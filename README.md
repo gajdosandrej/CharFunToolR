@@ -16,7 +16,9 @@ and algorithms for numerical inversion of the (combined and/or compound) charact
 The package includes inversion algorithm, including those based on simple trapezoidal rule for computing the integrals defined by the Gil-Pelaez formulae, and/or by using the FFT algorithm for computing the Fourier transform integrals.
                                                                        
 Installation and requirements
-=============================CharFunToolR was developed with R version 3.4.2 (2017-09-28).
+============================= 
+
+CharFunToolR was developed with R version 3.4.2 (2017-09-28).
 
 To install, you can either clone the directory with Git or download a .zip file or install package from R CRAN-repository.
 
