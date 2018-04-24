@@ -71,18 +71,13 @@ cfE_Empirical <- function(t, data, cfX) {
     idx0 <- idx1 + 1
 
     if (missing(cfX)) {
-      #aux <- exp(1i * t(t(t)) %*% data[idx])
       aux <- exp(1i * t %*% t(data[idx]))
     } else {
       aux <- t(apply(as.matrix(cfX(t)), 1, FUN = '^', data[idx]))
-      #aux <- t(apply(as.matrix(cfX(t)), 2, FUN = '^', data[idx]))
-      #aux <- t(apply(as.matrix(cfX(t)), 2, FUN = '^', data[idx]))
-      #aux <- cfX(t) ^ data[idx]
     }
 
     if (length(weights) == 1) {
       cf <- cf + apply(weights * aux, 1, sum)
-      #cf <- cf + sum(weights * aux)
     } else {
       cf <- cf + apply(aux * weights[idx], 1, sum)
       cf <- cf + apply(t(apply(aux * weights[idx], 1, FUN = '*', c(1,2,3))), 1, sum)

@@ -67,13 +67,11 @@ For more details see WIKIPEDIA:
 Other Continuous Probability distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Beta}}, \code{\link{cfS_Gaussian}},
   \code{\link{cfS_Rectangular}}, \code{\link{cfS_Student}},
-  \code{\link{cfS_Trapezoidal}},
-  \code{\link{cfS_Triangular}}, \code{\link{cfX_Beta}},
+  \code{\link{cfS_Trapezoidal}}, \code{\link{cfX_Beta}},
   \code{\link{cfX_ChiSquare}},
   \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
   \code{\link{cfX_InverseGamma}},
   \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PearsonV}},
   \code{\link{cfX_Rectangular}},
   \code{\link{cfX_Triangular}},
   \code{\link{cf_ArcsineSymmetric}},
@@ -84,10 +82,4 @@ Other Continuous Probability distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_RectangularSymmetric}},
   \code{\link{cf_Student}},
   \code{\link{cf_TrapezoidalSymmetric}}
-
-Other Symetric Probability distribution
-
-WITKOVSKY V. (2016). Numerical inversion of a characteristic function:
-An alternative tool to form the probability distribution
-of output quantity in linear measurement models. Acta IMEKO, 5(3), 32-44.: \code{\link{cfS_Triangular}}
 }

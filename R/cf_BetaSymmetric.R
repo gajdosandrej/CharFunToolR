@@ -16,10 +16,7 @@
 #' 1) \eqn{\theta = 1/2}; Arcsine distribution on \eqn{(-1,1)}:     \eqn{cf(t) = besselj(0,t)}, \cr
 #' 2) \eqn{\theta = 1};   Rectangular distribution on \eqn{(-1,1)}: \eqn{cf(t) = sin(t)/t}.
 #'
-#' @family Continuous Symetric distribution
 #' @family Continuous Probability distribution
-#'
-#' @importFrom Bessel BesselJ
 #'
 #' @references
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic
@@ -93,22 +90,17 @@ cf_BetaSymmetric <- function(t, theta, coef, niid) {
     # cf <- vector()
     coef_t <- coef * t
     for(i in 1:length(t)) {
-      cf <- c(cf, tryCatch(Re(exp(GammaLog(0.5 + theta) + (0.5 - theta) * log(0.5 * coef_t[i] + 0i)) * BesselJ(coef_t[i], theta - 0.5)), error = function(e) 0))
+      cf <- c(cf, tryCatch(Re(exp(GammaLog(0.5 + theta) + (0.5 - theta) * log(0.5 * coef_t[i] + 0i)) * Bessel::BesselJ(coef_t[i], theta - 0.5)), error = function(e) 0))
     }
-    #cf <- tryCatch(Re(exp(GammaLog(0.5 + theta) + (0.5 - theta) * log(0.5 * coef * t + 0i)) * BesselJ(coef * t, theta - 0.5)), error = function(e) 0)
-    #cf <- tryCatch(Re(exp(GammaLog(0.5 + theta) + (0.5 - theta) * log(0.5 * coef * t)) * bessel_Jnu(theta - 0.5, coef * t)), error = function(e) NA)
-
   } else {
     aux1 <- t %*% t(coef)
     aux2 <- rep(1, length(t)) %*% t(theta)
     cf <- matrix(0, dim(aux1)[1], dim(aux1)[2])
     for(j in 1:length(t)) {
       for(k in 1:length(coef)) {
-        cf[j,k] <- tryCatch(Re(exp(GammaLog(0.5 + aux2[j,k]) + (0.5 - aux2[j,k]) * log(0.5 * aux1[j,k] + 0i)) * BesselJ(aux1[j,k], aux2[j,k] -0.5)), error = function(e) 0)
+        cf[j,k] <- tryCatch(Re(exp(GammaLog(0.5 + aux2[j,k]) + (0.5 - aux2[j,k]) * log(0.5 * aux1[j,k] + 0i)) * Bessel::BesselJ(aux1[j,k], aux2[j,k] -0.5)), error = function(e) 0)
       }
     }
-    #cf <- Re(apply(tryCatch(exp(GammaLog(0.5 + aux2) + (0.5 - aux2) * log(0.5 * aux1 + 0i)) * BesselJ(aux1, aux2 -0.5), error = function(e) 0), 1, prod))
-        #exp(GammaLog(0.5 + aux2) + (0.5 - aux2) * log(0.5 * aux1)) * bessel_Jn(aux2 -0.5, aux1), error = function(e) NA), 1, prod))
     cf <- apply(cf, 1, prod)
 
   }

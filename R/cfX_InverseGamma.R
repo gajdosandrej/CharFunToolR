@@ -13,8 +13,6 @@
 #'
 #' @family Continuous Probability distribution
 #'
-#' @importFrom Bessel BesselK
-#'
 #' @references
 #' WITKOVSKY, V.: Computing the distribution of a linear combination
 #' of inverted gamma variables, Kybernetika 37 (2001), 79-90.

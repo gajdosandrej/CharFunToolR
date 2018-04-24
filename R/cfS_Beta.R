@@ -14,8 +14,6 @@
 #' @family Continuous Symetric distribution
 #' @family Continuous Probability distribution
 #'
-#' @importFrom Bessel BesselJ
-#'
 #' @references
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic
 #' function: An alternative tool to form the probability distribution

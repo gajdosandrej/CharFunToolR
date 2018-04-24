@@ -43,8 +43,6 @@
 #'               3 is the method based on the asymptotic expansion, }
 #' \item{loops}{indicator of the used number of recursive loops.}
 #'
-#' @importFrom Matrix bandSparse
-#'
 #' @example R/Examples/example_hypergeom1F1.R
 #'
 #' @export
@@ -278,7 +276,7 @@ GaussLaguerre <- function(n, alpha) {
     idx <- 1:n
     a <- (2 * idx - 1) + alpha
     b <- sqrt(idx[1:(n-1)] * ((1:(n-1)) + alpha)) # bandSparse() Matrix package; sdiag() mgcv package
-    CM <- diag(a) + as.matrix(matrix(0, n, n) + bandSparse(n, n, c(1, -1), list(b, b)))
+    CM <- diag(a) + as.matrix(matrix(0, n, n) + Matrix::bandSparse(n, n, c(1, -1), list(b, b)))
 
     eig <- eigen(CM)
     V <- eig$vectors

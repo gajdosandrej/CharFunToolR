@@ -9,8 +9,6 @@
 #'
 #' @family Continuous Probability distribution
 #'
-#' @importFrom Bessel BesselK
-#'
 #'  @references
 #' [1] WITKOVSKY, V.: On the exact computation of the density and
 #' of the quantiles of linear combinations of t and F random variables.
@@ -47,7 +45,7 @@ cfX_PearsonV <- function(t, alpha = 1, beta = 1) {
   cf <-
     unlist(lapply(t, function(t)
       tryCatch(
-        BesselK(2 * sqrt((0 - 1i * t) / beta), nu = alpha),
+              Bessel::BesselK(2 * sqrt((0 - 1i * t) / beta), nu = alpha),
         error = function(e)
           0
       )))

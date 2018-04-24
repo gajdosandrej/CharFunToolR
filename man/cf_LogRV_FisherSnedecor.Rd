@@ -38,7 +38,7 @@ That is, \code{cf_LogRV_FisherSnedecor} evaluates the characteristic function
 \eqn{cf(t) of  Y = coef_1*log(X_1) +...+ coef_N*log(X_N)}, where X_i ~ F(df1_i,df2_i),
 with degrees of freedom \eqn{df1_i} and \eqn{df2_i}, for \eqn{i = 1,...,N}.
 
-The characteristic function of \eqn{Y = log(X)}, with \log{X ~ F(df1,df2,\lambda)},
+The characteristic function of \eqn{Y = log(X)}, with \eqn{X ~ F(df1,df2,\lambda)},
 where \eqn{\lambda} is the non-centrality parameter, is defined by
 \eqn{cf_Y(t) = E(exp(1i*t*Y)) = E(exp(1i*t*log(X))) = E(X^(1i*t))}.
 That is, the characteristic function can be derived from expression

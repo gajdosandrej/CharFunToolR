@@ -14,8 +14,6 @@
 #'
 #' @family Continuous Probability distribution
 #'
-#' @importFrom Bessel BesselK
-#'
 #' @references
 #' WITKOVSKY, V.: Computing the distribution of a linear combination
 #' of inverted gamma variables, Kybernetika 37 (2001), 79-90.
@@ -131,15 +129,11 @@ cf_InverseGamma <- function(t, alpha, beta, coef, niid) {
     aux3 <- 2 * aux
     for(k in 1:dim(aux)[1]) {
       for(l in 1:dim(aux)[2]) {
-        aux0[k,l] <- tryCatch(BesselK(aux3[k,l], aux2[k,l]), error = function(e) 0)
+        aux0[k,l] <- tryCatch(Bessel::BesselK(aux3[k,l], aux2[k,l]), error = function(e) 0)
       }
     }
     aux <- aux1 * aux0
-    # aux <- tryCatch(2 * (aux ^ (alpha[idx] * (BesselK(2 * aux, rep(1, length(t)) %*% t(alpha[idx]))))), error = function(e) 0)
     aux <- t(t(aux) * (1 / gamma(alpha[idx])))
-    # if(length(coef) > 1) {
-    #   cf <- cf * apply(aux, 1, prod)
-    # }
     cf <- cf * apply(aux, 1, prod)
   }
   dim(cf) <- szt

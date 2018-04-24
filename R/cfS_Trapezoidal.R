@@ -14,7 +14,6 @@
 #' where \eqn{w  = (1+\lambda)/2}.
 #'
 #' @family Continuous Probability distribution
-#' @family Symetric Probability distribution
 #'
 #' @references
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic function:

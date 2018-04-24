@@ -19,8 +19,6 @@
 #' @family Continuous Probability distribution
 #' @family Symetric Probability distribution
 #'
-#' @importFrom Bessel BesselK
-#'
 #' @references
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic
 #' function: An alternative tool to form the probability distribution
@@ -38,8 +36,6 @@
 #' @param niid scalar convolution coeficient, such that \eqn{Z = Y + ... + Y} is
 #' sum of \eqn{niid} random variables \eqn{Y}, where each \eqn{Y = sum_{i=1}^N coef_i * X_i}
 #' is independently and identically distributed random variable. If empty, default value is \code{niid = 1}.
-#'
-#' @note bessel function nefunguje dobre
 #'
 #' @return Characteristic function \eqn{cf(t)} of a linear combination
 #' of independent STUDENT's t random variables.
@@ -127,11 +123,10 @@ cf_Student <- function(t, df, mu, sigma, coef, niid) {
     o_df2 <- o %*% t(df2[idx])
     for(k in 1:dim(aux)[1]) {
       for(l in 1:dim(aux)[2]) {
-        aux0[k,l] <- tryCatch(log(BesselK(aux[k,l], o_df2[k,l], TRUE)), error = function(e) 0)
+        aux0[k,l] <- tryCatch(log(Bessel::BesselK(aux[k,l], o_df2[k,l], TRUE)), error = function(e) 0)
       }
     }
     aux <- - aux + t(df2[idx] * t(log(aux))) + aux0
-    #aux <- tryCatch(-aux + (df2[idx] * (log(aux) + log(BesselK(aux, o %*% t(df2[idx]), expon.scaled = TRUE)))), error = function(e) 0)
     aux <- t(t(aux) + ((-log(2) * (df2[idx] - 1)) - log(gamma(df2[idx]))))
     aux <- 1i * t %*% t(coef[idx] * mu[idx]) + aux
     if(length(coef) > 1) {

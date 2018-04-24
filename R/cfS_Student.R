@@ -12,9 +12,6 @@
 #' \deqn{cf(t) = cfS_Student(t,df) = besselk(df/2,abs(t)*sqrt(df),1) * exp(-abs(t)*sqrt(df)) * (sqrt(df)*abs(t))^(df/2) / 2^(df/2-1)/gamma(df/2).}
 #'
 #' @family Continuous Probability distribution
-#' @family Symetric Probability distribution
-#'
-#' @importFrom Bessel BesselK
 #'
 #' @references
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic
@@ -26,8 +23,6 @@
 #'
 #' @param t  vector or array of real values, where the CF is evaluated.
 #' @param df the degrees of freedom, \code{df > 0}. If empty, the default value is \code{df = 1}.
-#'
-#' @note bessel function nefunguje dobre
 #'
 #' @return Characteristic function \eqn{cf(t)} of the STUDENT's t-distribution.
 #'

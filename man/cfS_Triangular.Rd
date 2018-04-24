@@ -42,31 +42,4 @@ result <- cf2DistGP(cf = cf, x = x, options = options)
 \seealso{
 For more details see WIKIPEDIA:
 \url{https://en.wikipedia.org/wiki/Triangular_distribution}.
-
-Other Continuous Probability distribution: \code{\link{cfS_Arcsine}},
-  \code{\link{cfS_Beta}}, \code{\link{cfS_Gaussian}},
-  \code{\link{cfS_Rectangular}}, \code{\link{cfS_Student}},
-  \code{\link{cfS_Trapezoidal}}, \code{\link{cfX_Beta}},
-  \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PearsonV}},
-  \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
-  \code{\link{cf_ArcsineSymmetric}},
-  \code{\link{cf_BetaSymmetric}}, \code{\link{cf_Beta}},
-  \code{\link{cf_ChiSquare}}, \code{\link{cf_Exponential}},
-  \code{\link{cf_Gamma}}, \code{\link{cf_InverseGamma}},
-  \code{\link{cf_Normal}},
-  \code{\link{cf_RectangularSymmetric}},
-  \code{\link{cf_Student}},
-  \code{\link{cf_TrapezoidalSymmetric}},
-  \code{\link{cf_TriangularSymmetric}}
-
-Other Symetric Probability distribution
-
-WITKOVSKY V. (2016). Numerical inversion of a characteristic function:
-An alternative tool to form the probability distribution
-of output quantity in linear measurement models. Acta IMEKO, 5(3), 32-44.: \code{\link{cf_TriangularSymmetric}}
 }

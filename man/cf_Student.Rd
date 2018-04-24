@@ -42,9 +42,6 @@ Hence, the characteristic function of \eqn{Y  = coef_1*(\mu_1+\sigma_1*X_1) +...
 is \eqn{cf_Y(t) = exp(1i*\mu*t) * (cf_1(coef_1*\sigma_1*t) *...* cf_N(coef_N*\sigma_N*t))}, where \eqn{cf_i(t)}
 is the characteristic function of \eqn{X_i ~ t(df_i)}.
 }
-\note{
-bessel function nefunguje dobre
-}
 \examples{
 ## EXAMPLE 1
 # CF of a linear combination of independent Student's t RVs
@@ -78,13 +75,11 @@ For more details see WIKIPEDIA:
 Other Continuous Probability distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Beta}}, \code{\link{cfS_Gaussian}},
   \code{\link{cfS_Rectangular}}, \code{\link{cfS_Student}},
-  \code{\link{cfS_Trapezoidal}},
-  \code{\link{cfS_Triangular}}, \code{\link{cfX_Beta}},
+  \code{\link{cfS_Trapezoidal}}, \code{\link{cfX_Beta}},
   \code{\link{cfX_ChiSquare}},
   \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
   \code{\link{cfX_InverseGamma}},
   \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PearsonV}},
   \code{\link{cfX_Rectangular}},
   \code{\link{cfX_Triangular}},
   \code{\link{cf_ArcsineSymmetric}},
@@ -98,8 +93,6 @@ Other Continuous Probability distribution: \code{\link{cfS_Arcsine}},
 
 Other Symetric Probability distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Gaussian}},
-  \code{\link{cfS_Rectangular}}, \code{\link{cfS_Student}},
-  \code{\link{cfS_Trapezoidal}},
   \code{\link{cf_ArcsineSymmetric}},
   \code{\link{cf_Normal}},
   \code{\link{cf_RectangularSymmetric}},

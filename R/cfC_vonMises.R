@@ -12,8 +12,6 @@
 #'
 #' @family Circular Probability Distribution
 #'
-#' @importFrom Bessel BesselI
-#'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/Von_Mises_distribution}.
 #'
@@ -53,7 +51,7 @@ cfC_vonMises <- function(t,
 
   cf <-
     unlist(lapply(t, function(t)
-      tryCatch((BesselI(kappa, abs(t), TRUE) / BesselI(kappa, 0, TRUE)) * exp(1i *
+      tryCatch((Bessel::BesselI(kappa, abs(t), TRUE) / Bessel::BesselI(kappa, 0, TRUE)) * exp(1i *
                                                                                 t * mu),
                error = function(e)
                  0

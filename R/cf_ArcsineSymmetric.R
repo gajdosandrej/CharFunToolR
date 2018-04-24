@@ -15,8 +15,6 @@
 #' @family Continuous Probability distribution
 #' @family Symetric Probability distribution
 #'
-#' @importFrom Bessel BesselJ
-#'
 #' @references
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic
 #' function: An alternative tool to form the probability distribution
@@ -68,7 +66,7 @@ cf_ArcsineSymmetric <- function(t, coef, niid) {
     cf <- matrix(0,sz_t_coef[1],sz_t_coef[2])
     for(i in 1:length(t)) {
       for(j in 1:length(coef)) {
-        cf[i,j] <- tryCatch(BesselJ(t_coef[i,j], 0), error = function(e) 0)
+        cf[i,j] <- tryCatch(Bessel::BesselJ(t_coef[i,j], 0), error = function(e) 0)
       }
     }
     dim(cf) <- sz_t_coef
@@ -76,13 +74,10 @@ cf_ArcsineSymmetric <- function(t, coef, niid) {
     t_coef <- t %*% coef
     cf <- vector()
     for(k in 1:length(t)) {
-      cf <- c(cf, tryCatch(BesselJ(t_coef[k,1], 0), error = function(e) 0))
+      cf <- c(cf, tryCatch(Bessel::BesselJ(t_coef[k,1], 0), error = function(e) 0))
     }
     dim(cf) <- szt
   }
-  # cf <- tryCatch(BesselJ(t %*% coef, 0), error = function(e) 0)
-  # cf <- tryCatch(besselJ(t %*% coef, 0), error = function(e) 0)
-  # cf <- tryCatch(bessel_Jnu(0, t %*% coef), error = function(e) 0)
 
   if(length(coef) > 1) {
     cf <- apply(cf, 1, prod)

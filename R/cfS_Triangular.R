@@ -12,7 +12,6 @@
 #' \deqn{cf(t) = (2-2*cos(t))/t^2.}
 #'
 #' @family Continuous Probability distribution
-#' @family Symetric Probability distribution
 #'
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic function:
 #' An alternative tool to form the probability distribution

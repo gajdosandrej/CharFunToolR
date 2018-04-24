@@ -54,18 +54,14 @@ of output quantity in linear measurement models. Acta IMEKO, 5(3), 32-44.
 For more details see WIKIPEDIA:
 \url{https://en.wikipedia.org/wiki/Beta_distribution}.
 
-Other Continuous Symetric distribution: \code{\link{cf_BetaSymmetric}}
-
 Other Continuous Probability distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Gaussian}},
   \code{\link{cfS_Rectangular}}, \code{\link{cfS_Student}},
-  \code{\link{cfS_Trapezoidal}},
-  \code{\link{cfS_Triangular}}, \code{\link{cfX_Beta}},
+  \code{\link{cfS_Trapezoidal}}, \code{\link{cfX_Beta}},
   \code{\link{cfX_ChiSquare}},
   \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
   \code{\link{cfX_InverseGamma}},
   \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PearsonV}},
   \code{\link{cfX_Rectangular}},
   \code{\link{cfX_Triangular}},
   \code{\link{cf_ArcsineSymmetric}},

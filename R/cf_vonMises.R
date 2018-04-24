@@ -12,8 +12,6 @@
 #'
 #' @family Circular Probability Distribution
 #'
-#' @importFrom Bessel BesselI
-#'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/Von_Mises_distribution}.
 #'
@@ -99,10 +97,9 @@ cf_vonMises <- function(t,
   if (length(coef) == 1) {
     aux <- vector()
     for(i in 1:length(t)) {
-      aux <- tryCatch(BesselI(kappa, abs(t[i] * coef), TRUE) / BesselI(kappa, 0, TRUE), error = function(e) 0)
+      aux <- tryCatch(Bessel::BesselI(kappa, abs(t[i] * coef), TRUE) / Bessel::BesselI(kappa, 0, TRUE), error = function(e) 0)
     }
     cf <- aux * exp(1i * t * mu * coef)
-    # cf <- tryCatch((BesselI(kappa, abs(t * coef), TRUE) / BesselI(kappa, 0, TRUE)) * exp(1i * t * mu * coef), error = function(e) 0)
   } else {
     aux0 <- matrix(0, dim(t %*% t(coef))[1], dim(t %*% t(coef))[2])
     aux1 <- rep(1, length(t)) %*% t(kappa)
@@ -110,12 +107,10 @@ cf_vonMises <- function(t,
     aux3 <- exp(1i * t %*% t(mu * coef))
     for(j in 1:length(t)) {
       for(k in 1:length(coef)) {
-        aux0[j,k] <- tryCatch(BesselI(aux1[j,k], aux2[j,k], TRUE) / BesselI(aux1[j,k], 0, TRUE), error = function(e) 0)
+        aux0[j,k] <- tryCatch(Bessel::BesselI(aux1[j,k], aux2[j,k], TRUE) / Bessel::BesselI(aux1[j,k], 0, TRUE), error = function(e) 0)
       }
     }
     cf <- apply(aux0 * aux3, 1, prod)
-    # cf <- tryCatch(apply((BesselI(rep(1, length(t)) %*% t(kappa), abs(t %*% t(coef)), TRUE) / BesselI(rep(1, length(t)) %*% t(kappa), 0, TRUE)) * exp(1i * t %*% t(mu * coef)), 1, prod), error = function(e) 0)
-
   }
 
   cf[t == 0] <- 1

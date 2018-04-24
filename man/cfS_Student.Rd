@@ -25,9 +25,6 @@ of independent (location-scale) STUDENT's t-distributed random variables.
 The characteristic function of the STUDENT's t-distribution with \eqn{df} degrees of freedom is defined by
 \deqn{cf(t) = cfS_Student(t,df) = besselk(df/2,abs(t)*sqrt(df),1) * exp(-abs(t)*sqrt(df)) * (sqrt(df)*abs(t))^(df/2) / 2^(df/2-1)/gamma(df/2).}
 }
-\note{
-bessel function nefunguje dobre
-}
 \examples{
 ## EXAMPLE1
 # CF of the Student t-distribution with df = 3
@@ -60,13 +57,11 @@ For more details see WIKIPEDIA:
 Other Continuous Probability distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Beta}}, \code{\link{cfS_Gaussian}},
   \code{\link{cfS_Rectangular}},
-  \code{\link{cfS_Trapezoidal}},
-  \code{\link{cfS_Triangular}}, \code{\link{cfX_Beta}},
+  \code{\link{cfS_Trapezoidal}}, \code{\link{cfX_Beta}},
   \code{\link{cfX_ChiSquare}},
   \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
   \code{\link{cfX_InverseGamma}},
   \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PearsonV}},
   \code{\link{cfX_Rectangular}},
   \code{\link{cfX_Triangular}},
   \code{\link{cf_ArcsineSymmetric}},
@@ -78,14 +73,4 @@ Other Continuous Probability distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_Student}},
   \code{\link{cf_TrapezoidalSymmetric}},
   \code{\link{cf_TriangularSymmetric}}
-
-Other Symetric Probability distribution: \code{\link{cfS_Arcsine}},
-  \code{\link{cfS_Gaussian}},
-  \code{\link{cfS_Rectangular}},
-  \code{\link{cfS_Trapezoidal}},
-  \code{\link{cf_ArcsineSymmetric}},
-  \code{\link{cf_Normal}},
-  \code{\link{cf_RectangularSymmetric}},
-  \code{\link{cf_Student}},
-  \code{\link{cf_TrapezoidalSymmetric}}
 }

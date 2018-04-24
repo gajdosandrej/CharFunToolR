@@ -12,7 +12,6 @@
 #' \deqn{cf(t) = sinc(t) = sin(t)/t.}
 #'
 #' @family Continuous Probability distribution
-#' @family Symetric Probability distribution
 #'
 #' @references
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic
