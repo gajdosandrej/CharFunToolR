@@ -103,8 +103,7 @@ mu3 <- pi
 kappa3 <- 10
 cf <-
         function(t)
-                0.25 * cfC_vonMises(t, mu1, kappa1) + 0.25 * cfC_vonMises(t, mu2, kappa2) + 0.5 *
-        cfC_vonMises(t, mu3, kappa3)
+                0.25 * cfC_vonMises(t, mu1, kappa1) + 0.25 * cfC_vonMises(t, mu2, kappa2) + 0.5 * cfC_vonMises(t, mu3, kappa3)
 options <- list()
 options$xMin <- 0
 options$xMax <- 2 * pi

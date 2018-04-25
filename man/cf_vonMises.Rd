@@ -81,7 +81,6 @@ result <- cf2DistGP(cf, x, prob, options)
 result
 angle  <- result$x
 radius <- result$pdf
-
 plotPolar(angle, radius)
 # figure; polarplot(angle,radius); ???
 # x = gca; ax.ThetaAxisUnits = 'radians'; ???

@@ -4,7 +4,7 @@
 #' @description
 #' \code{cfC_vonMises(t, mu, kappa, coef, niid)} evaluates the characteristic function \eqn{cf(t)}
 #' of \eqn{Y = sum_{i=1}^N coef_i * X_i} where \eqn{X_i ~ vonMises(\mu_i,\kappa_i)}
-#' inedependent RVs, with the locarion parameters \eqn{\mu_i} in Real and the rate
+#' inedependent RVs, with the location parameters \eqn{\mu_i} in Real and the rate
 #' parameters \eqn{\kappa_i > 0}, for \eqn{i = 1,...,N}.
 #'
 #' The characteristic function of the \eqn{vonMises(\mu,\kappa)} distribution is
