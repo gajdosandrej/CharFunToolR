@@ -44,7 +44,7 @@ You can download package from
 
 - https://github.com/gajdosandrej/CharFunToolR/releases
 
-in installe packages in R-studio you chose Package Archive File (.tar.gz).
+in install packages in R-studio you chose Package Archive File (.tar.gz).
 
 
 Getting started
