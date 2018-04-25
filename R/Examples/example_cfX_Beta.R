@@ -4,14 +4,16 @@ alpha <- 1 / 2
 beta <- 3 / 2
 t <- seq(-50, 50, length.out = 501)
 plotGraf(function(t)
-  cfX_Beta(t, alpha, beta), t, title = "CF of the Beta distribution with alpha = 1/2, beta = 3/2")
+        cfX_Beta(t, alpha, beta),
+        t,
+        title = "CF of the Beta distribution with alpha = 1/2, beta = 3/2")
 
 ## EXAMPLE 2
 # PDF/CDF of the Beta distribution with alpha = 1/2, beta = 3/2
 alpha <- 1 / 2
 beta <- 3 / 2
 cf <- function(t)
-  cfX_Beta(t, alpha, beta)
+        cfX_Beta(t, alpha, beta)
 x <- seq(0, 1, length.out = 101)
 xRange <- 1
 option <- list()

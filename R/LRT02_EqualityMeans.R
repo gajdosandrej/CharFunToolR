@@ -114,7 +114,7 @@ LRT02_EqualityMeans <- function(W, n, p, q, options) {
   if (!missing(W) && length(W) > 0) {
     # % P-VALUE
     options$isPlot <- FALSE
-    result <- cf2DistGP(cf = cf, x = W, option = options)
+    result <- cf2DistGP(cf = cf, x = W, options = options)
     pval <- 1 - result$cdf
   } else {
     # DISTRIBUTION of Lambda PDF/CDF
@@ -124,7 +124,7 @@ LRT02_EqualityMeans <- function(W, n, p, q, options) {
         cf = cf,
         x = options$x,
         prob = options$prob,
-        option = options
+        options = options
       )
   }
 

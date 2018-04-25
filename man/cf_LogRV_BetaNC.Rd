@@ -56,9 +56,13 @@ alpha <- 1
 beta  <- 3
 delta <- 1
 coef  <- -1
-t <- seq(from = -10, to = 10, length.out = 201)
+t <- seq(from = -10,
+         to = 10,
+         length.out = 201)
 plotGraf(function(t)
-  cf_LogRV_BetaNC(t, alpha, beta, delta, coef), t, title = 'CF of minus log-transformed Beta RV')
+        cf_LogRV_BetaNC(t, alpha, beta, delta, coef),
+        t,
+        title = 'CF of minus log-transformed Beta RV')
 
 ## EXAMPLE 2
 # CDF/PDF of the minus log-transformed non-central Beta RV with delta = 1
@@ -66,7 +70,8 @@ alpha <- 1
 beta  <- 3
 delta <- 1
 coef  <- -1
-cf <- function(t) cf_LogRV_BetaNC(t, alpha, beta, delta, coef)
+cf <- function(t)
+        cf_LogRV_BetaNC(t, alpha, beta, delta, coef)
 options <- list()
 options$xMin <- 0
 result <- cf2DistGP(cf = cf, options = options)
@@ -76,8 +81,9 @@ result <- cf2DistGP(cf = cf, options = options)
 alpha <- c(1, 2, 3)
 beta  <- c(3, 4, 5)
 delta <- c(0, 1, 2)
-coef  <- c(-1, -1, -1)/3
-cf <- function(t) cf_LogRV_BetaNC(t, alpha, beta, delta, coef)
+coef  <- c(-1,-1,-1) / 3
+cf <- function(t)
+        cf_LogRV_BetaNC(t, alpha, beta, delta, coef)
 options <- list()
 options$xMin <- 0
 result <- cf2DistGP(cf = cf, options = options)

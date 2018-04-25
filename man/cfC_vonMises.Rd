@@ -47,7 +47,7 @@ in the normal distribution), on a whole circle, i.e. the interval of angles \eqn
 # CF of the uniform von Mises distribution on (-pi,pi)
 t <- seq(-10, 10, length.out = 501)
 plotGraf(function(t)
-  cfC_vonMises(t), t, title = "CF of the uniform von Mises distribution on (-pi,pi)")
+        cfC_vonMises(t), t, title = "CF of the uniform von Mises distribution on (-pi,pi)")
 
 ## EXAMPLE2
 # CF of the mixture of the von Mises distribution on (-pi,pi)
@@ -56,8 +56,8 @@ kappa1 <- 5
 mu2 <- 1
 kappa2 <- 15
 cf <-
-  function(t)
-    0.25 * cfC_vonMises(t, mu1, kappa1) + 0.75 * cfC_vonMises(t, mu2, kappa2)
+        function(t)
+                0.25 * cfC_vonMises(t, mu1, kappa1) + 0.75 * cfC_vonMises(t, mu2, kappa2)
 t <- seq(-10, 10, length.out = 501)
 plotGraf(cf, t, title = "CF of the mixture of the von Mises distribution")
 
@@ -66,11 +66,11 @@ plotGraf(cf, t, title = "CF of the mixture of the von Mises distribution")
 mu <- 0
 kappa <- 5
 cf  <- function(t)
-  cfC_vonMises(t, mu, kappa)
+        cfC_vonMises(t, mu, kappa)
 options <- list()
 options$xMin <- -pi
 options$xMax <- pi
-result <- cf2DistGP(cf=cf, options=options)
+result <- cf2DistGP(cf = cf, options = options)
 angle <- result$x
 radius <- result$pdf
 plotPolar(angle, radius)
@@ -82,13 +82,13 @@ kappa1 <- 5
 mu2 <- 1
 kappa2 <- 15
 cf <-
-  function(t)
-    cfC_vonMises(1 * t, mu1, kappa1) * cfC_vonMises(0.25 * t, mu2, kappa2)
+        function(t)
+                cfC_vonMises(1 * t, mu1, kappa1) * cfC_vonMises(0.25 * t, mu2, kappa2)
 options <- list()
 options$xMin <- -pi
 options$xMax <- pi
 options$isCircular <- TRUE
-result <- cf2DistGP(cf=cf,options=options)
+result <- cf2DistGP(cf = cf, options = options)
 angle <- result$x
 radius <- result$pdf
 plotPolar(angle, radius)
@@ -102,14 +102,14 @@ kappa2 <- 15
 mu3 <- pi
 kappa3 <- 10
 cf <-
-  function(t)
-    0.25 * cfC_vonMises(t, mu1, kappa1) + 0.25 * cfC_vonMises(t, mu2, kappa2) + 0.5 *
-  cfC_vonMises(t, mu3, kappa3)
+        function(t)
+                0.25 * cfC_vonMises(t, mu1, kappa1) + 0.25 * cfC_vonMises(t, mu2, kappa2) + 0.5 *
+        cfC_vonMises(t, mu3, kappa3)
 options <- list()
 options$xMin <- 0
-options$xMax <- 2*pi
+options$xMax <- 2 * pi
 options$isCircular <- TRUE
-result <- cf2DistGP(cf,options)
+result <- cf2DistGP(cf, options)
 angle <- result$x
 radius <- result$pdf
 plotPolar(angle, radius)

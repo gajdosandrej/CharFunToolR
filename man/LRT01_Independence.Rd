@@ -16,7 +16,7 @@ CF/PDF/CDF and the quantiles of the null distribution of \eqn{W}.}
 
 \item{p}{vector \eqn{p = (p_1,...,p_k)} of dimensions of \eqn{X_k, k = 1,...m}.}
 
-\item{option}{option structure, for more details see \code{\link{cf2DistGP}}.
+\item{options}{option structure, for more details see \code{\link{cf2DistGP}}.
 Moreover, \cr
 \code{x} set vector of values where PDF/CDF is evaluated, \cr
 \code{prob} set vector of probabilities for the quantiles, \cr

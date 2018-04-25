@@ -13,7 +13,7 @@
 #' CF/PDF/CDF and the quantiles of the null distribution of \eqn{W}.
 #' @param n sample size (\eqn{n > q_k}).
 #' @param p vector \eqn{p = (p_1,...,p_k)} of dimensions of \eqn{X_k, k = 1,...m}.
-#' @param option option structure, for more details see \code{\link{cf2DistGP}}.
+#' @param options option structure, for more details see \code{\link{cf2DistGP}}.
 #' Moreover, \cr
 #' \code{x} set vector of values where PDF/CDF is evaluated, \cr
 #' \code{prob} set vector of probabilities for the quantiles, \cr
@@ -125,7 +125,7 @@ LRT01_Independence <- function(W, n, p, options) {
   if (!missing(W) && length(W) > 0) {
     # P-VALUE
     options$isPlot <- FALSE
-    result <- cf2DistGP(cf = cf, x = W, option = options)
+    result <- cf2DistGP(cf = cf, x = W, options = options)
     pval <- 1 - result$cdf
   } else {
     # DISTRIBUTION of Lambda PDF/CDF
@@ -135,7 +135,7 @@ LRT01_Independence <- function(W, n, p, options) {
         cf = cf,
         x = options$x,
         prob = options$prob,
-        option = options
+        options = options
       )
   }
 

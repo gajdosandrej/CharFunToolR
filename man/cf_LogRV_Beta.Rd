@@ -53,14 +53,26 @@ is evaluated with the parameters \code{alpha(i)} and \code{beta(i)}.
 \examples{
 ## EXAMPLE 1
 # CF of a linear combination of K=50 independent log-Beta RVs
-coef <- 1/((((1:50)-0.5)*pi)^2)
-plot(1:50, coef, xlab="", ylab="", type = "p", pch = 20, col = "blue", cex = 1, main = expression('Coefficients of the linear combination of' ~ chi^2 ~ 'RVs with DF=1'))
+coef <- 1 / ((((1:50) - 0.5) * pi) ^ 2)
+plot(
+        1:50,
+        coef,
+        xlab = "",
+        ylab = "",
+        type = "p",
+        pch = 20,
+        col = "blue",
+        cex = 1,
+        main = expression('Coefficients of the linear combination of' ~ chi ^ 2 ~ 'RVs with DF=1')
+)
 lines(1:50, coef, col = "blue")
-alpha <- 5/2
-beta <- 3/2
-t <- seq(-100, 100, (100-(-100))/200)
+alpha <- 5 / 2
+beta <- 3 / 2
+t <- seq(-100, 100, (100 - (-100)) / 200)
 plotGraf(function(t)
-  cf_LogRV_Beta(t,alpha,beta,coef), t, title = 'Characteristic function of a linear combination of log-Beta RVs')
+        cf_LogRV_Beta(t, alpha, beta, coef),
+        t,
+        title = 'Characteristic function of a linear combination of log-Beta RVs')
 
 #library(ggplot2)
 #df <- data.frame(x_axis = t, y1_axis = Re(cf), y2_axis = Im(cf))
@@ -77,13 +89,15 @@ plotGraf(function(t)
 
 ##  EXAMPLE 2:
 # PDF/CDF from the CF by cf2DistGP
-   alpha <- 5/2
-   beta  <- 3/2
-   coef <- 1/((((1:50)-0.5)*pi)^2)
-   cf <- function(t) {cf_LogRV_Beta(t,alpha,beta,coef)}
-   options <- list()
-   options$xMax <- 0
-   result <- cf2DistGP(cf = cf, options = options)
+alpha <- 5 / 2
+beta  <- 3 / 2
+coef <- 1 / ((((1:50) - 0.5) * pi) ^ 2)
+cf <- function(t) {
+        cf_LogRV_Beta(t, alpha, beta, coef)
+}
+options <- list()
+options$xMax <- 0
+result <- cf2DistGP(cf = cf, options = options)
 
 ## EXAMPLE 3:
 # Distribution of log(R), where R=geometric/arithmetic mean of Gamma RVs
@@ -97,11 +111,15 @@ plotGraf(function(t)
 # Here we evaluate the PDF/CDF of W = -log(R) (i.e. minus of log(R))
 n <- 10
 alpha <- 1 #A = 1, i.e. X_j are from exponential distribution
-beta <- (1:n-1)/n
-coef <- -1/n
-t <- seq(from = -25, to = 25, length.out = 201)
+beta <- (1:n - 1) / n
+coef <- -1 / n
+t <- seq(from = -25,
+         to = 25,
+         length.out = 201)
 plotGraf(function(t)
-  cf_LogRV_Beta(t,alpha,beta,coef), t, title = 'Characteristic function of a linear combination of log-Beta RVs')
+        cf_LogRV_Beta(t, alpha, beta, coef),
+        t,
+        title = 'Characteristic function of a linear combination of log-Beta RVs')
 prob <- c(0.9, 0.95, 0.99)
 options <- list()
 options.xMin = 0
@@ -125,49 +143,64 @@ p <- 10
 m <- 20
 n <- 7
 i  <- 1:p
-alpha <- (m+1-i)/2
-beta  <- n/2
+alpha <- (m + 1 - i) / 2
+beta  <- n / 2
 coef  <- -1
-t <- seq(from = -5,to = 5,length.out = 201)
+t <- seq(from = -5,
+         to = 5,
+         length.out = 201)
 plotGraf(function(t)
-  cf_LogRV_Beta(t,alpha,beta,coef), t, title = 'Characteristic function of a linear combination of log-Beta RVs')
+        cf_LogRV_Beta(t, alpha, beta, coef),
+        t,
+        title = 'Characteristic function of a linear combination of log-Beta RVs')
 prob <- c(0.99, 0.95, 0.9)
-x <- seq(from = 2,to = 8, length.out = 100)
+x <- seq(from = 2,
+         to = 8,
+         length.out = 100)
 options <- list()
-options.xMin = 0;
+options.xMin = 0
+
 # Distribution of -log(Lambda)
-result <- cf2DistGP(cf = cf, x = x, prob = prob, options = options)
+result <- cf2DistGP(
+        cf = cf,
+        x = x,
+        prob = prob,
+        options = options
+)
 str(result)
 
 # PDF of Lambda
 # If W = -log(Lambda), then pdf_Lambda(u) = pdf_W(x)/exp(-x),
 # where x = -log(u) and u = exp(-x)
 plot.new()
-plot.window(xlim=c(0,0.15), ylim=c(0, 40))
+plot.window(xlim = c(0, 0.15), ylim = c(0, 40))
 axis(1)
 axis(2)
 #title(main=paste("PDF of Wilks", expression(Lambda), "distribution with p=10, m = 20, n=7"))
-title(main=expression("PDF of Wilks" ~ Lambda ~ "distribution with p=10, m = 20, n=7"))
-title(xlab=expression(Lambda))
-title(ylab="PDF")
+title(main = expression("PDF of Wilks" ~ Lambda ~ "distribution with p=10, m = 20, n=7"))
+title(xlab = expression(Lambda))
+title(ylab = "PDF")
 grid(lty = "solid")
-lines(exp(-result$x), result$pdf/exp(-result$x), col = "blue", lwd = 2)
+lines(exp(-result$x),
+      result$pdf / exp(-result$x),
+      col = "blue",
+      lwd = 2)
 
 # CDF of Lambda
 # If W = -log(Lambda), then cdf_Lambda(u) = 1-cdf_W(x),
 # where x = -log(u) and u = exp(-x)
 plot.new()
-plot.window(xlim=c(0,0.15), ylim=c(0, 1))
+plot.window(xlim = c(0, 0.15), ylim = c(0, 1))
 axis(1)
 axis(2)
 #title(main=paste("PDF of Wilks", expression(Lambda), "distribution with p=10, m = 20, n=7"))
-title(main=expression("CDF of Wilks" ~ Lambda ~ "distribution with p=10, m = 20, n=7"))
-title(xlab=expression(Lambda))
-title(ylab="PDF")
+title(main = expression("CDF of Wilks" ~ Lambda ~ "distribution with p=10, m = 20, n=7"))
+title(xlab = expression(Lambda))
+title(ylab = "PDF")
 grid(lty = "solid")
-lines(exp(-result$x), 1-result$cdf, col = "blue", lwd = 2)
+lines(exp(-result$x), 1 - result$cdf, col = "blue", lwd = 2)
 print("Quantiles of Wilks Lambda distribution")
-print(paste("alpha =", prob ))
+print(paste("alpha =", prob))
 print(paste("quantile =", exp(-result$qf)))
 }
 \references{
