@@ -11,8 +11,7 @@
 #' The characteristic function of \eqn{Y} is defined by
 #' \deqn{cf(t) = exp(1i*(coef'*\mu)*t - (1/2)*(coef^2'*\sigma^2)*t^2).}
 #'
-#' @family Continuous Probability distribution
-#' @family Symetric Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/Normal_distribution}.

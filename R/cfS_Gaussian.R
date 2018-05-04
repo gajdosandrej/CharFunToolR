@@ -11,8 +11,8 @@
 #' The characteristic function of the standard normally distributed random variable, \eqn{X ~ N(0,1)},
 #' is defined by \deqn{cf(t) = cfS_Gaussian(t) = exp(-t^2/2).}
 #'
-#' @family Continuous Probability distribution
-#' @family Symetric Probability distribution
+#' @family Continuous Probability Distribution
+#' @family Symmetric Probability Distribution
 #'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/Normal_distribution}.

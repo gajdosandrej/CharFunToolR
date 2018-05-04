@@ -11,7 +11,7 @@
 #' The characteristic function of the CHI-SQUARE distribution is defined
 #' by \deqn{cf(t) = (1 - 2*i*t )^(df/2) * exp((i*t*ncp)/(1-2*i*t)).}
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/Chi-squared_distribution}.

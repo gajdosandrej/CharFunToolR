@@ -17,7 +17,7 @@
 #' is \eqn{cf(t) =  cf_X_1(coef(1)*t) * ... * cf_X_N(coef(N)*t)},
 #' where \eqn{X_i ~ Beta(\alpha(i),\beta(i))} with \eqn{cf_X_i(t)}.
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/Beta_distribution}.

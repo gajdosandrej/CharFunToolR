@@ -10,7 +10,7 @@
 #'
 #' The FOURIER INTEGRALs are calculated by using the simple TRAPEZOIDAL QUADRATURE method, see below.
 #'
-#' @family  CF Inversion Algorithm
+#' @family CF Inversion Algorithm
 #'
 #' @importFrom stats runif
 #' @importFrom graphics plot grid

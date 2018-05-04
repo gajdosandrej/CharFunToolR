@@ -31,6 +31,8 @@
 #' @param z complex argument (scalar, vector or array).
 #' @param n number of the Gauss-Laguerre nodes and weights on \eqn{(0,Inf)}. If empty, default value is \code{n = 64}.
 #'
+#' @family Special Function
+#'
 #' @return
 #' List including the following items:
 #'

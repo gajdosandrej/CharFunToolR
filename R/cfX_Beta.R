@@ -10,7 +10,7 @@
 #' \deqn{cf(t) = cfX_Beta(t,\alpha,\beta) = 1F1(\alpha ,\alpha + \beta , i*t),}
 #' where \eqn{1F1(.;.;.)} is the Confluent hypergeometric function.
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/Beta_distribution}.

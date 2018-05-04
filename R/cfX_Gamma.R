@@ -11,7 +11,7 @@
 #' The characteristic function of the GAMMA distribution is defined by
 #' \deqn{cf(t) = (1 - i*t/\beta)^(-\alpha).}
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/Gamma_distribution}.

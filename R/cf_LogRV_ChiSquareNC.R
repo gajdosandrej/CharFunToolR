@@ -35,6 +35,7 @@
 #' \url{https://en.wikipedia.org/wiki/Noncentral_chi-squared_distribution}.
 #'
 #' @family Continuous Probability Distribution
+#' @family Non-central Probability Distribution
 #'
 #' @example R/Examples/example_cf_LogRV_ChiSquareNC.R
 #'

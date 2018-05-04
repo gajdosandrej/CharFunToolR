@@ -11,7 +11,7 @@
 #' The characteristic function of the EXPONENTIAL distribution is
 #' \deqn{cf(t) = \lambda / (\lambda - 1i*t).}
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/Exponential_distribution}.

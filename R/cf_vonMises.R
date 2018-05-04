@@ -10,6 +10,7 @@
 #' The characteristic function of the \eqn{vonMises(\mu,\kappa)} distribution is
 #' \deqn{cf(t) = cf_vonMises(t,\mu,\kappa) = besseli(t,\kappa)/besseli(0,\kappa) * exp(1i*t*\mu).}
 #'
+#' @family Continuous Probability Distribution
 #' @family Circular Probability Distribution
 #'
 #' @seealso For more details see WIKIPEDIA:

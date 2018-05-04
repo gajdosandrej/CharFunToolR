@@ -11,7 +11,8 @@
 #' The characteristic function of the STUDENT's t-distribution with \eqn{df} degrees of freedom is defined by
 #' \deqn{cf(t) = cfS_Student(t,df) = besselk(df/2,abs(t)*sqrt(df),1) * exp(-abs(t)*sqrt(df)) * (sqrt(df)*abs(t))^(df/2) / 2^(df/2-1)/gamma(df/2).}
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
+#' @family Symmetric Probability Distribution
 #'
 #' @references
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic

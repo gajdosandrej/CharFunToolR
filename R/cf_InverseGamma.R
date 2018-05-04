@@ -12,7 +12,7 @@
 #' The characteristic function of Y is defined by
 #' \deqn{cf(t) = Prod( 2 / gamma(\alpha(i)) * (-1i*\beta(i)*t).^(\alpha(i)/2) * besselk(\alpha(i),sqrt(-4i*\beta(i)*t)) ).}
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @references
 #' WITKOVSKY, V.: Computing the distribution of a linear combination

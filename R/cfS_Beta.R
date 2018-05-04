@@ -11,8 +11,8 @@
 #' The characteristic function of \eqn{X ~ BetaSymmetric(\theta)} is defined by
 #' \deqn{cf(t) = cf_BetaSymmetric(t,\theta) = gamma(1/2+\theta) * (t/2)^(1/2-\theta) * besselj(\theta-1/2,t).}
 #'
-#' @family Continuous Symetric distribution
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
+#' @family Symmetric Probability Distribution
 #'
 #' @references
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic

@@ -6,7 +6,7 @@
 #' (Rectangular distribution with \eqn{mean = (a + b)/2} and \eqn{variance = 1/12(b - a)^2)}
 #' \eqn{cfX_Rectangular(t, a, b) = (exp(ibt) - exp(iat))/(i(b - a)t)}.
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/Normal_distribution}.

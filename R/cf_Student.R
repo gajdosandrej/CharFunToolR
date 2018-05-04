@@ -16,8 +16,7 @@
 #' is \eqn{cf_Y(t) = exp(1i*\mu*t) * (cf_1(coef_1*\sigma_1*t) *...* cf_N(coef_N*\sigma_N*t))}, where \eqn{cf_i(t)}
 #' is the characteristic function of \eqn{X_i ~ t(df_i)}.
 #'
-#' @family Continuous Probability distribution
-#' @family Symetric Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @references
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic

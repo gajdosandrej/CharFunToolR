@@ -32,7 +32,7 @@
 #' function \code{integrate()}, with precission specified by tolerance \code{tol} (default
 #' value is \eqn{tol = 1e-6}).
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @references
 #' [1] WITKOVSKY, V.: On the exact computation of the density and

@@ -4,7 +4,7 @@
 #' @description
 #' \code{ChebPoints(N, interval)} evaluates Evaluate \eqn{N} chebpoints on the given interval \eqn{[a,b]}.
 #'
-#' @family
+#' @family Special Function
 #'
 #' @param N number of chebpoints required.
 #' @param interval vector containing lower and upper bound of interval.

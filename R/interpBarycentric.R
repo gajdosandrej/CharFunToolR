@@ -6,7 +6,7 @@
 #' \code{funNew} at given points \code{xNew} by barycentric interpolation from function values \code{fun}
 #' given at chebpoints \code{x}.
 #'
-#' @family
+#' @family Special Function
 #'
 #' @seealso
 #' For more details see WIKIPEDIA:

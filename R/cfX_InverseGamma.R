@@ -11,7 +11,7 @@
 #' The characteristic function of the GAMMA distribution is defined
 #' by \deqn{cf(t) =  2 / gamma(\alpha) * (-1i*\beta*t).^(\alpha/2) * besselk(\alpha,sqrt(-4i*\beta*t)).}
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @references
 #' WITKOVSKY, V.: Computing the distribution of a linear combination

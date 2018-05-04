@@ -13,8 +13,8 @@
 #' The characteristic function of \eqn{X ~ TriangularSymmetric} is defined
 #' by \deqn{cf(t) = cf_TriangularSymmetric(t) = (2-2*cos(t))/t^2.}
 #'
-#' @family Continuous Probability distribution
-#' @family Symetric Probability distribution
+#' @family Continuous Probability Distribution
+#' @family Symmetric Probability Distribution
 #'
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic function:
 #' An alternative tool to form the probability distribution

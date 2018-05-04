@@ -7,7 +7,7 @@
 #' \deqn{cfX_PearsonV(t, \alpha, \beta) = (2/gamma(\alpha)) * (-1i*t/\beta)^(\alpha/2) * besselk(\alpha,2*sqrt(-1i*t/\beta)),}
 #' where \eqn{besselk(a,z)} denotes the modified Bessel function of the second order.
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #'  @references
 #' [1] WITKOVSKY, V.: On the exact computation of the density and

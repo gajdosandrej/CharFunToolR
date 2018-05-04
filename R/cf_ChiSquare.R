@@ -13,7 +13,7 @@
 #' The characteristic function of \eqn{Y} is defined by
 #' \deqn{cf(t) = Prod ( (1-2*i*t*coef(i))^(-df(i)/2) * exp((i*t*ncp(i))/(1-2*i*t*coef(i))) ).}
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @references
 #' IMHOF J. (1961): Computing the distribution of quadratic forms in normal variables. Biometrika 48, 419-426.

@@ -11,7 +11,7 @@
 #' The characteristic function of \eqn{Y} is defined by
 #' \deqn{cf(t) = Prod( \lambda_i / (\lambda_i - 1i*t) ).}
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/Exponential_distribution}.

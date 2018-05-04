@@ -11,8 +11,8 @@
 #'
 #' The characteristic function of the symmetric ARCSINE distribution is \eqn{cf(t) = besselj(0,t)}.
 #'
-#' @family Continuous Probability distribution
-#' @family Symetric Probability distribution
+#' @family Continuous Probability Distribution
+#' @family Symmetric Probability Distribution
 #'
 #' @references
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic

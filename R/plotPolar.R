@@ -12,6 +12,8 @@
 #' @param type type of lines, dots.
 #' @param color color.
 #'
+#' @family Graphic Function
+#'
 #' @export
 #'
 plotPolar <-

@@ -24,6 +24,8 @@
 #'
 #' @return Graf of function \code{f} in argument \code{x} or in range \code{[xmin, xmax]} with step \code{dx}.
 #'
+#' @family Graphic Function
+#'
 #' @export
 #'
 plotGraf <-

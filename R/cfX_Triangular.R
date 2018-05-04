@@ -7,7 +7,7 @@
 #' (Triangular distribution with \eqn{mean = a + b + c)/3} and \eqn{variance = 1/18(a^2 + b^2 + c^2 + - ab - ac - bc)}).
 #' \deqn{cfX_Triangula(t, a, b, c) = -2((b-c)exp(iat) - (b-a)exp(ict) + (c-a)exp(ibt))/((b-a)(c-a)(b-c)t^2).}
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/Triangular_distribution}.

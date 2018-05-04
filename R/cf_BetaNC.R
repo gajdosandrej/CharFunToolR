@@ -38,6 +38,7 @@
 #' \url{https://en.wikipedia.org/wiki/Noncentral_beta_distribution}.
 #'
 #' @family Continuous Probability Distribution
+#' @family Non-central Probability Distribution
 #'
 #' @example R/Examples/example_cf_BetaNC.R
 #'

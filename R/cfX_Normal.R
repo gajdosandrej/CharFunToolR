@@ -5,7 +5,7 @@
 #' the Normal distribution with \eqn{mean = mean} and \eqn{variance = variance}: \eqn{N(mean, variance)};\cr
 #' \eqn{cfX_Normal(t, mean, variance) = exp(imeant -1/2variance^2t^2)}.
 #'
-#' @family Continuous Probability distribution
+#' @family Continuous Probability Distribution
 #'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/Normal_distribution}.

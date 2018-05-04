@@ -12,8 +12,8 @@
 #' The characteristic function of \eqn{X ~ ArcsineSymmetric} is defined by
 #' \deqn{cf(t) = cf_ArcsineSymmetric(t) = besselj(0,t).}
 #'
-#' @family Continuous Probability distribution
-#' @family Symetric Probability distribution
+#' @family Continuous Probability Distribution
+#' @family Symmetric Probability Distribution
 #'
 #' @references
 #' WITKOVSKY V. (2016). Numerical inversion of a characteristic

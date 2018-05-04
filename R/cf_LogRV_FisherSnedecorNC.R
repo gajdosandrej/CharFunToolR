@@ -38,6 +38,7 @@
 #' \url{https://en.wikipedia.org/wiki/Noncentral_F-distribution}.
 #'
 #' @family Continuous Probability Distribution
+#' @family Non-central Probability Distribution
 #'
 #' @example R/Examples/example_cf_LogRV_FisherSnedecorNC.R
 #'
