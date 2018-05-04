@@ -41,3 +41,6 @@ Graf of function \code{f} in argument \code{x} or in range \code{[xmin, xmax]} w
 \details{
 Function with optional parameters must be pass as lambda function \code{f = function(x) f(x, optional parameters)}.
 }
+\seealso{
+Other Graphic Function: \code{\link{plotPolar}}
+}

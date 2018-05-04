@@ -44,3 +44,8 @@ print(list(
         "sin(xNew)" = sin(xNew)
 ))
 }
+\seealso{
+Other Special Function: \code{\link{GammaLog}},
+  \code{\link{hypergeom1F1}},
+  \code{\link{interpBarycentric}}
+}

@@ -25,3 +25,8 @@ J. Spouge,  SIAM JNA 31, 1994. pp. 931. \cr
 W. Press,  "Numerical Recipes". \cr
 S. Chang, "Computation of special functions", 1996.
 }
+\seealso{
+Other Special Function: \code{\link{ChebPoints}},
+  \code{\link{hypergeom1F1}},
+  \code{\link{interpBarycentric}}
+}

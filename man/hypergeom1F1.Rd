@@ -74,4 +74,7 @@ proceedings, pp. 241-248. Springer.
 For more details on confluent hypergeometric function \eqn{1F1(a, b, z)}
 or the Kummer's (confluent hypergeometric) function \eqn{M(a, b, z)} see WIKIPEDIA:
 \url{https://en.wikipedia.org/wiki/Confluent_hypergeometric_function}.
+
+Other Special Function: \code{\link{ChebPoints}},
+  \code{\link{GammaLog}}, \code{\link{interpBarycentric}}
 }

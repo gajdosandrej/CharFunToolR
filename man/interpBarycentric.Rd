@@ -136,4 +136,7 @@ lines(result$cdf, result$x, col = "blue",  lwd = 2)
 \seealso{
 For more details see WIKIPEDIA:
 \url{https://en.wikipedia.org/wiki/Barycentric_coordinate_system}.
+
+Other Special Function: \code{\link{ChebPoints}},
+  \code{\link{GammaLog}}, \code{\link{hypergeom1F1}}
 }
