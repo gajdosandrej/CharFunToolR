@@ -20,7 +20,7 @@ Installation and requirements
 
 CharFunToolR was developed with R version 3.4.2 (2017-09-28).
 
-To install, you can either clone the directory with Git or download a .zip file or install package from R CRAN-repository.
+To install, you can either clone the directory with Git or download a .zip file or install package from GitHub repository.
 
 ## Option 1: Download .zip file
 
@@ -28,7 +28,7 @@ Download a .zip of CharFunToolR from
 
 - https://github.com/gajdosandrej/CharFunToolR/releases
 
-After unzipping, you will need open CharFunToolR.Rproj.
+After unzipping, you will need to open CharFunToolR.Rproj.
 
 ## Option 2: Clone with Git
 
@@ -36,15 +36,23 @@ To clone the CharFunToolR repository, first navigate in a terminal to where you 
 ```
 git clone https://github.com/gajdosandrej/CharFunToolR.git
 ```
-and you will need open CharFunToolR.Rproj.
+and you will need to open CharFunToolR.Rproj.
 
-## Option 3: Install package
+## Option 3: Install package from source archive
 
 You can download package from 
 
 - https://github.com/gajdosandrej/CharFunToolR/releases
 
-in install packages in R-studio you chose Package Archive File (.tar.gz).
+in install packages in RStudio you chose Package Archive File (.tar.gz).
+
+
+## Option 4: Install package from GitHub
+
+Just run the following command in your RStudio console:
+```
+devtools::install_github("gajdosandrej/CharFunToolR")
+```
 
 
 Getting started
