@@ -2,7 +2,7 @@
 # CF of the Logarithmic distribution with the parameter p = 0.5
 p <- 0.5
 t <- seq(-10, 10, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfN_Logarithmic(t, p),
         t,
         title = "CF of the Logarithmic distribution with the parameter p = 0.5")
@@ -14,7 +14,7 @@ lambda <- 5
 cfX <- function(t)
         cfX_Exponential(t, lambda)
 t <- seq(-10, 10, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfN_Logarithmic(t, p, cfX),
         t,
         title = "CF of the compound Logarithmic-Exponential distribution")

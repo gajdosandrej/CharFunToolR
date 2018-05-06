@@ -3,7 +3,7 @@
 alpha <- 2
 beta <- 2
 t <- seq(-20, 20, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfX_InverseGamma(t, alpha, beta), t,
         title = "CF of the InverseGamma distribution with alpha = 2, beta = 2")
 

@@ -1,6 +1,6 @@
 ## EXAMPLE1 (CF of the Triangular distribution on (-1 , 2) mode = 0)
 t <- seq(-10, 10, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfX_Triangular(t, a = -1, b = 2, c = 0), t,
         title = "CF of the Triangular distribution on (-1 , 2)")
 

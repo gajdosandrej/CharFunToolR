@@ -1,7 +1,7 @@
 ## EXAMPLE1
 # CF of the Rectangular distribution on (-1,1)
 t <- seq(-50, 50, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfS_Rectangular(t), t, title = "CF of the Rectangular distribution on (-1,1)")
 
 ## EXAMPLE2

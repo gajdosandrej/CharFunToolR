@@ -6,7 +6,7 @@ coef  <- c(1, 2, 3, 4, 5) / 15
 t <- seq(from = -20,
          to = 20,
          length.out = 201)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_vonMises(t,
                     mu,
                     kappa,

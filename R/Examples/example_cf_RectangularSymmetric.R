@@ -3,7 +3,7 @@
 t <- seq(from = -50,
          to = 50,
          length.out = 201)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_RectangularSymmetric(t),
         t,
         title = "CF of the Rectangular distribution on (-1,1)")
@@ -14,7 +14,7 @@ t <- seq(from = -10,
          to = 10,
          length.out = 201)
 coef <- c(1, 2, 3, 4, 5) / 15
-plotGraf(function(t)
+plotReIm(function(t)
         cf_RectangularSymmetric(t, coef),
         t,
         title = "CF of a weighted linear combination of Rectangular RVs")

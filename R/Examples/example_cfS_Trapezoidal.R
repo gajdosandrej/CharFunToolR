@@ -2,7 +2,7 @@
 # CF of the symmetric Trapezoidal distribution, lambda = 0.5
 lambda <- 0.5
 t <- seq(-50, 50, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfS_Trapezoidal(t, lambda), t,
         title = "CF of the symmetric Trapezoidal distribution with lambda = 0.5")
 

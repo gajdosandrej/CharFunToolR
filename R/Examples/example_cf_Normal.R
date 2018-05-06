@@ -22,7 +22,7 @@ sigma <- seq(from = 0.1,
 t <- seq(from = -100,
          to = 100,
          length.out = 2001)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_Normal(t, mu, sigma, coef),
         t,
         title = "Characteristic function of the linear combination of Normal RVs")

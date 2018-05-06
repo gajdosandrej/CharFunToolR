@@ -4,7 +4,7 @@ a <- 2.2
 b <- 3.3
 c <- 4
 t <- seq(-15, 15, length.out = 1001)
-plotGraf(function(t)
+plotReIm(function(t)
         cfN_Delaporte(t, a, b, c),
         t,
         title = "CF of the Delaporte distribution with a=2.2, b=3.3, c=4")
@@ -18,7 +18,7 @@ lambda <- 10
 cfX <- function(t)
         cfX_Exponential(t, lambda)
 t <- seq(-10, 10, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfN_Delaporte(t, a, b, c, cfX),
         t,
         title = "CF of the compound Delaport-Exponential distribution")

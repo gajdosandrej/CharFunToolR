@@ -6,7 +6,7 @@ df <- c(1, 2, 3, 4, 5)
 t <- seq(from = -20,
          to = 20,
          length.out = 1001)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_LogRV_ChiSquare(t, df, weight), t, title = "CF of a linear combination of minus log-ChiSquare RVs")
 
 ## EXAMPLE 2

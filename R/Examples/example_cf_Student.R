@@ -5,7 +5,7 @@ df   <- seq(50, 1, -1)
 t <- seq(from = -1,
          to = 1,
          length.out = 201)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_Student(t, df, coef),
         t,
         title = "Characteristic function of the linear combination of t RVs")

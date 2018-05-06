@@ -1,7 +1,7 @@
 ## EXAMPLE1
 # CF of the Gaussian distribution N(0,1)
 t <- seq(-5, 5, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfS_Gaussian(t), t, title = "CF of the Gaussian distribution N(0,1)")
 
 ## EXAMPLE2

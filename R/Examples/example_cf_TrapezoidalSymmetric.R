@@ -4,7 +4,7 @@ lambda <- 1 / 2
 t <- seq(from = -50,
          to = 50,
          length.out = 201)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_TrapezoidalSymmetric(t, lambda), t,
         title = "CF of the symmetric Trapezoidal distribution on (-1,1)")
 
@@ -15,7 +15,7 @@ t <- seq(from = -20,
          length.out = 201)
 lambda <- c(3, 3, 4, 4, 5) / 7
 coef <- c(1, 2, 3, 4, 5) / 15
-plotGraf(function(t)
+plotReIm(function(t)
         cf_TrapezoidalSymmetric(t, lambda, coef), t,
         title = "CF of a linear combination of independent Trapezoidal RVs")
 

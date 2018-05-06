@@ -4,7 +4,7 @@ a <- 2.2
 b <- 3.3
 m <- 4
 t <- seq(-15, 15, length.out = 1001)
-plotGraf(function(t)
+plotReIm(function(t)
         cfN_PolyaEggenberger(t, a, b, m), t,
         title = "CF of the Polya-Eggenberger distribution with a = 2.2, b = 3.3, m = 4")
 
@@ -17,7 +17,7 @@ lambda <- 5
 cfX <- function(t)
         cfX_Exponential(t, lambda)
 t <- seq(-50, 50, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfN_PolyaEggenberger(t, a, b, m, cfX), t,
         title = "CF of the compound Polya-Eggenberger-Exponential distribution")
 

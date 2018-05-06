@@ -1,7 +1,7 @@
 ## EXAMPLE1 (
 # CF of the symmetric Arcsine distribution on (-1,1)
 t <- seq(-50, 50, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfS_Arcsine(t), t, title = "CF of the the Arcsine distribution on (-1,1)")
 
 ## EXAMPLE2

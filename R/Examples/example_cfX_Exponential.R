@@ -4,7 +4,7 @@ lambda <- 5
 t <- seq(from = -50,
          to = 50,
          length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfX_Exponential(t, lambda), t, title = "CF of the Exponential distribution with lambda = 5")
 
 ## EXAMPLE 2

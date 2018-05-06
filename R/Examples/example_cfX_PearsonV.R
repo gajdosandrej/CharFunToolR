@@ -3,7 +3,7 @@
 alpha <- 3 / 2
 beta <- 2 / 3
 t <- seq(-10, 10, length.out = 1001)
-plotGraf(function(t)
+plotReIm(function(t)
         cfX_PearsonV(t, alpha, beta), t,
         title = "CF of the PearsonV distribution with alpha = 3/2, beta = 2/3")
 

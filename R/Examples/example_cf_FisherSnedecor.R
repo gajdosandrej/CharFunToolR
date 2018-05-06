@@ -6,7 +6,7 @@ coef <- 1 / 10
 t <- seq(from = -5,
          to = 5,
          length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_FisherSnedecor(t, df1, df2, coef),
         t,
         title = 'Characteristic function of the linear combination of F RVs')

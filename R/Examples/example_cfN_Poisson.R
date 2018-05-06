@@ -2,7 +2,7 @@
 # CF of the Poisson distribution with the parameter lambda = 10
 lambda <- 10
 t <- seq(-10, 10, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfN_Poisson(t, lambda), t,
         title = "CF of the Poisson distribution with the parameter lambda = 10")
 
@@ -13,7 +13,7 @@ lambda2 <- 5
 cfX <- function(t)
         cfX_Exponential(t, lambda2)
 t <- seq(-10, 10, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfN_Poisson(t, lambda1, cfX), t,
         title = "CF of the compound Poisson-Exponential distribution")
 

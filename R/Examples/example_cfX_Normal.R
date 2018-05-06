@@ -1,6 +1,6 @@
 ## EXAMPLE1 (CF of the Normal distribution N(1,1))
 t <- seq(-5, 5, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfX_Normal(t, mean = 1, variance = 1), t, title = "CF of the Normal distribution N(1,1)")
 
 ## EXAMPLE2 (PDF/CDF of the Normal distribution N(1,1))

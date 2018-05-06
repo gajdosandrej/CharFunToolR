@@ -16,7 +16,7 @@ lines(1:50, coef, col = "blue")
 alpha <- 5 / 2
 beta <- 3 / 2
 t <- seq(-100, 100, (100 - (-100)) / 200)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_LogRV_Beta(t, alpha, beta, coef),
         t,
         title = 'Characteristic function of a linear combination of log-Beta RVs')
@@ -63,7 +63,7 @@ coef <- -1 / n
 t <- seq(from = -25,
          to = 25,
          length.out = 201)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_LogRV_Beta(t, alpha, beta, coef),
         t,
         title = 'Characteristic function of a linear combination of log-Beta RVs')
@@ -96,7 +96,7 @@ coef  <- -1
 t <- seq(from = -5,
          to = 5,
          length.out = 201)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_LogRV_Beta(t, alpha, beta, coef),
         t,
         title = 'Characteristic function of a linear combination of log-Beta RVs')

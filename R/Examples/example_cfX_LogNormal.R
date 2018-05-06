@@ -3,7 +3,7 @@
 mu <- 0
 sigma <- 1
 t <- seq(-20, 20, length.out = 2 ^ 10 + 1)
-plotGraf(function(t)
+plotReIm(function(t)
         cfX_LogNormal(t, mu, sigma),
         t,
         title = "Characteristic function of the Lognormal distribution")
