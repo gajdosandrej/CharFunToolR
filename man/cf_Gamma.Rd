@@ -78,7 +78,7 @@ beta <- 1 / 2
 t <- seq(from = -10,
          to = 10,
          length.out = 201)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_Gamma(t, alpha, beta, coef),
         t,
         title = "Characteristic function of the linear combination of GAMMA RVs")

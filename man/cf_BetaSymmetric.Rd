@@ -45,7 +45,7 @@ theta <- 3 / 2
 t <- seq(from = -50,
          to = 50,
          length.out = 201)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_BetaSymmetric(t, theta),
         t,
         title = "CF of the symmetric Beta distribution on (-1,1)")
@@ -57,7 +57,7 @@ t <- seq(from = -20,
          length.out = 201)
 theta <- c(3, 3, 4, 4, 5) / 2
 coef <- c(1, 2, 3, 4, 5) / 15
-plotGraf(function(t)
+plotReIm(function(t)
         cf_BetaSymmetric(t, theta, coef),
         t,
         title = "CF of a linear combination of independent Beta RVs")

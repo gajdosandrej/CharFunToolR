@@ -54,7 +54,7 @@ delta <- 1
 t <- seq(from = -10,
          to = 10,
          length.out = 201)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_FisherSnedecorNC(t, df1, df2, delta), t, title = 'CF of non-central Fisher Snedecor RV')
 
 ## EXAMPLE 2

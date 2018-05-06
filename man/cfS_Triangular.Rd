@@ -29,7 +29,7 @@ The characteristic function of \eqn{X ~ TriangularSymmetric} is defined by
 t <- seq(from = -50,
          to = 50,
          length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfS_Triangular(t), t, title = "CF of the the symmetric Triangular distribution on (-1,1)")
 
 ## EXAMPLE 2

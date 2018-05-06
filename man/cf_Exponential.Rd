@@ -40,7 +40,7 @@ lambda <- 5
 t <- seq(from = -50,
          to = 50,
          length.out = 501)
-plotGraf(
+plotReIm(
         function(t)
                 cfX_Exponential(t, lambda),
         t,
@@ -54,7 +54,7 @@ lambda <- 5
 t <- seq(from = -100,
          to = 100,
          length.out = 201)
-plotGraf(function(t)
+plotReIm(function(t)
         cfX_Exponential(t, lambda, coef),
         t,
         title = "CF of a linear combination of EXPONENTIAL RVs")

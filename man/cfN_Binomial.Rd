@@ -41,7 +41,7 @@ independent RV with its CF given by \eqn{cfN(t)}.
 n <- 25
 p <- 0.3
 t <- seq(-15, 15, length.out = 1001)
-plotGraf(function(t)
+plotReIm(function(t)
         cfN_Binomial(t, n, p),
         t,
         title = "CF of the Binomial distribution with n = 25, p = 0.3")
@@ -54,7 +54,7 @@ lambda <- 10
 cfX <- function(t)
         cfX_Exponential(t, lambda)
 t <- seq(-10, 10, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfN_Binomial(t, n, p, cfX),
         t,
         title = "CF of the compound Binomial-Exponential distribution")

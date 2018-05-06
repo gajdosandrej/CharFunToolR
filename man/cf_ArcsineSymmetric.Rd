@@ -39,7 +39,7 @@ The characteristic function of \eqn{X ~ ArcsineSymmetric} is defined by
 t <- seq(from = -50,
          to = 50,
          length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_ArcsineSymmetric(t),
         t,
         title = "CF of the the Arcsine distribution on (-1,1)")
@@ -50,7 +50,7 @@ t <- seq(from = -1,
          to = 1,
          length.out = 501)
 coef <- c(1, 2, 3, 4, 5)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_ArcsineSymmetric(t, coef),
         t,
         title = "CF of a linear combination of independent Arcsine RVs")

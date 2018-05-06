@@ -46,7 +46,7 @@ coef <- 1
 t <- seq(from = -100,
          to = 100,
          length.out = 501)
-plotGraf(
+plotReIm(
         function(t)
                 cf_ChiSquare(t, df, ncp, coef),
         t,
@@ -72,7 +72,7 @@ df <- 1
 t <- seq(from = -100,
          to = 100,
          length.out = 501)
-plotGraf(
+plotReIm(
         function(t)
                 cf_ChiSquare(t = t, df = df, coef = coef),
         t,

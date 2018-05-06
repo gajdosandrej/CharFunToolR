@@ -53,7 +53,7 @@ result <- hypergeom1F1(a, b, z, n)
 a  = 1 / 2
 b  = 1 / 2
 t  = seq(-100, 100, length.out = 1001)
-plotGraf(
+plotReIm(
         function(t)
                 hypergeom1F1(a, a + b, 1i * t)$f,
         t,

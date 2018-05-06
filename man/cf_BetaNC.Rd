@@ -57,7 +57,7 @@ delta <- 1
 t <- seq(from = -50,
          to = 50,
          length.out = 201)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_BetaNC(t, alpha, beta, delta), t, title = 'CF of a Beta RVs')
 
 ## EXAMPLE 2

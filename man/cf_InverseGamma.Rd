@@ -73,7 +73,7 @@ beta <- 2
 t <- seq(from = -100,
          to = 100,
          length.out = 201)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_InverseGamma(t, alpha, beta, coef), t,
         title = "Characteristic function of the linear combination of IGamma RVs")
 

@@ -57,7 +57,7 @@ coef  <- -1
 t <- seq(from = -10,
          to = 10,
          length.out = 201)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_LogRV_FisherSnedecorNC(t, df1, df2, delta, coef),
         t,
         title = 'CF of minus log-transformed F RV')

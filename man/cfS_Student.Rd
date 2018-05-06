@@ -30,7 +30,7 @@ The characteristic function of the STUDENT's t-distribution with \eqn{df} degree
 # CF of the Student t-distribution with df = 3
 df <- 3
 t <- seq(-5, 5, length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cfS_Student(t, df), t, title = "CF of the Student t-distribution with df = 3")
 
 ## EXAMPLE2

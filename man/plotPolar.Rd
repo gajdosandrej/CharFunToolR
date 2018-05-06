@@ -22,5 +22,6 @@ plotPolar(angle, radius, title = "", type = "l", color = "blue")
  with \code{angle} indicating the angle in radians and \code{radius} indicating the radius value for each point.
 }
 \seealso{
-Other Graphic Function: \code{\link{plotGraf}}
+Other Graphic Function: \code{\link{plotGraf}},
+  \code{\link{plotReIm}}
 }

@@ -43,7 +43,7 @@ independent RV with its CF given by \eqn{cfN(t)}.
 r <- 5
 p <- 0.3
 t <- seq(-15, 15, length.out = 1001)
-plotGraf(function(t)
+plotReIm(function(t)
         cfN_NegativeBinomial(t, r, p), t,
         title = "CF of the Negative Binomial distribution with r = 5, p = 0.3")
 

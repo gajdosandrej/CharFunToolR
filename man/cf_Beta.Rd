@@ -48,7 +48,7 @@ beta  <- 3
 t <- seq(from = -50,
          to = 50,
          length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_Beta(t, alpha, beta), t, title = "CF of a Beta RVs")
 
 ## EXAMPLE 2
@@ -77,7 +77,7 @@ weights <- coef / sum(coef)
 t <- seq(from = -100,
          to = 100,
          length.out = 501)
-plotGraf(function(t)
+plotReIm(function(t)
         cf_Beta(t, alpha, beta, weights),
         t,
         title = "CF of a weighted linear combination of independent Beta RVs")
