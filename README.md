@@ -46,7 +46,7 @@ You can download package from
 
 in install packages in RStudio you chose Package Archive File (.tar.gz).
 
-## Option 3: Install package from GitHub
+## Option 4: Install package from GitHub
 
 Just run the following command in your RStudio console:
 ```
