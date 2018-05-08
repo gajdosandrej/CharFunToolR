@@ -70,7 +70,7 @@ plot(
         pch = 20,
         col = "blue",
         cex = 1,
-        main = expression('Coefficients of the linear combination of' ~ chi ^ 2 ~ 'RVs with DF=1')
+        main = expression('Coefficients of the linear combination of GAMMA RVs')
 )
 lines(1:50, coef, col = "blue")
 alpha <- 5 / 2

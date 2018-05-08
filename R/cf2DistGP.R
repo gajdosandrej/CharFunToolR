@@ -247,7 +247,7 @@ cf2DistGP <- function(cf, x, prob, options) {
       t <- (1:N) * dt
       xStd <- numeric()
     } else {
-      N <- 2 * options$N
+      N <- options$N
       dt <- options$dt
       T <- options$T
       xMin <- options$xMin

@@ -139,7 +139,7 @@ cf_Gamma <- function(t, alpha, beta, coef, niid) {
     idx <- idx0:idx1
     idx0 <- idx1 + 1
     aux <- t %*% t(coef[idx] / beta[idx])
-    aux <- (1 - 1i * aux) ^ (-alpha[idx])
+    aux <- t(t((1 - 1i * aux)) ^ (-alpha[idx]))
     cf <- cf * apply(aux, 1, prod)
   }
   dim(cf) <- szt
