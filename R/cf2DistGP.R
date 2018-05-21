@@ -1,7 +1,6 @@
 #' @title
 #' Evaluating CDF/PDF/QF from CF of a continous distribution F by using the Gil-Pelaez inversion formulae.
 #'
-#'
 #' @description
 #' \code{cf2DistGP(cf, x, prob, options)} calcuates the CDF/PDF/QF from the Characteristic Function CF
 #' by using the Gil-Pelaez inversion formulae:
@@ -47,14 +46,6 @@
 #'         \item \code{options$DIST$cft} CF evaluated at \eqn{t_j} : \eqn{cf(t_j)}.
 #'         }
 #'     }
-#'
-#' @param isCircular    treat the circular distributions, default FALSE.
-#' @param isCompound    treat the compound distributions, default FALSE.
-#' @param N             \code{N} points used by GP, default \eqn{2^10} (\eqn{2^14} for compound distribution).
-#' @param SixSigmaRule  set the rule for computing domain, default \eqn{6}.
-#' @param xMin          set the lower limit of \code{x}.
-#' @param xMax          set the upper limit of \code{x}.
-#' @param isPlot        plot the graphs of PDF/CDF, default TRUE.
 #'
 #' @return
 #' \item{result}{structure (list) with CDF/PDF/QF amd further details.}
