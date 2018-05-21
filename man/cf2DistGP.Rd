@@ -39,20 +39,6 @@ cf2DistGP(cf, x, prob, options)
         \item \code{options$DIST$cft} CF evaluated at \eqn{t_j} : \eqn{cf(t_j)}.
         }
     }}
-
-\item{isCircular}{treat the circular distributions, default FALSE.}
-
-\item{isCompound}{treat the compound distributions, default FALSE.}
-
-\item{N}{\code{N} points used by GP, default \eqn{2^10} (\eqn{2^14} for compound distribution).}
-
-\item{SixSigmaRule}{set the rule for computing domain, default \eqn{6}.}
-
-\item{xMin}{set the lower limit of \code{x}.}
-
-\item{xMax}{set the upper limit of \code{x}.}
-
-\item{isPlot}{plot the graphs of PDF/CDF, default TRUE.}
 }
 \value{
 \item{result}{structure (list) with CDF/PDF/QF amd further details.}
@@ -161,4 +147,6 @@ of frequency and severity. ArXiv preprint, 2017, arXiv:1701.08299.
 \seealso{
 For more details see:
 \url{https://arxiv.org/pdf/1701.08299.pdf}.
+
+Other CF Inversion Algorithm: \code{\link{cf2DistFFT}}
 }

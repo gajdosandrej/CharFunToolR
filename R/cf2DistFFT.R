@@ -1,6 +1,6 @@
 #' @title
 #' Evaluating CDF/PDF/QF (quantiles) from the characteristic function CF
-#' of a (continuous) distribution F by using the Fast Fourier Transform (FFT) algorithm.
+#' of a (continuous) distribution F by using the Fast Fourier Transform (FFT) algorithm
 #'
 #' @description
 #' \code{cf2DistFFT(cf, x, prob, options)} evaluates the approximate values CDF(x), PDF(x),
@@ -21,11 +21,11 @@
 #' \code{cf2DistFFT} automatically selects vector \code{x} from the domain.
 #' @param prob    vector of values from \eqn{[0,1]} for which the quantiles
 #' will be estimated, if \code{prob} is left empty, \code{cf2DistFFT} automatically
-#' selects vector \code{prob <- c(0.9, 0.95, 0.975, 0.99, 0.995, 0.999)}.
+#' selects vector \code{prob = c(0.9, 0.95, 0.975, 0.99, 0.995, 0.999)}.
 #' @param options  structure (list) with the following default parameters:
 #' \itemize{
 #'     \item \code{options$isCompound = FALSE} treat the compound distributions, of the RV \eqn{Y = X_1 + ... + X_N},
-#'     where \eqn{N} is discrete RV and \eqn{X\ge0} are iid RVs from nonnegative continuous distribution,
+#'     where \eqn{N} is discrete RV and \eqn{X\ge 0} are iid RVs from nonnegative continuous distribution,
 #'     \item \code{options$N = 2^10} N points used by FFT,
 #'     \item \code{options$xMin = -Inf} set the lower limit of \code{x},
 #'     \item \code{options$xMax = Inf} set the upper limit of \code{x},
@@ -79,34 +79,34 @@
 #' - selected number of points used by the FFT algorithm (by default \code{options$N = 2^10}), \cr
 #' - estimated/calculated domain \eqn{[A,B]} of the distribution \eqn{F}, \cr
 #' used with the FFT algorithm. Optimally, \eqn{[A,B]} covers large part of the distribution domain,
-#' say more than \eqn{99%}. However, the default automatic procedure for selection of the domain
+#' say more than \eqn{99\%}. However, the default automatic procedure for selection of the domain
 #' \eqn{[A,B]} may fail. It is based on the 'SixSigmaRule': \eqn{A = MEAN - SixSigmaRule * STD},
-#' and \eqn{B = MEAN + SixSigmaRule * STD}. Alternatively, change the \code{options.SixSigmaRule}
+#' and \eqn{B = MEAN + SixSigmaRule * STD}. Alternatively, change the \code{options$SixSigmaRule}
 #' to different value, say \eqn{12}, or use the \code{options$xMin} and \code{options$xMax} to set
 #' manually the values of \eqn{A} and \eqn{B}.
 #'
 #' @references
 #' [1] WITKOVSKY, V.: On the exact computation of the density and
 #' of the quantiles of linear combinations of t and F random variables.
-#' Journal of Statistical Planning and Inference 94 (2001), 1–13.
+#' Journal of Statistical Planning and Inference 94 (2001), 1-13.
 #'
 #' [2] WITKOVSKY, V.: Matlab algorithm TDIST: The distribution of a linear combination
-#' of Student’s t random variables. In COMPSTAT 2004 Symposium (2004), J. Antoch, Ed.,
-#' Physica-Verlag/Springer 2004, Heidelberg, Germany, pp. 1995–2002.
+#' of Student's t random variables. In COMPSTAT 2004 Symposium (2004), J. Antoch, Ed.,
+#' Physica-Verlag/Springer 2004, Heidelberg, Germany, pp. 1995-2002.
 #'
-#' [3] WITKOVSKY, V.: WIMMER,G., DUBY, T. Logarithmic Lambert W x F random variables
+#' [3] WITKOVSKY, V., WIMMER, G., DUBY, T.: Logarithmic Lambert W x F random variables
 #' for the family of chi-squared distributions and their applications.
-#' Statistics & Probability Letters 96 (2015), 223–231.
+#' Statistics & Probability Letters 96 (2015), 223-231.
 #'
-#' [4] WITKOVSKY V. (2016). Numerical inversion of a characteristic function:
+#' [4] WITKOVSKY, V. (2016): Numerical inversion of a chracteristic function:
 #' An alternative tool to form the probability distribution of output quantity
-#' in linear measurement models. Acta IMEKO, 5(3), 32-44.
+#' in linear measurement models. Acta IMEKO, 5(3), 32-34.
 #'
-#' [5] WITKOVSKY V., WIMMER G., DUBY T. (2016). Computing the aggregate loss distribution
+#' [5] WITKOVSKY, V., WIMMER G., DUBY T. (2016): Computing the aggregate loss distribution
 #' based on numerical inversion of the compound empirical characteristic function
 #' of frequency and severity. Preprint submitted to Insurance: Mathematics and Economics.
 #'
-#' [6] DUBY T., WIMMER G., WITKOVSKY V.(2016). MATLAB toolbox CRM for computing distributions
+#' [6] DUBY, T., WIMMER, G., WITKOVSKY, V. (2016): MATLAB toolbox CRM for computing distributions
 #' of collective risk models. Preprint submitted to Journal of Statistical Software.
 #'
 #' @example R/Examples/example_cf2DistFFT.R
