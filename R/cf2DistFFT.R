@@ -3,6 +3,7 @@
 #' of a (continuous) distribution F by using the Fast Fourier Transform (FFT) algorithm
 #'
 #' @description
+#' TEST VERSION !
 #' \code{cf2DistFFT(cf, x, prob, options)} evaluates the approximate values CDF(x), PDF(x),
 #' and/or the quantiles QF(prob) for given \code{x} and \code{prob}, by interpolation
 #' from the PDF-estimate computed by the numerical inversion of the given
