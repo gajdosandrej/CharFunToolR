@@ -18,7 +18,7 @@ plotReIm(f, x, title, xmin, xmax, dx = 0.1, xlab, ylab, px = 0, py = 0,
 
 \item{xmax}{number, default value \code{xmax = 1}.}
 
-\item{dx}{positive number, default value \code{dx = 0.1}}
+\item{dx}{positive number, default value \code{dx = 0.1}.}
 
 \item{xlab}{a title for the \eqn{x} axis: see \link[graphics]{title}.}
 
@@ -36,7 +36,7 @@ plotReIm(f, x, title, xmin, xmax, dx = 0.1, xlab, ylab, px = 0, py = 0,
 Graf of function \code{f} in argument \code{x} or in range \code{[xmin, xmax]} with step \code{dx}.
 }
 \description{
-\code{plotReIm(f, x, xmin, xmax)} plots graf of complex function \code{f} in real arguments \code{x} or in range \eqn{[xmin, xmax]} with step \eqn{dx}.
+\code{plotReIm(f, x, xmin, xmax)} plots graf of complex function \code{f} in real arguments \code{x} or in range \code{[xmin, xmax]} with step \code{dx}.
 }
 \details{
 Function with optional parameters must be pass as lambda function \code{f = function(x) f(x, optional parameters)}.

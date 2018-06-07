@@ -72,10 +72,12 @@ str(output)
 }
 \references{
 [1] ANDERSON, Theodore Wilbur. An Introduction to Multivariate Statistical Analysis.
-New York: Wiley, 3rd Ed., 2003.\cr
+New York: Wiley, 3rd Ed., 2003.
+
 [2] MARQUES, Filipe J.; COELHO, Carlos A.; ARNOLD, Barry C. A general
 near-exact distribution theory for the most common likelihood ratio
-test statistics used in Multivariate Analysis. Test, 2011, 20.1:180-203. \cr
+test statistics used in Multivariate Analysis. Test, 2011, 20.1:180-203.
+
 [3] WITKOVSKY, Viktor. Exact distribution of selected multivariate test
 criteria by numerical inversion of their characteristic functions. \cr
 arXiv preprint arXiv:1801.02248, 2018.
