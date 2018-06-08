@@ -44,28 +44,28 @@ selects vector \code{prob = c(0.9, 0.95, 0.975, 0.99, 0.995, 0.999)}.}
 }
 \value{
 \item{result}{structure (list) with with the following results values:}
-\item{result$x = x;}
-\item{result$cdf = cdf;}
-\item{result$pdf = pdf;}
-\item{result$prob = prob;}
-\item{result$qf = qf;}
-\item{result$xFTT = xFFT;}
-\item{result$pdfFFT = pdfFFT;}
-\item{result$cdfFFT = cdfFFT;}
-\item{result$SixSigmaRule = options.SixSigmaRule;}
-\item{result$N = N;}
-\item{result$dt = dt;}
-\item{result$T = t[length(t)];}
-\item{result$PrecisionCrit = PrecisionCrit;}
-\item{result$myPrecisionCrit = options.crit;}
-\item{result$isPrecisionOK = isPrecisionOK;}
-\item{result$xMean = xMean;}
-\item{result$xStd = xStd;}
-\item{result$xMin = xMin;}
-\item{result$xMax = xMax;}
-\item{result$cf = cf;}
-\item{result$options = options;}
-\item{result$tictoc = toc.}
+\item{result$x = x;}{}
+\item{result$cdf = cdf;}{}
+\item{result$pdf = pdf;}{}
+\item{result$prob = prob;}{}
+\item{result$qf = qf;}{}
+\item{result$xFTT = xFFT;}{}
+\item{result$pdfFFT = pdfFFT;}{}
+\item{result$cdfFFT = cdfFFT;}{}
+\item{result$SixSigmaRule = options.SixSigmaRule;}{}
+\item{result$N = N;}{}
+\item{result$dt = dt;}{}
+\item{result$T = t[length(t)];}{}
+\item{result$PrecisionCrit = PrecisionCrit;}{}
+\item{result$myPrecisionCrit = options.crit;}{}
+\item{result$isPrecisionOK = isPrecisionOK;}{}
+\item{result$xMean = xMean;}{}
+\item{result$xStd = xStd;}{}
+\item{result$xMin = xMin;}{}
+\item{result$xMax = xMax;}{}
+\item{result$cf = cf;}{}
+\item{result$options = options;}{}
+\item{result$tictoc = toc.}{}
 }
 \description{
 TEST VERSION !

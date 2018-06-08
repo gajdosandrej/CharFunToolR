@@ -50,28 +50,28 @@
 #'
 #' @return
 #' \item{result}{structure (list) with with the following results values:}
-#' \item{result$x = x;}
-#' \item{result$cdf = cdf;}
-#' \item{result$pdf = pdf;}
-#' \item{result$prob = prob;}
-#' \item{result$qf = qf;}
-#' \item{result$xFTT = xFFT;}
-#' \item{result$pdfFFT = pdfFFT;}
-#' \item{result$cdfFFT = cdfFFT;}
-#' \item{result$SixSigmaRule = options.SixSigmaRule;}
-#' \item{result$N = N;}
-#' \item{result$dt = dt;}
-#' \item{result$T = t[length(t)];}
-#' \item{result$PrecisionCrit = PrecisionCrit;}
-#' \item{result$myPrecisionCrit = options.crit;}
-#' \item{result$isPrecisionOK = isPrecisionOK;}
-#' \item{result$xMean = xMean;}
-#' \item{result$xStd = xStd;}
-#' \item{result$xMin = xMin;}
-#' \item{result$xMax = xMax;}
-#' \item{result$cf = cf;}
-#' \item{result$options = options;}
-#' \item{result$tictoc = toc.}
+#' \item{result$x = x;}{}
+#' \item{result$cdf = cdf;}{}
+#' \item{result$pdf = pdf;}{}
+#' \item{result$prob = prob;}{}
+#' \item{result$qf = qf;}{}
+#' \item{result$xFTT = xFFT;}{}
+#' \item{result$pdfFFT = pdfFFT;}{}
+#' \item{result$cdfFFT = cdfFFT;}{}
+#' \item{result$SixSigmaRule = options.SixSigmaRule;}{}
+#' \item{result$N = N;}{}
+#' \item{result$dt = dt;}{}
+#' \item{result$T = t[length(t)];}{}
+#' \item{result$PrecisionCrit = PrecisionCrit;}{}
+#' \item{result$myPrecisionCrit = options.crit;}{}
+#' \item{result$isPrecisionOK = isPrecisionOK;}{}
+#' \item{result$xMean = xMean;}{}
+#' \item{result$xStd = xStd;}{}
+#' \item{result$xMin = xMin;}{}
+#' \item{result$xMax = xMax;}{}
+#' \item{result$cf = cf;}{}
+#' \item{result$options = options;}{}
+#' \item{result$tictoc = toc.}{}
 #'
 #' @details
 #' The outputs of the algorithm \code{cf2DistFFT} are approximate values!
