@@ -18,7 +18,7 @@ These data were collected at Copenhagen Reinsurance and comprise 2167 fire losse
 
 }
 \references{
-#' Resnick, S. I. (1997). Discussions of the Danish Data on Large Fire Insurance Losses.
+Resnick, S. I. (1997). Discussions of the Danish Data on Large Fire Insurance Losses.
 ASTIN Bulletin: The Journal of the IAA, 27(1), 139-151.
 
 Cooray, K., & Ananda, M. M. A. (2005). Modeling actuarial data with a composite lognormal-Pareto model.
