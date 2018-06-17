@@ -1,7 +1,7 @@
 Package: CharFunToolR
 Type: Package
 Title: Numerical Computation Cumulative Distribution Function and Probability Density Function from Characteristic Function
-Version: 0.1.1
+Version: 0.2.0
 Author: Viktor Witkovsky, Andrej Gajdos, Ludmila Simkova  
 Maintainer: Andrej Gajdos <andrejg44@gmail.com>
 Description: The Characteristic Functions Toolbox (CharFunToolR) consists of a set of algorithms for evaluating selected characteristic functions and algorithms for numerical inversion of the (combined and/or compound) characteristic functions, used to evaluate the probability density function (PDF) and the cumulative distribution function (CDF).
@@ -10,3 +10,6 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
 Imports: Bessel, Matrix, graphics, stats, pracma
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
