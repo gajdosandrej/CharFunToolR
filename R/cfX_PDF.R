@@ -75,8 +75,9 @@ cfX_PDF <- function(t, pdfFun, method, tol) {
                 method <- "definition"
         }
         if(missing(tol)) {
-                tol = 1e-6
+                tol <- 1e-6
         }
+        reltol <- tol
 
         ## EVALUATE THE CHARACTERISTIC FUNCTION: cfX_PDF(t,pdfFun)
 
@@ -93,24 +94,24 @@ cfX_PDF <- function(t, pdfFun, method, tol) {
         if(method == "def" || method == "definition" || method == "standard" || method == "direct") {
                 for(i in 1:length(t)) {
                         if(id[i]) {
-                                re <- integrate(function(x) {as.numeric(Re(funCFdef(pdfFun, t[i], (x / (1 - x)) ^ 2) * (2 * x / (1 - x) ^ 3)))}, 0, 1, rel.tol = tol, subdivisions = 2000)$value
-                                im <- integrate(function(x) {as.numeric(Im(funCFdef(pdfFun, t[i], (x / (1 - x)) ^ 2) * (2 * x / (1 - x) ^ 3)))}, 0, 1, rel.tol = tol, subdivisions = 2000)$value
+                                re <- integrate(function(x) {as.numeric(Re(funCFdef(pdfFun, t[i], (x / (1 - x)) ^ 2) * (2 * x / (1 - x) ^ 3)))}, 0, 1, rel.tol = reltol, subdivisions = 2000)$value
+                                im <- integrate(function(x) {as.numeric(Im(funCFdef(pdfFun, t[i], (x / (1 - x)) ^ 2) * (2 * x / (1 - x) ^ 3)))}, 0, 1, rel.tol = reltol, subdivisions = 2000)$value
                                 cf[i] <- re + 1i*im
                         }
                 }
         } else if(method == "fit" || method == "fourier" || method == "transoform") {
                 for(i in 1:length(t)) {
                         if(id[i]) {
-                                re <- integrate(function(x) {as.numeric(Re(funCFfit(pdfFun, t[i], (x / (1 - x)) ^ 2) * (2 * x / (1 - x) ^ 3)))}, 0, 1, rel.tol = tol, subdivisions = 2000)$value
-                                im <- integrate(function(x) {as.numeric(Im(funCFfit(pdfFun, t[i], (x / (1 - x)) ^ 2) * (2 * x / (1 - x) ^ 3)))}, 0, 1, rel.tol = tol, subdivisions = 2000)$value
+                                re <- integrate(function(x) {as.numeric(Re(funCFfit(pdfFun, t[i], (x / (1 - x)) ^ 2) * (2 * x / (1 - x) ^ 3)))}, 0, 1, rel.tol = reltol, subdivisions = 2000)$value
+                                im <- integrate(function(x) {as.numeric(Im(funCFfit(pdfFun, t[i], (x / (1 - x)) ^ 2) * (2 * x / (1 - x) ^ 3)))}, 0, 1, rel.tol = reltol, subdivisions = 2000)$value
                                 cf[i] <- re + 1i*im
                         }
                 }
         } else {
                 for(i in 1:length(t)) {
                         if(id[i]) {
-                                re <- integrate(function(x) {as.numeric(Re(funCFdef(pdfFun, t[i], (x / (1 - x)) ^ 2) * (2 * x / (1 - x) ^ 3)))}, 0, 1, rel.tol = tol, subdivisions = 2000)$value
-                                im <- integrate(function(x) {as.numeric(Im(funCFdef(pdfFun, t[i], (x / (1 - x)) ^ 2) * (2 * x / (1 - x) ^ 3)))}, 0, 1, rel.tol = tol, subdivisions = 2000)$value
+                                re <- integrate(function(x) {as.numeric(Re(funCFdef(pdfFun, t[i], (x / (1 - x)) ^ 2) * (2 * x / (1 - x) ^ 3)))}, 0, 1, rel.tol = reltol, subdivisions = 2000)$value
+                                im <- integrate(function(x) {as.numeric(Im(funCFdef(pdfFun, t[i], (x / (1 - x)) ^ 2) * (2 * x / (1 - x) ^ 3)))}, 0, 1, rel.tol = reltol, subdivisions = 2000)$value
                                 cf[i] <- re + 1i*im                     }
                 }
         }
@@ -149,8 +150,8 @@ funCFfit <- function(pdfFun, t, x) {
         x <- c(Conj(x))
 
         ot <- rep(1, length(ti))
-        ox = rep(1, length(x))
-        f  = (1i * ti %*% t(ox)) * pdfFun(1i * ti %*% t(x)) * exp(-ot %*% t(x))
+        ox <- rep(1, length(x))
+        f <- (1i * ti %*% t(ox)) * pdfFun(1i * ti %*% t(x)) * exp(-ot %*% t(x))
 
         return(f)
 }
