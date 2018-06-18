@@ -134,7 +134,7 @@ cf <- function(t) exp(-t ^ 2 / 2)
 
 The final step is to call `cf2DistGP` to calculate CDF/PDF. 
 
-```{r}
+```{r fig.height = 4, fig.width = 6}
 result <- cf2DistGP(cf)
 # to see the structure of the whole output you can run the following command 
 # str(result)
@@ -154,7 +154,7 @@ cf_Y <- function(t) cfChi2_1(10 * t) * cfChi2_10(t)
 
 Again the `cf` argument of `cf2DistFFT(cf, x, prob, options)` is mandatory. The other input arguments can be specified or not and consequently the `cf2DistFFT` is executed. 
 
-```{r}
+```{r fig.height = 4, fig.width = 6}
 options <- list()
 options$xMin <- 0
 result <- cf2DistFFT(cf = cf_Y, options = options)
@@ -173,7 +173,7 @@ t <- seq(-15, 15, length.out = 1001)
 
 Input arguments of `cfN_Binomial` have been set so we can execute the code below. You can see that we use an auxiliary function `plotReIm` from **CharFunToolR** to plot the real and imaginary part of CF. 
 
-```{r}
+```{r fig.height = 4, fig.width = 6}
 plotReIm(function(t)
         cfN_Binomial(t, n, p),
         t,
@@ -192,7 +192,7 @@ t <- seq(-10, 10, length.out = 501)
 
 All the input parameters have been set so we can run the final command to get the values of CF and to plot the CF. 
 
-```{r}
+```{r fig.height = 4, fig.width = 6}
 plotReIm(function(t)
         cfN_Binomial(t, n, p, cfX),
         t,
@@ -222,14 +222,14 @@ options$isCompound <- TRUE
 
 Finally we execute `cf2DistGP(cf, x, prob, options)` to calculate PDF/CDF/QF of the compound Binomial-Exponential distribution. As you can see, the plots for PDF and CDF are created by default. 
 
-```{r}
+```{r fig.height = 4, fig.width = 6}
 result <- cf2DistGP(cf, x, prob, options)
 # str(result)
 ```
 
 Another family of R functions in our package is *Continuous Probability Distribution*. It includes characteristic functions of chosen continuous probability distributions. We give two examples to illustrate some applications of mentioned class of R functions in **CharFunToolR**. We demonstrate ideas with function `cf_Gamma`. In first example we would like to calculate values of CF of a linear combination of independent Gamma RVs. So we need to specify coefficients of particular linear combination. We can also plot the coefficients. 
 
-```{r}
+```{r fig.height = 4, fig.width = 6}
 coef <- 1 / (((1:50) - 0.5) * pi) ^ 2
 plot(
         1:50,
@@ -257,7 +257,7 @@ t <- seq(from = -10,
 
 Now we can calculate the values of CF, plot the real and imaginary part of CF. 
 
-```{r}
+```{r fig.height = 4, fig.width = 6}
 plotReIm(function(t)
         cf_Gamma(t, alpha, beta, coef),
         t,
@@ -284,7 +284,7 @@ options$xMin <- 0
 
 Finally we execute `cf2DistGP(cf = cf, options = options)` to get the numerical and graphical result of PDF/CDF. 
 
-```{r}
+```{r fig.height = 4, fig.width = 6}
 result <- cf2DistGP(cf = cf, options = options)
 ```
 
@@ -297,7 +297,7 @@ $$cf_{\hat{F}_{X}}(t)=\dfrac{1}{n}\sum\limits_{j=1}^{n}e^{itx_j}.$$
 
 Let us first introduce an example, in which we calculate the ECF of weighted mixture of independent Dirac variables from particular Normal, Student's t and Chi-square distribution. 
 
-```{r}
+```{r fig.height = 4, fig.width = 6}
 set.seed(101)
 n <- 1000
 data <- c(rnorm(3 * n, 5, 0.2), rt(n, 3), rchisq(n, 1))
@@ -310,7 +310,7 @@ plotReIm(function(t)
 
 It is also possible to use `cfE_Empirical` to get the values of PDF/CDF of the compound empirical  distribution. In the following example we compose the Binomial and Log Normal distibution. At first we calculate and plot the ECF of the compound empirical distribution. 
 
-```{r}
+```{r fig.height = 4, fig.width = 6}
 set.seed(101)
 lambda <- 25
 nN <- 10
@@ -330,7 +330,7 @@ plotReIm(cf, t, title = "Compound Empirical CF")
 
 In the final step we compute and plot PDF/CDF of the compound empirical distribution. We also get the values for chosen percentiles of that distribution. 
 
-```{r}
+```{r fig.height = 4, fig.width = 6}
 x <- seq(0, 1000, length.out = 501)
 prob <- c(0.9, 0.95)
 options <- list()
