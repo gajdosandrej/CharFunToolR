@@ -3,9 +3,11 @@ R repository of characteristic functions and tools for their combinations and nu
 
 For the R version of the package see the CharFun package development available at
 
-- https://github.com/gajdosandrej/CharFunToolR current status of the MATLAB toolbox (not an identical clone) see the CharFunTool development available at
+- https://github.com/gajdosandrej/CharFunToolR .
 
-- https://github.com/witkovsky/CharFunTool
+For the current status of the MATLAB toolbox (not an identical clone) see the CharFunTool development available at
+
+- https://github.com/witkovsky/CharFunTool .
 
 About
 =====
