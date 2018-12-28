@@ -49,6 +49,8 @@
 #'
 #' @return Characteristic function \eqn{cf(t)} of a linear combination of independent INVERSE-GAMMA random variables.
 #'
+#' @note Ver.: 16-Sep-2018 18:28:11 (consistent with Matlab CharFunTool v1.3.0, 10-May-2017 18:11:50).
+#'
 #' @example R/Examples/example_cf_InverseGamma.R
 #'
 #' @export

@@ -47,6 +47,8 @@
 #'
 #' @family Continuous Probability Distribution
 #'
+#' @note Ver.: 16-Sep-2018 18:29:18 (consistent with Matlab CharFunTool v1.3.0, 02-Jun-2017 12:08:24).
+#'
 #' @example R/Examples/example_cf_LogRV_Beta.R
 #'
 #' @export

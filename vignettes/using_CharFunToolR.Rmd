@@ -46,7 +46,7 @@ tool.
 
 The Characteristic Functions Package (**CharFunToolR**) consists of a set of algorithms for evaluating selected characteristic funcions (CF) and algorithms for numerical inversion of the (combined and/or compound) characteristic functions, used to evaluate the probability density function (PDF) and the cumulative distribution function (CDF).
 
-The package includes inversion algorithms, including those based on simple trapezoidal rule for computing the integrals defined by the Gil-Pelaez formulae [@gil-pelaez_note_1951], and/or by using the Fast Fourier Transformation (FFT)  algorithm for computing the Fourier transform integrals.
+The package includes inversion algorithm based on simple trapezoidal rule for computing the integrals defined by the Gil-Pelaez formulae [@gil-pelaez_note_1951]. 
 
 ## Numerical inversion of characteristic function 
 
@@ -69,7 +69,7 @@ typically in combination with efficient root-finding algorithms and algorithms f
 computing of the limit values of the sums of alternating series (not considered here), see e.g.,
 [@sidi_user-friendly_1988], [@cohen_convergence_2000]. Note that the selection of the integration method significantly contributes to the integration error of this approximation. 
 
-Let us briefly describe two approaches [see @witkovsky_numerical_2016 for more details] for numerical inversion of CF implemented in our package. More precisely it is a method based on Gil-Pelaez formulae [@gil-pelaez_note_1951] and FFT algorithm. 
+Let us briefly describe one approach [see @witkovsky_numerical_2016 for more details] for numerical inversion of CF implemented in our package. More precisely it is a method based on Gil-Pelaez formulae [@gil-pelaez_note_1951]. 
 
 #### The Gil-Pelaez inversion formulae
 
@@ -91,39 +91,13 @@ or documentation of function `cf2DistGP`.
 In our package function `cf2DistGP` implements this approach for numerical inversion of CF. You can see examples 
 how to use the function in the following section. 
 
-#### Numerical inversion of the characteristic function by using the FFT algorithm
-
-This approach for computing the PDF by numerical inversion of the characteristic function by using the FFT
-algorithm is based on the results by H&uuml;rlimann in [@hurlimann_improved_2013]. Alternatively, for other applications based on using the fractional fast Fourier transform (FRFT), see [@bailey_fractional_1991] and also 
-[@carr_option_1999, @chourdakis_option_2005, @held_cfh_2014, @kim_computing_2009]. 
-
-Here we shall approximate the continuous Fourier transform (CFT), say
-$$F(y)=\int\limits_{-\infty}^{\infty}e^{-u2\pi uy}f(u)du,$$
-by a discrete Fourier transform (DFT). The DFT can be efficiently evaluated by using the FFT algorithm 
-that computes the same result as the DFT, but much faster.
-
-For complex numbers $f_0,\ldots,f_{N-1}$ the DFT is defined as 
-$$F_k=\sum\limits_{j=0}^{N-1}e^{-i2\pi k\dfrac{j}{N}}f_j,\,\,\,k\in{0,1,\dots,N-1}.$$
-Formally, here we shall use the following notation, 
-$$\boldsymbol{F}_N=FFT(\boldsymbol{f}_N),$$
-where $\boldsymbol{f}_N=(f_0,\ldots,f_{N-1})$ and $\boldsymbol{F}_N=(F_0,\ldots,F_{N-1})$.
-
-The relationship between the CF and the PDF is given by the (inverse) continuous Fourier transform defined by 
-$$\mathrm{pdf}_Y(y)=\dfrac{1}{2\pi}\int_{-\infty}^{\infty}e^{-ity}\mathrm{cf}_Y(t)dt,\,\,\,y\in\mathbb{R}.$$
-For a sufficiently large interval $(-T,T)$ it is possible to approximate a PDF by 
-$$\mathrm{pdf}_Y(y)=\dfrac{1}{2\pi}\int_{-T}^{T}e^{-ity}\mathrm{cf}_Y(t)dt.$$
-Here we shall consider the integral approximation, based on the mid-point integration rule, 
-$\int\limits_{a}^{b}f(x)dx\approx\dfrac{f(a)+f(b)}{2}(b-a),$ which corresponds to the trapezoidal quadrature. For more alternative approaches based
-on more sophisticated integration rules see, e.g., [@witkovsky_logarithmic_2015].
-For more details about numerical inversion of the characteristic function by using the FFT algorithm, see [@witkovsky_numerical_2016] or documentation of function `cf2DistFFT`.
-
 ## The CharFunToolR package
 
 In this section we present several classes of R functions from our package. We choose some functions as representatives, we give examples how to use particular functions in R and the other functions in the package from the same families of functions work similalrly. 
 
 #### Functions & examples
 
-The first important class of functions in our package is *CF Inversion Algorithm*. Currently it involves two R functions: `cf2DistGP` and `cf2DistFFT` mentioned in introductory part of this manual. We have already explained shortly the main ideas of algorithms which these functions implement. So let us take a look at particular examples in R  about how to use at first `cf2DistGP` and then `cf2DistFFT`. 
+The first important class of functions in our package is *CF Inversion Algorithm*. Currently it involves one R function: `cf2DistGP` mentioned in introductory part of this manual. We have already explained shortly the main idea of algorithm which this function implements. So let us take a look at particular example in R  about how to use `cf2DistGP`. 
 
 Imagine we would like to calculate CDF/PDF of $N(0,1)$ by inverting its CF. At least the `cf` input argument of `cf2DistGP` need to be specified. We connect package **CharFunToolR** and create a characteristic function for $N(0,1)$. 
 
@@ -141,27 +115,6 @@ result <- cf2DistGP(cf)
 ```
 
 Note that argument `x` (vector of values where the CDF/PDF is computed) of `cf2DistGP(cf, x, prob, options)` is set by default. Similarly `options` object (list) is created with some default values. As `prob` has not been specified, the quantiles are not calculated and therefore `options$qf = NULL`. 
-
-In the next example we would like to calculate CDF/PDF/CQ of linear combination of independent $\chi^2$ random variables (RVs) (Chi-squared RVs with $1$ and $10$ degrees of freedom) $Y = 10X_{\chi^2_1} + X_{\chi^2_{10}}$. At first we specify degrees of freedom for $X_{\chi^2_1}$ and $X_{\chi^2_1}$, create their characteristic funtions and also the CF of their linear combination $Y$. 
-
-```{r}
-df1 <- 1
-df2 <- 10
-cfChi2_1 <- function(t) (1 - 2i * t)^(-df1 / 2)
-cfChi2_10 <- function(t) (1 - 2i * t)^(-df2 / 2)
-cf_Y <- function(t) cfChi2_1(10 * t) * cfChi2_10(t)
-```
-
-Again the `cf` argument of `cf2DistFFT(cf, x, prob, options)` is mandatory. The other input arguments can be specified or not and consequently the `cf2DistFFT` is executed. 
-
-```{r fig.height = 4, fig.width = 6}
-options <- list()
-options$xMin <- 0
-result <- cf2DistFFT(cf = cf_Y, options = options)
-# str(result)
-```
-
-Note that argument `x` (vector of values where the CDF/PDF is computed) of `cf2DistFFT(cf, x, prob, options)` is set by default again. Despite the fact that `prob` has not been specified, this time the default values has been set `prob = c(0.9, 0.95, 0.975, 0.99, 0.995, 0.999)`. In turn the corresponding quantiles can be calculated. 
 
 The next family of R functions in our package is *Discrete Probability Distribution*. It includes characteristic functions of chosen discrete probability distributions. We give three examples to illustrate what can be done in **CharFunToolR** with discrete probability distributions. We demonstrate ideas with function `cfN_Binomial`. In first example we want to compute values of CF of the Binomial distribution with the following parameters: the number of trials `n = 25`, probability of success `p = 0.3`. We choose $1001$ equally spaced points in interval $[-15,15]$, in that we want to know the values of CF. 
 

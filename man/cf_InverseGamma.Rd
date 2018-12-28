@@ -52,6 +52,9 @@ parameters \eqn{\alpha} and \eqn{\beta}, respectively.
 If \eqn{X ~ IGamma(df/2,1/2)}(shape-rate parametrization), then \eqn{X} is identical
 to \eqn{ICHI2(df)}, the Inverse-Chi-squared distribution with \eqn{df} degrees of freedom.
 }
+\note{
+Ver.: 16-Sep-2018 18:28:11 (consistent with Matlab CharFunTool v1.3.0, 10-May-2017 18:11:50).
+}
 \examples{
 ## EXAMPLE 1
 # CF of a linear combination of K=100 independent IGamma RVs
@@ -108,11 +111,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Trapezoidal}},
   \code{\link{cfS_Triangular}},
   \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PDF}}, \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
+  \code{\link{cfX_Exponential}},
+  \code{\link{cfX_FisherSnedecor}},
+  \code{\link{cfX_Gamma}}, \code{\link{cfX_InverseGamma}},
+  \code{\link{cfX_LogNormal}},
   \code{\link{cf_ArcsineSymmetric}},
   \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
   \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
@@ -125,6 +127,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_LogRV_ChiSquare}},
   \code{\link{cf_LogRV_FisherSnedecorNC}},
   \code{\link{cf_LogRV_FisherSnedecor}},
+  \code{\link{cf_LogRV_MeansRatioW}},
+  \code{\link{cf_LogRV_MeansRatio}},
+  \code{\link{cf_LogRV_WilksLambdaNC}},
+  \code{\link{cf_LogRV_WilksLambda}},
   \code{\link{cf_Normal}},
   \code{\link{cf_RectangularSymmetric}},
   \code{\link{cf_Student}},

@@ -5,7 +5,7 @@
 #' plane. This routine uses an excellent Lanczos series
 #' approximation for the complex \eqn{ln(Gamma)} function.
 #'
-#' @family Special Function
+#' @family Utility Function
 #'
 #' @param z may be complex and of any size.
 #'
@@ -18,6 +18,8 @@
 #' J. Spouge,  SIAM JNA 31, 1994. pp. 931. \cr
 #' W. Press,  "Numerical Recipes". \cr
 #' S. Chang, "Computation of special functions", 1996.
+#'
+#' @note Ver.: 16-Sep-2018 21:15:04 (consistent with Matlab CharFunTool v1.3.0, 24-Jul-2017 10:06:48).
 #'
 #' @export
 #'

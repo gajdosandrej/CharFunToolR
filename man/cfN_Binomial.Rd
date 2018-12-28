@@ -35,6 +35,9 @@ i.e. distribution of the random variable \eqn{Y = X_1 + ... + X_N}, where \eqn{X
 are i.i.d. random variables with common CF \eqn{cfX(t)}, and \eqn{N ~ F_N} is
 independent RV with its CF given by \eqn{cfN(t)}.
 }
+\note{
+Ver.: 16-Sep-2018 18:57:37 (consistent with Matlab CharFunTool v1.3.0, 15-Nov-2016 13:36:26).
+}
 \examples{
 ## EXAMPLE1
 # CF of the Binomial distribution with n = 25, p = 0.3

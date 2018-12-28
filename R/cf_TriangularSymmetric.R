@@ -34,6 +34,8 @@
 #' @return Characteristic function \eqn{cf(t)} of a linear combination
 #' of independent zero-mean symmetric TRIANGULAR random variables.
 #'
+#' @note Ver.: 16-Sep-2018 18:40:04 (consistent with Matlab CharFunTool v1.3.0, 02-Jun-2017 12:08:24).
+#'
 #' @example R/Examples/example_cf_TriangularSymmetric.R
 #'
 #' @export

@@ -36,12 +36,14 @@
 #' [1] PHILLIPS, P.C.B. The true characteristic function of the F distribution. Biometrika (1982), 261-264.
 #'
 #' [2] WITKOVSKY, V.: On the exact computation of the density and of the quantiles of linear combinations
-#' of t and F random variables. Journal of Statistical Planning and Inference 94 (2001), 1–13.
+#' of t and F random variables. Journal of Statistical Planning and Inference 94 (2001), 1-13.
 #'
 #' @seealso For more details see WIKIPEDIA:
 #' \url{https://en.wikipedia.org/wiki/F-distribution}.
 #'
 #' @family Continuous Probability Distribution
+#'
+#' @note Ver.: 16-Sep-2018 18:18:47 (consistent with Matlab CharFunTool v1.3.0, 24-Jun-2017 10:07:43).
 #'
 #' @example R/Examples/example_cf_FisherSnedecor.R
 #'

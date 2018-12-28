@@ -14,6 +14,8 @@ cf_LogRV_FisherSnedecorNC(t, df1, df2, delta, coef, niid, tol)
 
 \item{df2}{vector of the  degrees of freedom \code{df2 > 0}. If empty, default value is \code{df2 = 1}.}
 
+\item{delta}{vector of non-centrality parameters.}
+
 \item{coef}{vector of the coefficients of the linear combination of the Beta distributed random variables.
 If coef is scalar, it is assumed that all coefficients are equal. If empty, default value is \code{coef = 1}.}
 
@@ -42,10 +44,18 @@ The characteristic function of \eqn{Y = log(X) with X ~ F(df1,df2,\delta)} is Po
 of the CFs of the shifted log-transformed central F RVs of the form
 \deqn{cf(t) = cf_LogRV_FisherSnedecorNC(t,df1,df2,\delta) = exp(-\delta/2) sum_{j=1}^Inf (\delta/2)^j/j! *
 exp(1i*t*(df1+2*j)/df1) * cf_LogRV_FisherSnedecor(t,df1+2*j,df2),}
-where \eqn{cf_LogRV_FisherSnedecor(t,df1,df2)} are the CFs of central log-transformed F RVs
-with parameters \eqn{df1} and \eqn{df2}. Hence,the characteristic function of \eqn{Y  = coef(1)*Y1 + ... + coef(N)*YN}
-\eqn{cf_Y(t) =  cf_Y1(coef(1)*t) * ... * cf_YN(coef(N)*t)}, where \eqn{cf_Yi(t)}
-is evaluated with the parameters \eqn{df1_i}, \eqn{df2_i}, and \eqn{\delta_i}.
+where cf_LogRV_FisherSnedecor(t,df1,df2) denotes CF of log-transformed centrally distributed
+F RVs with parameters df1 and df2. For more details on  the non-central
+F distribution see \code{cf_FisherSnedecorNC}.
+Alternatively,
+\deqn{cf(t) = (df2/df1)^(1i*t) * gamma(df1/2 + 1i*t) / gamma(df1/2) * gamma(df2/2 - 1i*t) / gamma(df2/2) * 1F1(-1i*t;df1/2;-delta/2),}
+where \eqn{1F1(a;b;z)} is the confluent hypergeometric function, also known as the Kummer function \eqn{M(a,b,z)}.
+Hence,the characteristic function of \eqn{Y  = coef(1)*Y1 + ... + coef(N)*YN}
+is  \eqn{cf_Y(t) =  cf_Y1(coef(1)*t) * ... * cf_YN(coef(N)*t)}, where \eqn{cf_Yi(t)}
+is evaluated with the parameters \eqn{df1_i}, \eqn{df2_i}, and \eqn{delta_i}.
+}
+\note{
+Ver.: 20-Sep-2018 19:44:50 (consistent with Matlab CharFunTool v1.3.0, 10-Aug-2018 15:46:49).
 }
 \examples{
 ## EXAMPLE 1
@@ -98,11 +108,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Trapezoidal}},
   \code{\link{cfS_Triangular}},
   \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PDF}}, \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
+  \code{\link{cfX_Exponential}},
+  \code{\link{cfX_FisherSnedecor}},
+  \code{\link{cfX_Gamma}}, \code{\link{cfX_InverseGamma}},
+  \code{\link{cfX_LogNormal}},
   \code{\link{cf_ArcsineSymmetric}},
   \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
   \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
@@ -115,6 +124,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_LogRV_ChiSquareNC}},
   \code{\link{cf_LogRV_ChiSquare}},
   \code{\link{cf_LogRV_FisherSnedecor}},
+  \code{\link{cf_LogRV_MeansRatioW}},
+  \code{\link{cf_LogRV_MeansRatio}},
+  \code{\link{cf_LogRV_WilksLambdaNC}},
+  \code{\link{cf_LogRV_WilksLambda}},
   \code{\link{cf_Normal}},
   \code{\link{cf_RectangularSymmetric}},
   \code{\link{cf_Student}},

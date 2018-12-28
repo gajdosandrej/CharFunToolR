@@ -27,6 +27,8 @@
 #' loss distribution based on numerical inversion of the compound empirical
 #' characteristic function of frequency and severity. arXiv preprint arXiv:1701.08299.
 #'
+#' @note Ver.: 23-Sep-2018 14:40:43 (consistent with Matlab CharFunTool v1.3.0, 15-Sep-2018 12:56:00).
+#'
 #' @example R/Examples/example_cfE_Empirical.R
 #'
 #' @export
@@ -39,53 +41,12 @@ cfE_Empirical <- function(t, data, cfX) {
   if (missing(data)) {
     data <- vector()
   }
-
-  ##
-  if (length(data) == 0) {
-    data <- 1
+  if(missing(cfX)) {
+          cfX <- NULL
   }
 
-  weights <- 1 / length(data)
-  data <- c(data)
-
-  # Special treatment for mixtures with large number of variables
-
-  szcoefs <- dim(t(data))
-  szcoefs <- szcoefs[1] * szcoefs[2]
-
-  szt <- dim(t)
-  sz <- dim(t(t))[1] * dim(t(t))[2]
-
-  szcLimit <- ceiling(1e3 / (sz / 2 ^ 16))
-  idc <- (1:(trunc(szcoefs / szcLimit) + 1))
-
-  # Characteristic function of a weighted mixture of Dirac variables
-
-  t <- c(t)
-  idx0 <- 1
-  cf <- 0
-
-  for (j in idc) {
-    idx1 <- min(idc[j] * szcLimit, szcoefs)
-    idx <- (idx0:idx1)
-    idx0 <- idx1 + 1
-
-    if (missing(cfX)) {
-      aux <- exp(1i * t %*% t(data[idx]))
-    } else {
-      aux <- t(apply(as.matrix(cfX(t)), 1, FUN = '^', data[idx]))
-    }
-
-    if (length(weights) == 1) {
-      cf <- cf + apply(weights * aux, 1, sum)
-    } else {
-      cf <- cf + apply(aux * weights[idx], 1, sum)
-      cf <- cf + apply(t(apply(aux * weights[idx], 1, FUN = '*', c(1,2,3))), 1, sum)
-    }
-
-  }
-
-  dim(cf) <- szt
+  weights <- vector()
+  cf <- cfE_DiracMixture(t, data, weights, cfX)
 
   return(cf)
 }

@@ -2,14 +2,16 @@
 #' Chebpoints on the given interval
 #'
 #' @description
-#' \code{ChebPoints(N, interval)} evaluates Evaluate \eqn{N} chebpoints on the given interval \eqn{[a,b]}.
+#' \code{ChebPoints(N, interval)} evaluates \eqn{N} chebpoints on the given interval \eqn{[a,b]}.
 #'
-#' @family Special Function
+#' @family Utility Function
 #'
 #' @param N number of chebpoints required.
 #' @param interval vector containing lower and upper bound of interval.
 #'
 #' @return  Function returns \eqn{N} chebpoints on the given interval.
+#'
+#' @note Ver.: 16-Sep-2018 21:16:55 (consistent with Matlab CharFunTool v1.3.0, 24-Jul-2017 10:06:48).
 #'
 #' @example R/Examples/example_ChebPoints.R
 #'

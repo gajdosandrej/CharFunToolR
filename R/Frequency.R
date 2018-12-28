@@ -21,10 +21,9 @@
 #' A Contradiction? Financial Markets and Portfolio Management, 20(1), 103-118.
 #'
 #' Diethelm Wuertz, Tobias Setz and Yohan Chalabi (2017). fExtremes: Rmetrics - Modelling Extreme
-#' Events in Finance. R package version 3042.82. \href{https://CRAN.R-project.org/package=fExtremes}
+#' Events in Finance. R package version 3042.82. \url{https://CRAN.R-project.org/package=fExtremes}
 #'
 #' @source \href{http://www.macs.hw.ac.uk/~mcneil/data.html}{SeverityData}
 #'
-#' @examples
 #'
 "Frequency"

@@ -34,6 +34,8 @@
 #'
 #' @return Characteristic function \eqn{cf(t)} of a linear combination of independent BETA random variables.
 #'
+#' @note Ver.: 16-Sep-2018 18:03:12 (consistent with Matlab CharFunTool v1.3.0, 14-May-2017 12:08:24).
+#'
 #' @example R/Examples/example_cf_Beta.R
 #'
 #' @export
@@ -128,7 +130,7 @@ cf_Beta <- function(t, alpha, beta, coef, niid) {
 
 }
 
-
+# auxiliary function to find the index of the first occurence of certain element (sorted sequence)
 firstOccIdx <- function(x) {
   x_uniqe <- sort(unique(x))
   indices <- vector()

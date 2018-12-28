@@ -57,6 +57,9 @@ given by \eqn{cf = function(t) {cf_LogRV_Beta(-(n/2)*t, (n-q-j)/2, q/2)}},
 where \eqn{q = (q_1,...,q_m)} with \eqn{q_k = p_{k+1} + ... + p_m},
 and \eqn{j = (j_1,...,j_m)} with \eqn{j_k = 1:p_k}.
 }
+\note{
+Ver.: 16-Sep-2018 21:08:45 (consistent with Matlab CharFunTool v1.3.0, 20-Jan-2018 12:43:15).
+}
 \examples{
 ## EXAMPLE
 # LRT for testing hypothesis about independence

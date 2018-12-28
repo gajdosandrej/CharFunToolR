@@ -21,7 +21,10 @@ plotPolar(angle, radius, title = "", type = "l", color = "blue")
 \code{plotPolar(angle, radius, title, type, color)} plots a line in polar coordinates,
  with \code{angle} indicating the angle in radians and \code{radius} indicating the radius value for each point.
 }
+\note{
+Ver.: 22-Sep-2018 20:35:05.
+}
 \seealso{
-Other Graphic Function: \code{\link{plotGraf}},
+Other Graphic Function: \code{\link{plotReIm2}},
   \code{\link{plotReIm}}
 }

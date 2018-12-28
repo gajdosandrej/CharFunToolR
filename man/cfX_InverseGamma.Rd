@@ -12,6 +12,11 @@ cfX_InverseGamma(t, alpha, beta, coef, niid)
 \item{alpha}{the shape parameter \code{alpha > 0}. If empty, default value is \code{alpha = 1}.}
 
 \item{beta}{the rate (1/scale) parameter \code{beta > 0}. If empty, default value is \code{beta = 1}.}
+
+\item{coef}{vector of coefficients of the linear combination of Inverse Gamma distributed random variables.
+If coef is scalar, it is assumed that all coefficients are equal. If empty, default value is \code{coef = 1}.}
+
+\item{niid}{scalar convolution coeficient.}
 }
 \value{
 Characteristic function \eqn{cf(t)} of the INVERSE GAMMA distribution.
@@ -26,6 +31,9 @@ of independent INVERSE GAMMA distributed random variables.
 
 The characteristic function of the GAMMA distribution is defined
 by \deqn{cf(t) =  2 / gamma(\alpha) * (-1i*\beta*t).^(\alpha/2) * besselk(\alpha,sqrt(-4i*\beta*t)).}
+}
+\note{
+Ver.: 16-Sep-2018 19:25:22 (consistent with Matlab CharFunTool v1.3.0, 15-Nov-2016 13:36:26).
 }
 \examples{
 ## EXAMPLE 1
@@ -81,10 +89,9 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Trapezoidal}},
   \code{\link{cfS_Triangular}},
   \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PDF}}, \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
+  \code{\link{cfX_Exponential}},
+  \code{\link{cfX_FisherSnedecor}},
+  \code{\link{cfX_Gamma}}, \code{\link{cfX_LogNormal}},
   \code{\link{cf_ArcsineSymmetric}},
   \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
   \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
@@ -98,6 +105,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_LogRV_ChiSquare}},
   \code{\link{cf_LogRV_FisherSnedecorNC}},
   \code{\link{cf_LogRV_FisherSnedecor}},
+  \code{\link{cf_LogRV_MeansRatioW}},
+  \code{\link{cf_LogRV_MeansRatio}},
+  \code{\link{cf_LogRV_WilksLambdaNC}},
+  \code{\link{cf_LogRV_WilksLambda}},
   \code{\link{cf_Normal}},
   \code{\link{cf_RectangularSymmetric}},
   \code{\link{cf_Student}},

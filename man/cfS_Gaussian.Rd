@@ -8,6 +8,15 @@ cfS_Gaussian(t, mu, sigma, coef, niid)
 }
 \arguments{
 \item{t}{vector or array of real values, where the CF is evaluated.}
+
+\item{mu}{vector of mean values parameters.}
+
+\item{sigma}{vector of dispersion parameters.}
+
+\item{coef}{vector of coefficients of the linear combination of Normally distributed random variables.
+If coef is scalar, it is assumed that all coefficients are equal. If empty, default value is \code{coef = 1}.}
+
+\item{niid}{scalar convolution coeficient.}
 }
 \value{
 Characteristic function \eqn{cf(t)} of a GAUSSIAN (standard normal) distribution.
@@ -22,6 +31,9 @@ of independent normally distributed random variables.
 
 The characteristic function of the standard normally distributed random variable, \eqn{X ~ N(0,1)},
 is defined by \deqn{cf(t) = cfS_Gaussian(t) = exp(-t^2/2).}
+}
+\note{
+Ver.: 16-Sep-2018 19:08:06 (consistent with Matlab CharFunTool v1.3.0, 02-Jun-2017 12:08:24).
 }
 \examples{
 ## EXAMPLE1
@@ -50,11 +62,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Student}}, \code{\link{cfS_Trapezoidal}},
   \code{\link{cfS_Triangular}},
   \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PDF}}, \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
+  \code{\link{cfX_Exponential}},
+  \code{\link{cfX_FisherSnedecor}},
+  \code{\link{cfX_Gamma}}, \code{\link{cfX_InverseGamma}},
+  \code{\link{cfX_LogNormal}},
   \code{\link{cf_ArcsineSymmetric}},
   \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
   \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
@@ -68,6 +79,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_LogRV_ChiSquare}},
   \code{\link{cf_LogRV_FisherSnedecorNC}},
   \code{\link{cf_LogRV_FisherSnedecor}},
+  \code{\link{cf_LogRV_MeansRatioW}},
+  \code{\link{cf_LogRV_MeansRatio}},
+  \code{\link{cf_LogRV_WilksLambdaNC}},
+  \code{\link{cf_LogRV_WilksLambda}},
   \code{\link{cf_Normal}},
   \code{\link{cf_RectangularSymmetric}},
   \code{\link{cf_Student}},

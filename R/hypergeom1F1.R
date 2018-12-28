@@ -31,7 +31,7 @@
 #' @param z complex argument (scalar, vector or array).
 #' @param n number of the Gauss-Laguerre nodes and weights on \eqn{(0,Inf)}. If empty, default value is \code{n = 64}.
 #'
-#' @family Special Function
+#' @family Utility Function
 #'
 #' @return
 #' List including the following items:
@@ -44,6 +44,8 @@
 #'               2 is the method based on the steepest descent integration, \cr
 #'               3 is the method based on the asymptotic expansion, }
 #' \item{loops}{indicator of the used number of recursive loops.}
+#'
+#' @note Ver.: 23-Sep-2018 17:54:17 (consistent with Matlab CharFunTool v1.3.0, 30-Mar-2018 13:45:00).
 #'
 #' @example R/Examples/example_hypergeom1F1.R
 #'

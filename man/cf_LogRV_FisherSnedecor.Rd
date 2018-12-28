@@ -20,9 +20,6 @@ If coef is scalar, it is assumed that all coefficients are equal. If empty, defa
 \item{niid}{scalar convolution coeficient \code{niid}, such that \eqn{Z = Y + ... + Y}
 is sum of \eqn{niid} iid random variables \eqn{Y}, where each \eqn{Y = sum_{i=1}^N coef(i) * log(X_i)}
 is independently and identically distributed random variable. If empty, default value is \code{niid = 1}.}
-
-\item{tol}{tolerance factor for selecting the Poisson weights, i.e. such that \eqn{PoissProb > tol}.
-If empty, default value is \code{tol = 1e-12}.}
 }
 \value{
 Characteristic function \eqn{cf(t)} of a linear combination
@@ -44,13 +41,14 @@ where \eqn{\lambda} is the non-centrality parameter, is defined by
 That is, the characteristic function can be derived from expression
 for the r-th moment of \eqn{X}, \eqn{E(X^r)} by using \eqn{(1i*t)} instead of \eqn{r}.
 In particular, the characteristic function of \eqn{Y = log(X)} is defined by
-\deqn{cf_Y(t) = (df2/df1)^(1i*t) * gamma(df1/2 + 1i*t) / gamma(df1/2) * gamma(df2/2 - 1i*t) / gamma(df2/2) * 1F1(-1i*t;df1/2;-\lambda/2),}
-where \eqn{1F1(a;b;z)} is the hypergeometric function confluent hypergeometric function,
-also known as the Kummer function \eqn{M(a,b,z)}.
+\deqn{cf_Y(t) = (df2/df1)^(1i*t) * gamma(df1/2 + 1i*t) / gamma(df1/2) * gamma(df2/2 - 1i*t) / gamma(df2/2).}
 
 Hence,the characteristic function of \eqn{Y  = coef(1)*Y1 + ... + coef(N)*YN}
 is  \deqn{cf_Y(t) =  cf_Y1(coef(1)*t) * ... * cf_YN(coef(N)*t),} where \eqn{cf_Yi(t)}
 is evaluated with the parameters \eqn{df1(i)}, \eqn{df2(i)}, and \eqn{\lambda(i)}.
+}
+\note{
+Ver.: 20-Sep-2018 19:26:09 (consistent with Matlab CharFunTool v1.3.0, 10-Aug-2018 15:46:49).
 }
 \examples{
 ## EXAMPLE 1
@@ -91,11 +89,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Trapezoidal}},
   \code{\link{cfS_Triangular}},
   \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PDF}}, \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
+  \code{\link{cfX_Exponential}},
+  \code{\link{cfX_FisherSnedecor}},
+  \code{\link{cfX_Gamma}}, \code{\link{cfX_InverseGamma}},
+  \code{\link{cfX_LogNormal}},
   \code{\link{cf_ArcsineSymmetric}},
   \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
   \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
@@ -108,6 +105,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_LogRV_ChiSquareNC}},
   \code{\link{cf_LogRV_ChiSquare}},
   \code{\link{cf_LogRV_FisherSnedecorNC}},
+  \code{\link{cf_LogRV_MeansRatioW}},
+  \code{\link{cf_LogRV_MeansRatio}},
+  \code{\link{cf_LogRV_WilksLambdaNC}},
+  \code{\link{cf_LogRV_WilksLambda}},
   \code{\link{cf_Normal}},
   \code{\link{cf_RectangularSymmetric}},
   \code{\link{cf_Student}},

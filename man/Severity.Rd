@@ -14,9 +14,6 @@ data(Severity)
 \description{
 These data were collected at Copenhagen Reinsurance and comprise 2167 fire losses over the period 1980 to 1990.
 }
-\examples{
-
-}
 \references{
 Resnick, S. I. (1997). Discussions of the Danish Data on Large Fire Insurance Losses.
 ASTIN Bulletin: The Journal of the IAA, 27(1), 139-151.
@@ -28,6 +25,6 @@ Dell'Aquila, R., & Embrechts, P. (2006). Extremes and Robustness:
 A Contradiction? Financial Markets and Portfolio Management, 20(1), 103-118.
 
 Diethelm Wuertz, Tobias Setz and Yohan Chalabi (2017). fExtremes: Rmetrics - Modelling Extreme
-Events in Finance. R package version 3042.82. \href{https://CRAN.R-project.org/package=fExtremes}
+Events in Finance. R package version 3042.82. \url{https://CRAN.R-project.org/package=fExtremes}
 }
 \keyword{datasets}

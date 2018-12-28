@@ -39,6 +39,8 @@
 #' @return Characteristic function \eqn{cf(t)} of a linear combination
 #' of independent STUDENT's t random variables.
 #'
+#' @note Ver.: 16-Sep-2018 18:38:54 (consistent with Matlab CharFunTool v1.3.0, 02-Jun-2017 12:08:24).
+#'
 #' @example R/Examples/example_cf_Student.R
 #'
 #' @export

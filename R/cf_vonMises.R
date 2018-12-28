@@ -36,6 +36,8 @@
 #' @return Characteristic function \eqn{cf(t)} of a linear combination
 #' of independent VON MISES random variables.
 #'
+#' @note Ver.: 16-Sep-2018 18:41:05 (consistent with Matlab CharFunTool v1.3.0, 24-Jun-2017 18:25:56).
+#'
 #' @example R/Examples/example_cf_vonMises.R
 #'
 #' @export

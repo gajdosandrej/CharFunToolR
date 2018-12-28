@@ -12,7 +12,11 @@
 #' The characteristic function of \eqn{Y = log(X)} with \eqn{X ~ ChiSquare(df,\delta)} is Poisson mixture
 #' of CFs of the central log-transformed ChiSquare RVs of the form
 #' \deqn{cf(t) = cf_LogRV_ChiSquareNC(t,df,\delta) = exp(-\delta/2) sum_{j=1}^Inf (\delta/2)^j/j! * cf_LogRV_ChiSquare(df+2*j),}
-#' where \eqn{cf_LogRV_ChiSquare(df+j)} are the CFs of central log-transformed ChiSquare RVs with \eqn{df+j} degrees of freedom.
+#' where \eqn{cf_LogRV_ChiSquare(df+2+j)} are the CFs of central log-transformed ChiSquare RVs with \eqn{df+2+j} degrees of freedom.
+#' Alternatively,
+#' \deqn{cf(t) = cf_LogRV_ChiSquareNC(t,df,\delta) = cf_LogRV_ChiSquare(t,df) * 1F1(-1i*t;df/2;-\delta/2),}
+#' where \eqn{1F1(a;b;z)} is hypergeometric function.
+#'
 #' Hence, the characteristic function of \eqn{Y  = coef(1)*Y1 + ... + coef(N)*YN}
 #' \deqn{cf_Y(t) =  cf_Y1(coef(1)*t) * ... * cf_YN(coef(N)*t),}
 #' where \eqn{cf_Yi(t)} is evaluated with the parameters \eqn{df_i} and \eqn{delta_i}.
@@ -36,6 +40,8 @@
 #'
 #' @family Continuous Probability Distribution
 #' @family Non-central Probability Distribution
+#'
+#' @note Ver.: 20-Sep-2018 19:53:05 (consistent with Matlab CharFunTool v1.3.0, 10-Aug-2018 22:25:01).
 #'
 #' @example R/Examples/example_cf_LogRV_ChiSquareNC.R
 #'

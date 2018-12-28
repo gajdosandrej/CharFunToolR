@@ -50,6 +50,9 @@ Hence,the characteristic function of \eqn{Y  = coef(1)*Y1 + ... + coef(N)*YN}
 is \eqn{cf_Y(t) = cf_Y1(coef(1)*t) * ... * cf_YN(coef(N)*t)}, where \eqn{cf_Yi(t)}
 is evaluated with the parameters \code{alpha(i)} and \code{beta(i)}.
 }
+\note{
+Ver.: 16-Sep-2018 18:29:18 (consistent with Matlab CharFunTool v1.3.0, 02-Jun-2017 12:08:24).
+}
 \examples{
 ## EXAMPLE 1
 # CF of a linear combination of K=50 independent log-Beta RVs
@@ -217,11 +220,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Trapezoidal}},
   \code{\link{cfS_Triangular}},
   \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PDF}}, \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
+  \code{\link{cfX_Exponential}},
+  \code{\link{cfX_FisherSnedecor}},
+  \code{\link{cfX_Gamma}}, \code{\link{cfX_InverseGamma}},
+  \code{\link{cfX_LogNormal}},
   \code{\link{cf_ArcsineSymmetric}},
   \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
   \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
@@ -234,6 +236,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_LogRV_ChiSquare}},
   \code{\link{cf_LogRV_FisherSnedecorNC}},
   \code{\link{cf_LogRV_FisherSnedecor}},
+  \code{\link{cf_LogRV_MeansRatioW}},
+  \code{\link{cf_LogRV_MeansRatio}},
+  \code{\link{cf_LogRV_WilksLambdaNC}},
+  \code{\link{cf_LogRV_WilksLambda}},
   \code{\link{cf_Normal}},
   \code{\link{cf_RectangularSymmetric}},
   \code{\link{cf_Student}},

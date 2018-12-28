@@ -60,6 +60,8 @@
 #'
 #' @return Characteristic function \eqn{cf(t)} of the Lognormal distribution.
 #'
+#' @note Ver.: 16-Sep-2018 19:26:07 (consistent with Matlab CharFunTool v1.3.0, 15-Nov-2016 13:36:26).
+#'
 #' @example R/Examples/example_cfX_LogNormal.R
 #'
 #' @export
@@ -77,6 +79,61 @@ cfX_LogNormal <- function(t,
   cfIm <- seq(1, 1, length.out = length(t))
   cfRe <- seq(1, 1, length.out = length(t))
   id <- t != 0
+
+  funCF <- function(mu, sigma, t, x) {
+          szt <- dim(t)
+          t <- c(t)
+          t  <- exp(mu) * t
+          szx <- dim(x)
+          x  <- c(x)
+
+          ot <- seq(1, 1, length.out = length(t))
+          dim(ot) <- szt
+          ox <- seq(1, 1, length.out = length(x))
+          dim(ox) <- szx
+
+          funPDF <- function(x, s)
+                  exp(-0.5 * (log(x) / s) ^ 2) / (sqrt(2 * pi) * s * x)
+
+          if (sigma >= 1 / 3) {
+                  t <- 1 / t
+                  f <- (1i * t * ox) * exp(-ot * x) * funPDF(1i * t * x, sigma)
+          } else {
+                  # Set optimum limits for small and large abs(t)
+                  small <- 7 * sqrt(1 / sigma)
+                  large <- 25 * sqrt(1 / sigma)
+                  f <- ot * ox
+
+                  id <- abs(t) <= small
+                  if (any(id)) {
+                          f[id] <- exp(1i * t[id] * x) * funPDF(ot[id] * x * sigma)
+                  }
+
+                  id <- t > small & t <= large
+                  if (any(id)) {
+                          f[id] = exp(1i * ot[id] * x) * exp(-0.5 * (log(1 / t[id]) * x) / sigma) ^
+                                  2 / (sqrt(2 * pi) * sigma * ot[id] * x)
+                  }
+
+                  id <- t < -small & t >= -large
+                  if (any(id)) {
+                          f[id] = exp(-1i * ot[id] * x) * exp(-0.5 * (log(-(1 / t[id]) * x) / sigma) ^
+                                                                      2) / (sqrt(2 * pi) * sigma * ot[id] * x)
+                  }
+
+                  id <- abs(t) > large
+                  if (any(id)) {
+                          f[id] <- 0
+                  }
+
+                  return(f)
+
+          }
+
+          return(f)
+
+  }
+
   cfRe[id] <-
     unlist(lapply(
       t[id],
@@ -88,6 +145,7 @@ cfX_LogNormal <- function(t,
             1 - x
           ) ^ 3)), 0, 1, rel.tol = reltol)$value
     ))
+
   cfIm[id] <-
     unlist(lapply(
       t[id],
@@ -124,54 +182,4 @@ cfX_LogNormal <- function(t,
 # WITKOVSKY V. (2016). On computing the characteristic functions
 # of lognormal distribution and its applications. Working Paper.
 
-funCF <- function(mu, sigma, t, x) {
-  szt <- dim(t)
-  t <- c(t)
-  t  <- exp(mu) * t
-  szx <- dim(x)
-  x  <- c(x)
 
-  ot <- seq(1, 1, length.out = length(t))
-  dim(ot) <- szt
-  ox <- seq(1, 1, length.out = length(x))
-  dim(ox) <- szx
-
-  funPDF <- function(x, s)
-    exp(-0.5 * (log(x) / s) ^ 2) / (sqrt(2 * pi) * s * x)
-
-  if (sigma >= 1 / 3) {
-    t <- 1 / t
-    f <- (1i * t * ox) * exp(-ot * x) * funPDF(1i * t * x, sigma)
-  } else {
-    # Set optimum limits for small and large abs(t)
-    small <- 7 * sqrt(1 / sigma)
-    large <- 25 * sqrt(1 / sigma)
-    f <- ot * ox
-
-    id <- abs(t) <= small
-    if (any(id)) {
-      f[id] <- exp(1i * t[id] * x) * funPDF(ot[id] * x * sigma)
-    }
-
-    id <- t > small & t <= large
-    if (any(id)) {
-      f[id] = exp(1i * ot[id] * x) * exp(-0.5 * (log(1 / t[id]) * x) / sigma) ^
-        2 / (sqrt(2 * pi) * sigma * ot[id] * x)
-    }
-
-    id <- t < -small & t >= -large
-    if (any(id)) {
-      f[id] = exp(-1i * ot[id] * x) * exp(-0.5 * (log(-(1 / t[id]) * x) / sigma) ^
-                                            2) / (sqrt(2 * pi) * sigma * ot[id] * x)
-    }
-
-    id <- abs(t) > large
-    if (any(id)) {
-      f[id] <- 0
-    }
-
-    return(f)
-
-  }
-
-}

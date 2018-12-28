@@ -12,6 +12,8 @@ interpBarycentric(x, fun, xNew, options)
 \item{fun}{function values of fun given at points \code{x}.}
 
 \item{xNew}{point in which fun will be estimated.}
+
+\item{options}{optional parameter, set the ChebPoints TRUE or FALSE by options$isChebPts <- TRUE.}
 }
 \value{
 This function returns a list consisting of values \code{funNew} of function \code{fun}
@@ -21,6 +23,9 @@ evaluated at points \code{xNew}.
 \code{interpBarycentric(x, fun, xNew, options)} evaluates (interpolates) function values
 \code{funNew} at given points \code{xNew} by barycentric interpolation from function values \code{fun}
 given at chebpoints \code{x}.
+}
+\note{
+Ver.: 16-Sep-2018 21:16:14 (consistent with Matlab CharFunTool v1.3.0, 24-Jul-2017 10:06:48).
 }
 \examples{
 ## EXAMPLE 1
@@ -137,6 +142,13 @@ lines(result$cdf, result$x, col = "blue",  lwd = 2)
 For more details see WIKIPEDIA:
 \url{https://en.wikipedia.org/wiki/Barycentric_coordinate_system}.
 
-Other Special Function: \code{\link{ChebPoints}},
-  \code{\link{GammaLog}}, \code{\link{hypergeom1F1}}
+Other Utility Function: \code{\link{ChebPoints}},
+  \code{\link{ChebPoly}}, \code{\link{GammaLog}},
+  \code{\link{GammaMultiLog}}, \code{\link{GammaMulti}},
+  \code{\link{GammaZX}},
+  \code{\link{Hypergeom1F1MatApprox}},
+  \code{\link{Hypergeom1F1Mat}},
+  \code{\link{Hypergeom2F1Mat}},
+  \code{\link{Hypergeom2F1}},
+  \code{\link{HypergeompFqMat}}, \code{\link{hypergeom1F1}}
 }

@@ -17,6 +17,9 @@ Natural Log of the Gamma function.
 plane. This routine uses an excellent Lanczos series
 approximation for the complex \eqn{ln(Gamma)} function.
 }
+\note{
+Ver.: 16-Sep-2018 21:15:04 (consistent with Matlab CharFunTool v1.3.0, 24-Jul-2017 10:06:48).
+}
 \references{
 C. Lanczos, SIAM JNA  1, 1964. pp. 86-96. \cr
 Y. Luke, "The Special ... approximations", 1969 pp. 29-31. \cr
@@ -26,7 +29,14 @@ W. Press,  "Numerical Recipes". \cr
 S. Chang, "Computation of special functions", 1996.
 }
 \seealso{
-Other Special Function: \code{\link{ChebPoints}},
+Other Utility Function: \code{\link{ChebPoints}},
+  \code{\link{ChebPoly}}, \code{\link{GammaMultiLog}},
+  \code{\link{GammaMulti}}, \code{\link{GammaZX}},
+  \code{\link{Hypergeom1F1MatApprox}},
+  \code{\link{Hypergeom1F1Mat}},
+  \code{\link{Hypergeom2F1Mat}},
+  \code{\link{Hypergeom2F1}},
+  \code{\link{HypergeompFqMat}},
   \code{\link{hypergeom1F1}},
   \code{\link{interpBarycentric}}
 }

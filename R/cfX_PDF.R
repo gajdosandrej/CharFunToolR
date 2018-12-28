@@ -31,6 +31,7 @@
 #'
 #' Selection of the proper method (standard definition or the integral transformation FIT)
 #' depends on the distribution and the particular form of its PDF.
+#'
 #' \code{cfX_PDF} evaluates this integral by using the R built in function \code{integrate},
 #' with precission specified by tolerance tol (default value is \code{tol = 1e-6}).
 #'
@@ -55,7 +56,9 @@
 #' of collective risk models. Working Paper. Journal of Statistical Software.
 #' arXiv preprint arXiv:1801.02248, 2018.
 #'
-#' @family Continuous Probability Distribution
+#' @family CF Tool
+#'
+#' @note Ver.: 23-Sep-2018 16:55:18 (consistent with Matlab CharFunTool v1.3.0, 21-Jul-2017 20:53:22).
 #'
 #' @example R/Examples/example_cfX_PDF.R
 #'
@@ -66,7 +69,7 @@ cfX_PDF <- function(t, pdfFun, method, tol) {
         ## CHECK THE INPUT PARAMETERS
 
         if(missing(t)) {
-                stop("VW:cfX_PDF:TooFewInputs")
+                stop("AG:cfX_PDF:TooFewInputs")
         }
         if(missing(pdfFun)) {
                 pdfFun <- function(x) exp(-x)
@@ -99,7 +102,7 @@ cfX_PDF <- function(t, pdfFun, method, tol) {
                                 cf[i] <- re + 1i*im
                         }
                 }
-        } else if(method == "fit" || method == "fourier" || method == "transoform") {
+        } else if(method == "fit" || method == "fourier" || method == "transform") {
                 for(i in 1:length(t)) {
                         if(id[i]) {
                                 re <- integrate(function(x) {as.numeric(Re(funCFfit(pdfFun, t[i], (x / (1 - x)) ^ 2) * (2 * x / (1 - x) ^ 3)))}, 0, 1, rel.tol = reltol, subdivisions = 2000)$value

@@ -86,6 +86,9 @@ criterion is not valid, the numerical precission of the result is
 violated, and the method should be improved (e.g. by selecting larger \eqn{N}
 or considering other more sofisticated algorithm - not considered here).
 }
+\note{
+Ver.: 16-Sep-2018 17:59:07 (consistent with Matlab CharFunTool v1.3.0, 22-Sep-2017 11:11:11).
+}
 \examples{
 ## EXAMPLE1
 # Calculate CDF/PDF of N(0,1) by inverting its CF
@@ -147,6 +150,4 @@ of frequency and severity. ArXiv preprint, 2017, arXiv:1701.08299.
 \seealso{
 For more details see:
 \url{https://arxiv.org/pdf/1701.08299.pdf}.
-
-Other CF Inversion Algorithm: \code{\link{cf2DistFFT}}
 }

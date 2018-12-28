@@ -45,6 +45,9 @@ Hence, the characteristic function of \eqn{Y  = coef_1*X_1 +...+ coef_N*X_N}
 is \deqn{cf_Y(t) =  cf_1(coef_1*t) *...* cf_N(coef_N*t),} where \eqn{cf_i(t)}
 is the characteristic function of \eqn{X_i ~ F(df1_i,df2_i)}.
 }
+\note{
+Ver.: 16-Sep-2018 18:18:47 (consistent with Matlab CharFunTool v1.3.0, 24-Jun-2017 10:07:43).
+}
 \examples{
 ## EXAMPLE 1
 # CF of a linear combination of independent F RVs
@@ -77,7 +80,7 @@ result
 [1] PHILLIPS, P.C.B. The true characteristic function of the F distribution. Biometrika (1982), 261-264.
 
 [2] WITKOVSKY, V.: On the exact computation of the density and of the quantiles of linear combinations
-of t and F random variables. Journal of Statistical Planning and Inference 94 (2001), 1–13.
+of t and F random variables. Journal of Statistical Planning and Inference 94 (2001), 1-13.
 }
 \seealso{
 For more details see WIKIPEDIA:
@@ -89,11 +92,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Trapezoidal}},
   \code{\link{cfS_Triangular}},
   \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PDF}}, \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
+  \code{\link{cfX_Exponential}},
+  \code{\link{cfX_FisherSnedecor}},
+  \code{\link{cfX_Gamma}}, \code{\link{cfX_InverseGamma}},
+  \code{\link{cfX_LogNormal}},
   \code{\link{cf_ArcsineSymmetric}},
   \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
   \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
@@ -106,6 +108,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_LogRV_ChiSquare}},
   \code{\link{cf_LogRV_FisherSnedecorNC}},
   \code{\link{cf_LogRV_FisherSnedecor}},
+  \code{\link{cf_LogRV_MeansRatioW}},
+  \code{\link{cf_LogRV_MeansRatio}},
+  \code{\link{cf_LogRV_WilksLambdaNC}},
+  \code{\link{cf_LogRV_WilksLambda}},
   \code{\link{cf_Normal}},
   \code{\link{cf_RectangularSymmetric}},
   \code{\link{cf_Student}},

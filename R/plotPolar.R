@@ -14,6 +14,8 @@
 #'
 #' @family Graphic Function
 #'
+#' @note Ver.: 22-Sep-2018 20:35:05.
+#'
 #' @export
 #'
 plotPolar <-

@@ -44,6 +44,8 @@
 #' [4] WIMMER G., ALTMANN G. (1999). Thesaurus of univariate discrete
 #'     probability distributions. STAMM Verlag GmbH, Essen, Germany. ISBN 3-87773-025-6.
 #'
+#' @note Ver.: 16-Sep-2018 19:03:05 (consistent with Matlab CharFunTool v1.3.0, 15-Nov-2016 13:36:26).
+#'
 #' @example R/Examples/example_cfN_PolyaEggenberger.R
 #'
 #' @export

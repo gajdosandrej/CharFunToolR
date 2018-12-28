@@ -48,6 +48,9 @@ minus log-transformed LRT statistic \eqn{\Lambda}, say \eqn{W = -log(\Lambda)} i
 \eqn{cf =  function(t) {cf_LogRV_Beta(-(n/2)*t, (n-j)/2, (j-1)/p + (j-1)/2)}},
 where \eqn{j = (2,..., p)'}.
 }
+\note{
+Ver.: 16-Sep-2018 21:11:16 (consistent with Matlab CharFunTool v1.3.0, 20-Jan-2018 12:43:15).
+}
 \examples{
 ## EXAMPLE
 # LRT for testing hypothesis on sphericity of covariance matrix

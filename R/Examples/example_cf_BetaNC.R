@@ -6,8 +6,9 @@ delta <- 1
 t <- seq(from = -50,
          to = 50,
          length.out = 201)
-plotReIm(function(t)
-        cf_BetaNC(t, alpha, beta, delta), t, title = 'CF of a Beta RVs')
+functions_to_plot <- list(function(t) cf_BetaNC(t, alpha, beta, delta, type = 1),
+                          function(t) cf_BetaNC(t, alpha, beta, delta, type = 2))
+plotReIm2(functions_to_plot, list(t, t), title = 'CF of Type I and II Beta RV')
 
 ## EXAMPLE 2
 # CDF/PDF of non-central Beta RV with delta = 1
@@ -31,4 +32,5 @@ cf <- function(t)
         cf_BetaNC(t, alpha, beta, delta, coef)
 options <- list()
 options$xMin <- 0
+options$xMax <- 1
 result <- cf2DistGP(cf = cf, options = options)

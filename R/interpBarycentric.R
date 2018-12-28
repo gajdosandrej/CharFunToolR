@@ -6,7 +6,7 @@
 #' \code{funNew} at given points \code{xNew} by barycentric interpolation from function values \code{fun}
 #' given at chebpoints \code{x}.
 #'
-#' @family Special Function
+#' @family Utility Function
 #'
 #' @seealso
 #' For more details see WIKIPEDIA:
@@ -15,9 +15,12 @@
 #' @param x points in which is fun given (for more accuracy use chebpoints).
 #' @param fun function values of fun given at points \code{x}.
 #' @param xNew point in which fun will be estimated.
+#' @param options  optional parameter, set the ChebPoints TRUE or FALSE by options$isChebPts <- TRUE.
 #'
 #' @return This function returns a list consisting of values \code{funNew} of function \code{fun}
 #' evaluated at points \code{xNew}.
+#'
+#' @note Ver.: 16-Sep-2018 21:16:14 (consistent with Matlab CharFunTool v1.3.0, 24-Jul-2017 10:06:48).
 #'
 #' @example R/Examples/example_interpBarycentric.R
 #'

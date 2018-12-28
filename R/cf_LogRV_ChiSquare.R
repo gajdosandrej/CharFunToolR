@@ -23,7 +23,6 @@
 #'
 #' @param t vector or array of real values, where the CF is evaluated.
 #' @param df vector of the  degrees of freedom \code{df > 0}. If empty, default value is \code{df = 1}.
-#' @param delta vector of the non-centrality parameters \code{delta > 0}. If empty, default value is \code{delta = 0}.
 #' @param coef vector of the coefficients of the linear combination of the logGamma random variables.
 #' If coef is scalar, it is assumed that all coefficients are equal. If empty, default value is \code{coef = 1}.
 #' @param niid scalar convolution coeficient \code{niid}, such that \eqn{Z = Y + ... + Y}
@@ -43,6 +42,8 @@
 #' \url{https://en.wikipedia.org/wiki/Chi-squared_distribution}.
 #'
 #' @family Continuous Probability Distribution
+#'
+#' @note Ver.: 16-Sep-2018 18:34:40 (consistent with Matlab CharFunTool v1.3.0, 02-Jun-2017 12:08:24).
 #'
 #' @example R/Examples/example_cf_LogRV_ChiSquare.R
 #'

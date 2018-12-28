@@ -64,6 +64,8 @@
 #'
 #' @family Likelihood Ratio Test
 #'
+#' @note Ver.: 16-Sep-2018 21:10:08 (consistent with Matlab CharFunTool v1.3.0, 20-Jan-2018 12:43:15).
+#'
 #' @example R/Examples/example_LRT03_EqualityCovariances.R
 #'
 #' @export

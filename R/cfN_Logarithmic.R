@@ -45,6 +45,8 @@
 #'
 #' @return Characteristic function \eqn{cf(t)} of the Logarithmic distribution.
 #'
+#' @note Ver.: 16-Sep-2018 19:01:18 (consistent with Matlab CharFunTool v1.3.0, 15-Nov-2016 13:36:26).
+#'
 #' @example R/Examples/example_cfN_Logarithmic.R
 #'
 #' @export

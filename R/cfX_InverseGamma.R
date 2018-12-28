@@ -23,8 +23,13 @@
 #' @param t vector or array of real values, where the CF is evaluated.
 #' @param alpha the shape parameter \code{alpha > 0}. If empty, default value is \code{alpha = 1}.
 #' @param beta the rate (1/scale) parameter \code{beta > 0}. If empty, default value is \code{beta = 1}.
+#' @param coef vector of coefficients of the linear combination of Inverse Gamma distributed random variables.
+#' If coef is scalar, it is assumed that all coefficients are equal. If empty, default value is \code{coef = 1}.
+#' @param niid scalar convolution coeficient.
 #'
 #' @return Characteristic function \eqn{cf(t)} of the INVERSE GAMMA distribution.
+#'
+#' @note Ver.: 16-Sep-2018 19:25:22 (consistent with Matlab CharFunTool v1.3.0, 15-Nov-2016 13:36:26).
 #'
 #' @example R/Examples/example_cfX_InverseGamma.R
 #'

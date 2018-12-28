@@ -43,14 +43,19 @@ we can evaluate the CF by the following (well behaved) integral:
 
 Selection of the proper method (standard definition or the integral transformation FIT)
 depends on the distribution and the particular form of its PDF.
+
 \code{cfX_PDF} evaluates this integral by using the R built in function \code{integrate},
 with precission specified by tolerance tol (default value is \code{tol = 1e-6}).
+}
+\note{
+Ver.: 23-Sep-2018 16:55:18 (consistent with Matlab CharFunTool v1.3.0, 21-Jul-2017 20:53:22).
 }
 \examples{
 ## EXAMPLE1 (CF of the Exponential distribution with mu = 1)
 pdfFun <- function(x) exp(-x)
 t <- seq(from = -20, to = 20, length.out = 2^10+1)
-plotReIm(function(t) cfX_PDF(t, pdfFun), t, 'Characteristic function of the Exponential distribution')
+plotReIm(function(t) cfX_PDF(t, pdfFun), t,
+         'Characteristic function of the Exponential distribution')
 
 ## EXAMPLE2 (CF of the LogNormal distribution with mu = 0, sigma = 1)
 mu <- 0
@@ -58,7 +63,8 @@ sigma <- 1
 pdfFun <- function(x) exp(-0.5 * ((log(x) - mu) / sigma) ^ 2) / (x * sqrt(2 * pi) * sigma)
 method <- 'fit'
 t <- seq(from = -20, to = 20, length.out = 2^10+1)
-plotReIm(function(t) cfX_PDF(t, pdfFun, method), t, 'Characteristic function of the LogNormal distribution')
+plotReIm(function(t) cfX_PDF(t, pdfFun, method), t,
+         'Characteristic function of the LogNormal distribution')
 
 ## EXAMPLE3 (CDF/PDF of the LogNormal distribution with mu = 0, sigma = 1)
 mu <- 0
@@ -76,7 +82,8 @@ b <- 0.5
 pdfFun <- function(x) (x / a) ^ (b - 1) * exp(-((x / a) ^ b)) * b / a
 method <- 'fit'
 t <- seq(from = -20, to = 20, length.out = 2^10+1)
-plotReIm(function(t) cfX_PDF(t, pdfFun, method), t, 'Characteristic function of the Weibull distribution')
+plotReIm(function(t) cfX_PDF(t, pdfFun, method), t,
+         'Characteristic function of the Weibull distribution')
 
 ## EXAMPLE5 (CF of the Weibull distribution with a = 1.5, and large b > 1)
 a <- 1.5
@@ -84,7 +91,8 @@ b <- 3.5
 pdfFun <- function(x) (x / a) ^ (b - 1) * exp(-((x / a) ^ b)) * b / a
 method <- 'def'
 t <- seq(from = -10, to = 10, length.out = 2^10+1)
-plotReIm(function(t) cfX_PDF(t, pdfFun, method), t, 'Characteristic function of the Weibull distribution')
+plotReIm(function(t) cfX_PDF(t, pdfFun, method), t,
+         'Characteristic function of the Weibull distribution')
 
 
 }
@@ -107,34 +115,5 @@ of collective risk models. Working Paper. Journal of Statistical Software.
 arXiv preprint arXiv:1801.02248, 2018.
 }
 \seealso{
-Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
-  \code{\link{cfS_Beta}}, \code{\link{cfS_Gaussian}},
-  \code{\link{cfS_Rectangular}}, \code{\link{cfS_Student}},
-  \code{\link{cfS_Trapezoidal}},
-  \code{\link{cfS_Triangular}},
-  \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
-  \code{\link{cf_ArcsineSymmetric}},
-  \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
-  \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
-  \code{\link{cf_Exponential}},
-  \code{\link{cf_FisherSnedecorNC}},
-  \code{\link{cf_FisherSnedecor}}, \code{\link{cf_Gamma}},
-  \code{\link{cf_InverseGamma}},
-  \code{\link{cf_LogRV_BetaNC}},
-  \code{\link{cf_LogRV_Beta}},
-  \code{\link{cf_LogRV_ChiSquareNC}},
-  \code{\link{cf_LogRV_ChiSquare}},
-  \code{\link{cf_LogRV_FisherSnedecorNC}},
-  \code{\link{cf_LogRV_FisherSnedecor}},
-  \code{\link{cf_Normal}},
-  \code{\link{cf_RectangularSymmetric}},
-  \code{\link{cf_Student}},
-  \code{\link{cf_TrapezoidalSymmetric}},
-  \code{\link{cf_TriangularSymmetric}},
-  \code{\link{cf_vonMises}}
+Other CF Tool: \code{\link{cf_Conv}}
 }

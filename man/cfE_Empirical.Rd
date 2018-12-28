@@ -27,6 +27,9 @@ concentrated at the constant \eqn{d=1}, i.e. \eqn{cfD(t) = exp(1i*t)}.
 \eqn{cf(t) = cfE_Empirical(-1i*log(cfX(t)),data) = (1/N) * sum_{j=1}^N cfX(t)^data_j};
 where \code{cfX} is function handle of the characteristic function \eqn{cfX(t)} of the random variable \eqn{X}.
 }
+\note{
+Ver.: 23-Sep-2018 14:40:43 (consistent with Matlab CharFunTool v1.3.0, 15-Sep-2018 12:56:00).
+}
 \examples{
 ## EXAMPLE1
 # Empirical CF - a weighted mixture of independent Dirac variables
@@ -88,4 +91,7 @@ characteristic function of frequency and severity. arXiv preprint arXiv:1701.082
 \seealso{
 For more details see WIKIPEDIA:
 \url{https://en.wikipedia.org/wiki/Empirical_characteristic_function}.
+
+Other Empirical Probability Distribution: \code{\link{cfE_DiracMixture}},
+  \code{\link{cfE_EmpiricalOgive}}
 }

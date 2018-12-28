@@ -5,7 +5,7 @@
 \title{Characteristic function of a linear combination
 of independent non-central BETA random variables}
 \usage{
-cf_BetaNC(t, alpha, beta, delta, coef, niid, tol)
+cf_BetaNC(t, alpha, beta, delta, coef, niid, tol, type)
 }
 \arguments{
 \item{t}{vector or array of real values, where the CF is evaluated.}
@@ -26,27 +26,49 @@ is independently and identically distributed random variable. If empty, default 
 
 \item{tol}{tolerance factor for selecting the Poisson weights, i.e. such that \eqn{PoissProb > tol}.
 If empty, default value is \code{tol = 1e-12}.}
+
+\item{type}{indicator of the type of the noncentral distribution
+(Type I = 1 or Type II = 2). If empty, default value is \code{type = 1}.}
 }
 \value{
 Characteristic function \eqn{cf(t)} of a linear combination
 of independent non-central BETA random variables.
 }
 \description{
-\code{cf_BetaNC(t, alpha, beta, delta, coef, niid, tol)} evaluates characteristic function
-of a linear combination (resp. convolution) of independent non-central BETA random variables,
-with distributions \eqn{Beta(\alpha_i,\beta_i,\delta_i)} defined on the interval \eqn{(0,1)}.
+\code{cf_BetaNC(t, alpha, beta, delta, coef, niid, tol, type)} evaluates characteristic function
+of a linear combination (resp. convolution) of independent non-central BETA random variables (Type I and Type II),
+with distributions \eqn{Beta(\alpha_i,\beta_i,\delta_i)} defined on the interval \eqn{(0,1)},
+and specified by the parameters \eqn{\alpha_i}, \eqn{\beta_i}, and the noncentrality parameters \eqn{delta_i}.
+
+The noncentral beta distribution has two types. The Type I is
+the distribution  of the random variable \eqn{B_1 = X_1/(X_1+X_2)},
+\eqn{X1 ~ Gamma(\alpha, \gamma, \delta)} and \eqn{X_2 ~ Gamma(\beta, \gamma)}.
+The Type II noncentral beta distribution is the distribution of the ratio random
+variable \eqn{B_2 = X_1/(X_1+X_2)}, where \eqn{X_1 ~ Gamma(\alpha,\gamma)} and
+\eqn{X_2 ~ Gamma(\beta, \gamma, \delta)}.
 
 That is, \code{cf_BetaNC} evaluates the characteristic function \eqn{cf(t)}
 of  \eqn{Y = sum_{i=1}^N coef_i * X_i}, where \eqn{X_i ~ Beta(\alpha_i,\beta_i,\delta_i)}
 are independent RVs, with the shape parameters \eqn{\alpha_i > 0} and \eqn{\beta_i > 0},
 and the noncentrality parameters \eqn{\delta_i > 0}, for \eqn{i = 1,...,N}.
 
-The characteristic function of \eqn{X ~ Beta(\alpha,\beta,\delta)} is Poisson mixture
-of the central Beta CFs of the form \deqn{cf(t) = cf_BetaNC(t,\alpha,\beta,\delta) = exp(-\delta/2) sum_{j=1}^Inf (\delta/2)^j/j! * cf_beta(\alpha+j,\beta)}
-where \eqn{cf_beta(\alpha+j,\beta)} are the CFs of central Beta RVs with parameters \eqn{\alpha+j} and \eqn{\beta}.
-Hence,the characteristic function of \eqn{Y = coef(1)*X_1 + ... + coef(N)*X_N} is
+For Type I noncentral beta distribution, the characteristic function
+of \eqn{X ~ Beta(\alpha, \beta, \delta)} is Poisson mixture of the central Beta CFs
+of the form
+\deqn{cf(t) = cf_BetaNC(t, \alpha, \beta, \delta) = exp(-\delta/2) sum_{j=1}^Inf (\delta/2)^j/j! * cf_beta(\alpha+j, \beta)}
+where \eqn{cf_beta(\alpha+j, \beta)} are the CFs of central Beta RVs with parameters \eqn{alpha}+j and \eqn{beta}.
+
+For Type I noncentral beta distribution, the characteristic function of
+\eqn{X ~ Beta(\alpha, \beta, \delta)} is Poisson mixture of the central Beta CFs of the form
+\deqn{cf(t) = cf_BetaNC(t, \alpha, \beta, \delta) = exp(-\delta/2) sum_{j=1}^Inf (\delta/2)^j/j! * cf_beta(\alpha, \beta+j)}
+where \eqn{cf_beta(\alpha, \beta+j)} are the CFs of central Beta RVs with parameters \eqn{\alpha+j} and \eqn{\beta}.
+
+Hence,the characteristic function of \eqn{Y  = coef(1)*X_1 + ... + coef(N)*X_N} is
 \deqn{cf(t) =  cf_X_1(coef(1)*t) * ... * cf_X_N(coef(N)*t),}
-where \eqn{X_i ~ BetaNC(\alpha(i),\beta(i),\delta(i))} with \eqn{cf_X_i(t)}.
+\eqn{where X_i ~ BetaNC(alpha(i),beta(i),delta(i)) with cf_X_i(t)}.
+}
+\note{
+Ver.: 19-Sep-2018 23:51:40 (consistent with Matlab CharFunTool v1.3.0, 07-Feb-2018 13:53:40).
 }
 \examples{
 ## EXAMPLE 1
@@ -57,8 +79,9 @@ delta <- 1
 t <- seq(from = -50,
          to = 50,
          length.out = 201)
-plotReIm(function(t)
-        cf_BetaNC(t, alpha, beta, delta), t, title = 'CF of a Beta RVs')
+functions_to_plot <- list(function(t) cf_BetaNC(t, alpha, beta, delta, type = 1),
+                          function(t) cf_BetaNC(t, alpha, beta, delta, type = 2))
+plotReIm2(functions_to_plot, list(t, t), title = 'CF of Type I and II Beta RV')
 
 ## EXAMPLE 2
 # CDF/PDF of non-central Beta RV with delta = 1
@@ -82,6 +105,7 @@ cf <- function(t)
         cf_BetaNC(t, alpha, beta, delta, coef)
 options <- list()
 options$xMin <- 0
+options$xMax <- 1
 result <- cf2DistGP(cf = cf, options = options)
 }
 \seealso{
@@ -94,11 +118,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Trapezoidal}},
   \code{\link{cfS_Triangular}},
   \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PDF}}, \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
+  \code{\link{cfX_Exponential}},
+  \code{\link{cfX_FisherSnedecor}},
+  \code{\link{cfX_Gamma}}, \code{\link{cfX_InverseGamma}},
+  \code{\link{cfX_LogNormal}},
   \code{\link{cf_ArcsineSymmetric}},
   \code{\link{cf_BetaSymmetric}}, \code{\link{cf_Beta}},
   \code{\link{cf_ChiSquare}}, \code{\link{cf_Exponential}},
@@ -111,6 +134,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_LogRV_ChiSquare}},
   \code{\link{cf_LogRV_FisherSnedecorNC}},
   \code{\link{cf_LogRV_FisherSnedecor}},
+  \code{\link{cf_LogRV_MeansRatioW}},
+  \code{\link{cf_LogRV_MeansRatio}},
+  \code{\link{cf_LogRV_WilksLambdaNC}},
+  \code{\link{cf_LogRV_WilksLambda}},
   \code{\link{cf_Normal}},
   \code{\link{cf_RectangularSymmetric}},
   \code{\link{cf_Student}},

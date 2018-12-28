@@ -40,6 +40,9 @@ suggested by S.Zhang and J.Jin (1996). For more details see also
 Computation of \eqn{1F1(a, b, z)} for large arguments \eqn{z} (with \eqn{|Im(z)| >= |Re(z)|}) and for \eqn{b > a > 0})
 is based on using the steepest descent integration method as suggested by G. Navas Palencia and A.A. Arratia Quesada (2016).
 }
+\note{
+Ver.: 23-Sep-2018 17:54:17 (consistent with Matlab CharFunTool v1.3.0, 30-Mar-2018 13:45:00).
+}
 \examples{
 ## EXAMPLE 1
 a <- 10
@@ -75,6 +78,14 @@ For more details on confluent hypergeometric function \eqn{1F1(a, b, z)}
 or the Kummer's (confluent hypergeometric) function \eqn{M(a, b, z)} see WIKIPEDIA:
 \url{https://en.wikipedia.org/wiki/Confluent_hypergeometric_function}.
 
-Other Special Function: \code{\link{ChebPoints}},
-  \code{\link{GammaLog}}, \code{\link{interpBarycentric}}
+Other Utility Function: \code{\link{ChebPoints}},
+  \code{\link{ChebPoly}}, \code{\link{GammaLog}},
+  \code{\link{GammaMultiLog}}, \code{\link{GammaMulti}},
+  \code{\link{GammaZX}},
+  \code{\link{Hypergeom1F1MatApprox}},
+  \code{\link{Hypergeom1F1Mat}},
+  \code{\link{Hypergeom2F1Mat}},
+  \code{\link{Hypergeom2F1}},
+  \code{\link{HypergeompFqMat}},
+  \code{\link{interpBarycentric}}
 }

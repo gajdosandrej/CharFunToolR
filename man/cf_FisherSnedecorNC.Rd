@@ -14,6 +14,8 @@ cf_FisherSnedecorNC(t, df1, df2, delta, coef, niid, tol)
 
 \item{df2}{vector of the  degrees of freedom \code{df2 > 0}. If empty, default value is \code{df2 = 1}.}
 
+\item{delta}{non-centrality parameter.}
+
 \item{coef}{vector of the coefficients of the linear combination of the Beta distributed random variables.
 If coef is scalar, it is assumed that all coefficients are equal. If empty, default value is \code{coef = 1}.}
 
@@ -38,12 +40,21 @@ That is, cf_FisherSnedecorNC evaluates the characteristic function
 are inedependent RVs, with \eqn{df1_i} and \eqn{df2_i} degrees of freedom,
 and the noncentrality parameters \eqn{\delta_i >0}, for \eqn{i = 1,...,N}.
 
+Random variable \eqn{X} has non-central \eqn{F} distribution with \eqn{df1} and \eqn{df2}
+degrees of freedom and the non-centrality parameter \eqn{\delta} if
+\eqn{X = (X1/df1)/(X2/df2)} where \eqn{X1 ~ ChiSquare(df1, \delta)},
+i.e. with non-central chi-square distribution, and \eqn{X2 ~ ChiSquare(df2)} is independent
+random variable with central chi-square distribution.
+
 The characteristic function of X ~ F(df1,df2,delta) is Poisson mixture of the CFs of the scaled central F RVs
 of the form
 \deqn{cf(t) = cf_FisherSnedecorNC(t,df1,df2,\delta) = exp(-\delta/2) sum_{j=1}^Inf (\delta/2)^j/j! * cf_FisherSnedecor(t*(df1+2*j)/df1,df1+2*j,df2),}
 where \eqn{cf_FisherSnedecor(t,df1,df2)} are the CFs of central F RVs with parameters \eqn{df1} and \eqn{df2}.
 Hence,the characteristic function of \eqn{Y = coef(1)*Y1 + ... + coef(N)*YN is cf_Y(t) = cf_Y1(coef(1)*t) * ... *cf_YN(coef(N)*t)},
 where \eqn{cf_Yi(t)} is evaluated with the parameters \eqn{df1_i}, \eqn{df2_i}, and \eqn{\delta_i}.
+}
+\note{
+Ver.: 20-Sep-2018 00:03:52 (consistent with Matlab CharFunTool v1.3.0, 10-Aug-2018 16:04:30).
 }
 \examples{
 ## EXAMPLE 1
@@ -90,11 +101,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Trapezoidal}},
   \code{\link{cfS_Triangular}},
   \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PDF}}, \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
+  \code{\link{cfX_Exponential}},
+  \code{\link{cfX_FisherSnedecor}},
+  \code{\link{cfX_Gamma}}, \code{\link{cfX_InverseGamma}},
+  \code{\link{cfX_LogNormal}},
   \code{\link{cf_ArcsineSymmetric}},
   \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
   \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
@@ -107,6 +117,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_LogRV_ChiSquare}},
   \code{\link{cf_LogRV_FisherSnedecorNC}},
   \code{\link{cf_LogRV_FisherSnedecor}},
+  \code{\link{cf_LogRV_MeansRatioW}},
+  \code{\link{cf_LogRV_MeansRatio}},
+  \code{\link{cf_LogRV_WilksLambdaNC}},
+  \code{\link{cf_LogRV_WilksLambda}},
   \code{\link{cf_Normal}},
   \code{\link{cf_RectangularSymmetric}},
   \code{\link{cf_Student}},

@@ -11,7 +11,12 @@ cfX_ChiSquare(t, df, ncp, coef, niid)
 
 \item{df}{the degrees of freedom parameter \code{df > 0}. If empty, default value is \code{df = 1}.}
 
-\item{npc}{the non-centrality parameter \code{ncp > 0}. If empty, default value is \code{ncp = 0}.}
+\item{ncp}{the non-centrality parameter \code{ncp > 0}. If empty, default value is \code{ncp = 0}.}
+
+\item{coef}{vector of coefficients of the linear combination of Chi-square distributed random variables.
+If coef is scalar, it is assumed that all coefficients are equal. If empty, default value is \code{coef = 1}.}
+
+\item{niid}{scalar convolution coeficient.}
 }
 \value{
 Characteristic function \eqn{cf(t)} of the CHI-SUQARE distribution.
@@ -26,6 +31,9 @@ of independent CHI-SQUARE distributed random variables.
 
 The characteristic function of the CHI-SQUARE distribution is defined
 by \deqn{cf(t) = (1 - 2*i*t )^(df/2) * exp((i*t*ncp)/(1-2*i*t)).}
+}
+\note{
+Ver.: 16-Sep-2018 19:20:45 (consistent with Matlab CharFunTool v1.3.0, 24-Jun-2017 10:07:43).
 }
 \examples{
 ## EXAMPLE 1
@@ -77,11 +85,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Rectangular}}, \code{\link{cfS_Student}},
   \code{\link{cfS_Trapezoidal}},
   \code{\link{cfS_Triangular}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PDF}}, \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
+  \code{\link{cfX_Exponential}},
+  \code{\link{cfX_FisherSnedecor}},
+  \code{\link{cfX_Gamma}}, \code{\link{cfX_InverseGamma}},
+  \code{\link{cfX_LogNormal}},
   \code{\link{cf_ArcsineSymmetric}},
   \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
   \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
@@ -95,6 +102,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_LogRV_ChiSquare}},
   \code{\link{cf_LogRV_FisherSnedecorNC}},
   \code{\link{cf_LogRV_FisherSnedecor}},
+  \code{\link{cf_LogRV_MeansRatioW}},
+  \code{\link{cf_LogRV_MeansRatio}},
+  \code{\link{cf_LogRV_WilksLambdaNC}},
+  \code{\link{cf_LogRV_WilksLambda}},
   \code{\link{cf_Normal}},
   \code{\link{cf_RectangularSymmetric}},
   \code{\link{cf_Student}},

@@ -24,24 +24,27 @@ plotReIm(f, x, title, xmin, xmax, dx = 0.1, xlab, ylab, px = 0, py = 0,
 
 \item{ylab}{a title for the \eqn{y} axis: see \link[graphics]{title}.}
 
-\item{px}{numerical values (number or vector) in which are auxiliary line on axis \eqn{x} render default value \code{px = 0}.}
+\item{px}{numerical values (number or vector) in which are auxiliary lines on axis \eqn{x} rendered, default value \code{px = 0}.}
 
-\item{py}{numerical values (number or vector) in which are auxiliary line on axis \eqn{y} render default value \code{py = 0}.}
+\item{py}{numerical values (number or vector) in which are auxiliary lines on axis \eqn{y} rendered, default value \code{py = 0}.}
 
-\item{labelx}{rendering auxiliary line default value TRUE.}
+\item{labelx}{rendering auxiliary line, default value \code{TRUE}.}
 
-\item{labely}{rendering auxiliary line default value TRUE.}
+\item{labely}{rendering auxiliary line, default value \code{TRUE}.}
 }
 \value{
 Graf of function \code{f} in argument \code{x} or in range \code{[xmin, xmax]} with step \code{dx}.
 }
 \description{
-\code{plotReIm(f, x, xmin, xmax)} plots graf of complex function \code{f} in real arguments \code{x} or in range \code{[xmin, xmax]} with step \code{dx}.
+\code{plotReIm(f, x, xmin, xmax)} plots values of complex function \code{f} in real arguments \code{x} or in range \code{[xmin, xmax]} with step \code{dx}.
 }
 \details{
 Function with optional parameters must be pass as lambda function \code{f = function(x) f(x, optional parameters)}.
 }
+\note{
+Ver.: 22-Sep-2018 20:32:20.
+}
 \seealso{
-Other Graphic Function: \code{\link{plotGraf}},
-  \code{\link{plotPolar}}
+Other Graphic Function: \code{\link{plotPolar}},
+  \code{\link{plotReIm2}}
 }

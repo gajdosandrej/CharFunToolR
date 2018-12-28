@@ -23,6 +23,9 @@ of the Pearson type V distribution with the parameters \eqn{alpha} (shape, \code
 \deqn{cfX_PearsonV(t, \alpha, \beta) = (2/gamma(\alpha)) * (-1i*t/\beta)^(\alpha/2) * besselk(\alpha,2*sqrt(-1i*t/\beta)),}
 where \eqn{besselk(a,z)} denotes the modified Bessel function of the second order.
 }
+\note{
+Ver.: 16-Sep-2018 19:28:37 (consistent with Matlab CharFunTool v1.3.0, 15-Nov-2016 13:36:26).
+}
 \examples{
 ## EXAMPLE 1
 # CF of the PearsonV distribution

@@ -25,7 +25,7 @@
 
 #' @param t vector or array of real values, where the CF is evaluated.
 #' @param df the degrees of freedom parameter \code{df > 0}. If empty, default value is \code{df = 1}.
-#' @param npc the non-centrality parameter \code{ncp > 0}. If empty, default value is \code{ncp = 0}.
+#' @param ncp the non-centrality parameter \code{ncp > 0}. If empty, default value is \code{ncp = 0}.
 #' @param coef vector of the coefficients of the linear combination
 #' of the chi-squared random variables. If coef is scalar,
 #' it is assumed that all coefficients are equal. If empty, default value is \code{coef = 1}.
@@ -34,6 +34,8 @@
 #' is independently and identically distributed random variable. If empty, default value is \code{niid = 1}.
 #'
 #' @return Characteristic function \eqn{cf(t)} of a linear combination of independent CHI-SQUARE random variables.
+#'
+#' @note Ver.: 16-Sep-2018 18:16:32 (consistent with Matlab CharFunTool v1.3.0, 10-May-2017 18:11:50).
 #'
 #' @example R/Examples/example_cf_ChiSquare.R
 #'

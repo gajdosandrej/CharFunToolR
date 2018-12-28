@@ -58,6 +58,9 @@ Hence, the exact characteristic function of the null distribution of
 minus log-transformed LRT statistic \eqn{\Lambda}, say \eqn{W = -log(\Lambda)} is given by
 \eqn{cf = function(t) {cf_LogRV_Beta(-(n/2)*t, (n-q-j+1)/2, (q-1)/2)}}, where \eqn{j = (1, 2, ..., p)}.
 }
+\note{
+Ver.: 16-Sep-2018 21:09:22 (consistent with Matlab CharFunTool v1.3.0, 20-Jan-2018 12:43:15).
+}
 \examples{
 ## EXAMPLE
 # LRT for testing hypothesis on equality of means

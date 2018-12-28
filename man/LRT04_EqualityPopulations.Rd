@@ -67,6 +67,9 @@ minus log-transformed LRT statistic Lambda, say \eqn{W = -log(\Lambda)} is given
 where \eqn{i = (1, 2, ..., p)}, \eqn{k = (1*o,...,q*o)} with \eqn{p}-dimensional vector
 of ones \eqn{o = (1,...,1)}  and \eqn{j = (j_1,...,j_q)} with \eqn{j_k = 1:p}.
 }
+\note{
+Ver.: 16-Sep-2018 21:10:45 (consistent with Matlab CharFunTool v1.3.0, 20-Jan-2018 12:43:15).
+}
 \examples{
 ## EXAMPLE
 # LRT for testing hypothesis on equality of populations

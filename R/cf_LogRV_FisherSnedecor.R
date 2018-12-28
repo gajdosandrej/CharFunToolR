@@ -17,9 +17,7 @@
 #' That is, the characteristic function can be derived from expression
 #' for the r-th moment of \eqn{X}, \eqn{E(X^r)} by using \eqn{(1i*t)} instead of \eqn{r}.
 #' In particular, the characteristic function of \eqn{Y = log(X)} is defined by
-#' \deqn{cf_Y(t) = (df2/df1)^(1i*t) * gamma(df1/2 + 1i*t) / gamma(df1/2) * gamma(df2/2 - 1i*t) / gamma(df2/2) * 1F1(-1i*t;df1/2;-\lambda/2),}
-#' where \eqn{1F1(a;b;z)} is the hypergeometric function confluent hypergeometric function,
-#' also known as the Kummer function \eqn{M(a,b,z)}.
+#' \deqn{cf_Y(t) = (df2/df1)^(1i*t) * gamma(df1/2 + 1i*t) / gamma(df1/2) * gamma(df2/2 - 1i*t) / gamma(df2/2).}
 #'
 #' Hence,the characteristic function of \eqn{Y  = coef(1)*Y1 + ... + coef(N)*YN}
 #' is  \deqn{cf_Y(t) =  cf_Y1(coef(1)*t) * ... * cf_YN(coef(N)*t),} where \eqn{cf_Yi(t)}
@@ -33,8 +31,6 @@
 #' @param niid scalar convolution coeficient \code{niid}, such that \eqn{Z = Y + ... + Y}
 #' is sum of \eqn{niid} iid random variables \eqn{Y}, where each \eqn{Y = sum_{i=1}^N coef(i) * log(X_i)}
 #' is independently and identically distributed random variable. If empty, default value is \code{niid = 1}.
-#' @param tol tolerance factor for selecting the Poisson weights, i.e. such that \eqn{PoissProb > tol}.
-#' If empty, default value is \code{tol = 1e-12}.
 #'
 #' @return Characteristic function \eqn{cf(t)} of a linear combination
 #' of independent  LOG-TRANSFORMED FISHER-SNEDECOR F random variables.
@@ -43,6 +39,8 @@
 #' \url{https://en.wikipedia.org/wiki/F-distribution}.
 #'
 #' @family Continuous Probability Distribution
+#'
+#' @note Ver.: 20-Sep-2018 19:26:09 (consistent with Matlab CharFunTool v1.3.0, 10-Aug-2018 15:46:49).
 #'
 #' @example R/Examples/example_cf_LogRV_FisherSnedecor.R
 #'

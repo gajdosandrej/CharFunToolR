@@ -107,6 +107,8 @@
 #' based on numerical inversion of the compound empirical characteristic function
 #' of frequency and severity. ArXiv preprint, 2017, arXiv:1701.08299.
 #'
+#' @note Ver.: 16-Sep-2018 17:59:07 (consistent with Matlab CharFunTool v1.3.0, 22-Sep-2017 11:11:11).
+#'
 #' @example R/Examples/example_cf2DistGP.R
 #'
 #' @export

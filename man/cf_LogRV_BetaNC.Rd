@@ -5,7 +5,7 @@
 \title{Characteristic function of a linear combination
 of independent LOG-TRANSFORMED non-central BETA random variables}
 \usage{
-cf_LogRV_BetaNC(t, alpha, beta, delta, coef, niid, tol)
+cf_LogRV_BetaNC(t, alpha, beta, delta, coef, niid, tol, type)
 }
 \arguments{
 \item{t}{vector or array of real values, where the CF is evaluated.}
@@ -25,29 +25,55 @@ is independently and identically distributed random variable. If empty, default 
 
 \item{tol}{tolerance factor for selecting the Poisson weights, i.e. such that \eqn{PoissProb > tol}.
 If empty, default value is \code{tol = 1e-12}.}
+
+\item{type}{indicator of the type of the noncentral distribution
+(Type I = 1 or Type II = 2). If empty, default value is \code{type = 1}.}
 }
 \value{
 Characteristic function \eqn{cf(t)} of a linear combination
 of independent LOG-TRANSFORMED non-central BETA random variables.
 }
 \description{
-\code{cf_LogRV_BetaNC(t, alpha, beta, delta, coef, niid, tol)} evaluates characteristic function
+\code{cf_LogRV_BetaNC(t, alpha, beta, delta, coef, niid, tol, type)} evaluates characteristic function
 of a linear combination (resp. convolution) of independent LOG-TRANSFORMED non-central BETA random variables,
-with distributions \eqn{Beta(\alpha_i,\beta_i,\delta_i)} defined on the interval \eqn{(0,1)}.
+(Type I and Type II), with their distributions specified
+by the parameters \eqn{\alpha_i, \beta_i}, and the noncentrality parameters \eqn{\delta_i}.
+
+The noncentral beta distribution has two types.
+The Type I is the distribution  of the random variable \eqn{B1 = X1/(X1+X2)}, \eqn{X1 ~ Gamma(\alpha, \gamma, \delta)}
+and \eqn{X2 ~ Gamma(\beta, \gamma)}. The Type II noncentral beta distribution is the distribution
+of the ratio random variable \eqn{B2 = X1/(X1+X2)}, where \eqn{X1 ~ Gamma(\alpha, \gamma)} and
+\eqn{X2 ~ Gamma(\beta, \gamma, \delta)}.
 
 That is, \code{cf_LogRV_BetaNC} evaluates the characteristic function \eqn{cf(t)}
 of \eqn{Y = coef_i*log(X_1) +...+ coef_N*log(X_N)}, where \eqn{X_i ~ Beta(\alpha_i,\beta_i,\delta_i)}
 are inedependent RVs, with the shape parameters \eqn{\alpha_i > 0}, \eqn{\beta_i > 0},
 and the noncentrality parameters \eqn{\delta_i > 0}, for \eqn{i = 1,...,N}.
 
-The characteristic function of \eqn{Y = log(X)} with \eqn{X ~ Beta(\alpha,\beta,\delta)}
-is Poisson mixture of CFs of the central log-transformed Beta RVs of the form
-\deqn{cf(t) = cf_LogRV_BetaNC(t,\alpha,\beta,\delta) = exp(-\delta/2) sum_{j=1}^Inf (\delta/2)^j/j! * cf_LogRV_Beta(\alpha+j,\beta),}
-where \eqn{cf_LogRV_Beta(\alpha+j,\beta)} are the CFs of central log-transformed
-Beta RVs with parameters \eqn{\alpha+j} and \eqn{\beta}.
-Hence, the characteristic function of \eqn{Y  = coef(1)*Y1 + ... + coef(N)*YN} is
-\deqn{cf_Y(t) =  cf_Y1(coef(1)*t) * ... * cf_YN(coef(N)*t),}
-where \eqn{cf_Yi(t)} is evaluated with the parameters \eqn{\alpha(i)} and \eqn{beta(i)}.
+For Type I noncentral beta distribution, the characteristic
+function of \eqn{Y = log(X)} with \eqn{X ~ Beta(\alpha, \beta, \delta)} is Poisson mixture
+of CFs of the central log-transformed Beta RVs of the form
+\deqn{cf(t) = cf_LogRV_BetaNC(t, \alpha, \beta, \delta) = exp(-\delta/2) * sum_{j=1}^Inf (\delta/2)^j/j! * cf_LogRV_Beta(\alpha+j, \beta)}
+where \eqn{cf_LogRV_Beta(\alpha+j, \beta)} are the CFs of central log-transformed Beta RVs
+with parameters \eqn{\alpha+j} and \eqn{\beta}. Alternatively,
+\deqn{cf(t) = cf_LogRV_BetaNC(t, \alpha, \beta, \delta) = Gamma(\alpha+1i*t)/Gamma(\alpha) * Gamma(\alpha+\beta)/Gamma(\alpha+\beta+1i*t) * exp(-\delta/2) * 2F2(\alpha+\beta, \alpha+1i*t; \alpha, \alpha+\beta+1i*t; \delta/2)},
+where \eqn{2F2(a,b,;c,d;z)} is hypergeometric function.
+
+For Type II noncentral beta distribution, the characteristic function
+of \eqn{Y = log(X)} with \eqn{X ~ Beta(\alpha, \beta, \delta)} is Poisson mixture of CFs
+of the central log-transformed Beta RVs of the form
+\deqn{cf(t) = cf_LogRV_BetaNC(t, \alpha, \beta, \delta) = exp(-\delta/2) * sum_{j=1}^Inf (\delta/2)^j/j! * cf_LogRV_Beta(\alpha, \beta+j)}
+where \eqn{cf_LogRV_Beta(\alpha, \beta+j)} are the CFs of central log-transformed Beta RVs with parameters \eqn{\alpha} and \eqn{\beta+j}.
+Alternatively,
+\deqn{cf(t) = cf_LogRV_BetaNC(t, \alpha, \beta, \delta) = Gamma(\alpha+1i*t)/Gamma(\alpha) * Gamma(\alpha+\beta)/Gamma(\alpha+ \beta+1i*t) * 1F1(1i*t;1i*t+(\alpha+\beta); -\delta/2) = cf_LogRV_Beta(t, \alpha, \beta) * 1F1(1i*t;1i*t+(\alpha+\beta);-\delta/2)}
+where \eqn{1F1(a;b;z)} is hypergeometric function.
+
+Hence,the characteristic function of \eqn{Y  = coef(1)*Y1 + ... + coef(N)*YN}
+is  \eqn{cf_Y(t) =  cf_Y1(coef(1)*t) * ... * cf_YN(coef(N)*t)}, where \eqn{cf_Yi(t)} is evaluated
+with the parameters \eqn{\alpha(i)} and \eqn{\beta(i)}.
+}
+\note{
+Ver.: 20-Sep-2018 00:17:22 (consistent with Matlab CharFunTool v1.3.0, 06-Jul-2018 15:10:17).
 }
 \examples{
 ## EXAMPLE 1
@@ -59,10 +85,23 @@ coef  <- -1
 t <- seq(from = -10,
          to = 10,
          length.out = 201)
+functions_to_plot <- list(function(t) cf_LogRV_BetaNC(t, alpha, beta, delta, coef, type = 1),
+                          function(t) cf_LogRV_BetaNC(t, alpha, beta, delta, coef, type = 2))
+plotReIm2(functions_to_plot, list(t, t),
+          title = 'CF of minus log-transformed Type I and II Beta RV')
+
+
+type <- 1
 plotReIm(function(t)
-        cf_LogRV_BetaNC(t, alpha, beta, delta, coef),
+        cf_LogRV_BetaNC(t, alpha, beta, delta, coef, type),
         t,
-        title = 'CF of minus log-transformed Beta RV')
+        title = 'CF of minus log-transformed Type I and II Beta RV')
+par(new=TRUE)
+type <- 2
+plotReIm(function(t)
+        cf_LogRV_BetaNC(t, alpha, beta, delta, coef, type),
+        t,
+        title = 'CF of minus log-transformed Type I and II Beta RV')
 
 ## EXAMPLE 2
 # CDF/PDF of the minus log-transformed non-central Beta RV with delta = 1
@@ -98,11 +137,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Trapezoidal}},
   \code{\link{cfS_Triangular}},
   \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PDF}}, \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
+  \code{\link{cfX_Exponential}},
+  \code{\link{cfX_FisherSnedecor}},
+  \code{\link{cfX_Gamma}}, \code{\link{cfX_InverseGamma}},
+  \code{\link{cfX_LogNormal}},
   \code{\link{cf_ArcsineSymmetric}},
   \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
   \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
@@ -115,6 +153,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_LogRV_ChiSquare}},
   \code{\link{cf_LogRV_FisherSnedecorNC}},
   \code{\link{cf_LogRV_FisherSnedecor}},
+  \code{\link{cf_LogRV_MeansRatioW}},
+  \code{\link{cf_LogRV_MeansRatio}},
+  \code{\link{cf_LogRV_WilksLambdaNC}},
+  \code{\link{cf_LogRV_WilksLambda}},
   \code{\link{cf_Normal}},
   \code{\link{cf_RectangularSymmetric}},
   \code{\link{cf_Student}},

@@ -11,6 +11,12 @@
 #' are inedependent RVs, with \eqn{df1_i} and \eqn{df2_i} degrees of freedom,
 #' and the noncentrality parameters \eqn{\delta_i >0}, for \eqn{i = 1,...,N}.
 #'
+#' Random variable \eqn{X} has non-central \eqn{F} distribution with \eqn{df1} and \eqn{df2}
+#' degrees of freedom and the non-centrality parameter \eqn{\delta} if
+#' \eqn{X = (X1/df1)/(X2/df2)} where \eqn{X1 ~ ChiSquare(df1, \delta)},
+#' i.e. with non-central chi-square distribution, and \eqn{X2 ~ ChiSquare(df2)} is independent
+#' random variable with central chi-square distribution.
+#'
 #' The characteristic function of X ~ F(df1,df2,delta) is Poisson mixture of the CFs of the scaled central F RVs
 #' of the form
 #' \deqn{cf(t) = cf_FisherSnedecorNC(t,df1,df2,\delta) = exp(-\delta/2) sum_{j=1}^Inf (\delta/2)^j/j! * cf_FisherSnedecor(t*(df1+2*j)/df1,df1+2*j,df2),}
@@ -28,6 +34,7 @@
 #' is independently and identically distributed random variable. If empty, default value is \code{niid = 1}.
 #' @param tol tolerance factor for selecting the Poisson weights, i.e. such that \eqn{PoissProb > tol}.
 #' If empty, default value is \code{tol = 1e-12}.
+#' @param delta non-centrality parameter.
 #'
 #' @return Characteristic function \eqn{cf(t)} of a linear combination
 #' of independent non-central Fisher-Snedecor random variables.
@@ -37,6 +44,8 @@
 #'
 #' @family Continuous Probability Distribution
 #' @family Non-central Probability Distribution
+#'
+#' @note Ver.: 20-Sep-2018 00:03:52 (consistent with Matlab CharFunTool v1.3.0, 10-Aug-2018 16:04:30).
 #'
 #' @example R/Examples/example_cf_FisherSnedecorNC.R
 #'

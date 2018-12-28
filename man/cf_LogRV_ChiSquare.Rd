@@ -18,8 +18,6 @@ If coef is scalar, it is assumed that all coefficients are equal. If empty, defa
 \item{niid}{scalar convolution coeficient \code{niid}, such that \eqn{Z = Y + ... + Y}
 is sum of \eqn{niid} iid random variables \eqn{Y}, where each \eqn{Y = sum_{i=1}^N coef(i) * log(X_i)}
 is independently and identically distributed random variable. If empty, default value is \code{niid = 1}.}
-
-\item{delta}{vector of the non-centrality parameters \code{delta > 0}. If empty, default value is \code{delta = 0}.}
 }
 \value{
 Characteristic function \eqn{cf(t)} of a linear combination
@@ -44,6 +42,9 @@ In particular, the characteristic function of \eqn{Y = log(X)} is
 Hence,the characteristic function of \eqn{Y  = coef_1*X_1 +...+ coef_N*X_N}
 is  \deqn{cf_Y(t) =  cf_1(coef_1*t) *...* cf_N(coef_N*t),}
 where \eqn{cf_i(t)} is the characteristic function of the ChiSquare distribution with \eqn{df_i} degrees of freedom.
+}
+\note{
+Ver.: 16-Sep-2018 18:34:40 (consistent with Matlab CharFunTool v1.3.0, 02-Jun-2017 12:08:24).
 }
 \examples{
 ## EXAMPLE 1
@@ -88,11 +89,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cfS_Trapezoidal}},
   \code{\link{cfS_Triangular}},
   \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}}, \code{\link{cfX_Gamma}},
-  \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}}, \code{\link{cfX_Normal}},
-  \code{\link{cfX_PDF}}, \code{\link{cfX_Rectangular}},
-  \code{\link{cfX_Triangular}},
+  \code{\link{cfX_Exponential}},
+  \code{\link{cfX_FisherSnedecor}},
+  \code{\link{cfX_Gamma}}, \code{\link{cfX_InverseGamma}},
+  \code{\link{cfX_LogNormal}},
   \code{\link{cf_ArcsineSymmetric}},
   \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
   \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
@@ -105,6 +105,10 @@ Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
   \code{\link{cf_LogRV_ChiSquareNC}},
   \code{\link{cf_LogRV_FisherSnedecorNC}},
   \code{\link{cf_LogRV_FisherSnedecor}},
+  \code{\link{cf_LogRV_MeansRatioW}},
+  \code{\link{cf_LogRV_MeansRatio}},
+  \code{\link{cf_LogRV_WilksLambdaNC}},
+  \code{\link{cf_LogRV_WilksLambda}},
   \code{\link{cf_Normal}},
   \code{\link{cf_RectangularSymmetric}},
   \code{\link{cf_Student}},

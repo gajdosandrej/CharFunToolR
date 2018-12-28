@@ -15,7 +15,10 @@ ChebPoints(N, interval)
 Function returns \eqn{N} chebpoints on the given interval.
 }
 \description{
-\code{ChebPoints(N, interval)} evaluates Evaluate \eqn{N} chebpoints on the given interval \eqn{[a,b]}.
+\code{ChebPoints(N, interval)} evaluates \eqn{N} chebpoints on the given interval \eqn{[a,b]}.
+}
+\note{
+Ver.: 16-Sep-2018 21:16:55 (consistent with Matlab CharFunTool v1.3.0, 24-Jul-2017 10:06:48).
 }
 \examples{
 ## EXAMPLE 1
@@ -45,7 +48,14 @@ print(list(
 ))
 }
 \seealso{
-Other Special Function: \code{\link{GammaLog}},
+Other Utility Function: \code{\link{ChebPoly}},
+  \code{\link{GammaLog}}, \code{\link{GammaMultiLog}},
+  \code{\link{GammaMulti}}, \code{\link{GammaZX}},
+  \code{\link{Hypergeom1F1MatApprox}},
+  \code{\link{Hypergeom1F1Mat}},
+  \code{\link{Hypergeom2F1Mat}},
+  \code{\link{Hypergeom2F1}},
+  \code{\link{HypergeompFqMat}},
   \code{\link{hypergeom1F1}},
   \code{\link{interpBarycentric}}
 }

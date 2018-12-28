@@ -47,6 +47,8 @@
 #'
 #' @return Characteristic function \eqn{cf(t)} of the Delaporte distribution.
 #'
+#' @note Ver.: 16-Sep-2018 18:58:36 (consistent with Matlab CharFunTool v1.3.0, 15-Nov-2016 13:36:26).
+#'
 #' @example R/Examples/example_cfN_Delaporte.R
 #'
 #' @export
