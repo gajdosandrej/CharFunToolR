@@ -47,29 +47,29 @@ matplot(cbind(result0$x, result$x), cbind(result0$pdf, result$pdf),
         main = expression(paste('PDFs of -log(',Lambda,') under null and alternative hypothesis')))
 
 ## EXAMPLE 4 (Compare exact vs. simulated non-central Wilk's distribution)
-# p <- 10 # p - length of the sample vectors (dimensionality)
-# n <- 30 # n - sample size / degrees of freedon
-# q <- 5  # q - degrees of freedom due to hypothesis model
-# N <- 10000  # N - number of simulation samples
-# M <- replicate(q, runif(p)) # M - the (true) mean (p x q)-matrix
-# delta <- eigen(M %*% t(M))$values # delta - the eigenvalues of non-centrality matrix
-# L <- rep(0, N)
-# for(i in 1:N) {
-#         X <- replicate(n, rnorm(p))
-#         E <- X %*% t(X)
-#         Y <- replicate(q, rnorm(p)) + M
-#         H <- Y %*% t(Y)
-#         L[i] <- det((E + H) / E)
-# }
-# # Exact and the empirical CDF of -log(L)
-# cf <- function(t) cf_LogRV_WilksLambdaNC(t, p, n, q, delta, -1)
-# options <- list()
-# options$xMin <- 0
-# options$SixSigmaRule <- 6
-# prob <- c(0.9, 0.95, 0.99)
-# result <- cf2DistGP(cf, prob = prob, options = options)
-# Fn <- ecdf(L)
-# matplot(cbind(result$x, result$x), cbind(result$cdf, Fn(result$x)),
-#         xlab = "x", ylab = "CDF / ECDF",
-# title = "Exact vs. empirical CDF of the non-central distribution")
+p <- 10 # p - length of the sample vectors (dimensionality)
+n <- 30 # n - sample size / degrees of freedon
+q <- 5  # q - degrees of freedom due to hypothesis model
+N <- 10000  # N - number of simulation samples
+M <- replicate(q, runif(p)) # M - the (true) mean (p x q)-matrix
+delta <- eigen(M %*% t(M))$values # delta - the eigenvalues of non-centrality matrix
+L <- rep(0, N)
+for(i in 1:N) {
+        X <- replicate(n, rnorm(p))
+        E <- X %*% t(X)
+        Y <- replicate(q, rnorm(p)) + M
+        H <- Y %*% t(Y)
+        L[i] <-  -log(det(E)/det(E + H))
+}
+# Exact and the empirical CDF of -log(L)
+cf <- function(t) cf_LogRV_WilksLambdaNC(t, p, n, q, delta, -1)
+options <- list()
+options$xMin <- 0
+options$SixSigmaRule <- 6
+prob <- c(0.9, 0.95, 0.99)
+result <- cf2DistGP(cf, prob = prob, options = options)
+Fn <- ecdf(L)
+matplot(cbind(result$x, result$x), cbind(result$cdf, Fn(result$x)),
+        xlab = "x", ylab = "CDF / ECDF",
+main = "Exact vs. empirical CDF of the non-central distribution")
 
