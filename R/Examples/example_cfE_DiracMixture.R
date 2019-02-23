@@ -16,12 +16,12 @@ set.seed(101)
 n <- 1000
 data <- c(rnorm(3 * n, 5, 0.2), rt(n, 3), rchisq(n, 1))
 bandwidth <- 0.25
-cf_DATA   <- function(t)
-        cfE_DiracMixture(t, data, weights)
-cf_KERNEL <- function(t)
-        exp(-(bandwidth * t) ^ 2 / 2)
-cf <- function(t)
-        cf_DATA(t) * cf_KERNEL(t)
+cf_DATA   <- function(t) {
+        cfE_DiracMixture(t, data, weights)}
+cf_KERNEL <- function(t) {
+        exp(-(bandwidth * t) ^ 2 / 2)}
+cf <- function(t) {
+        cf_DATA(t) * cf_KERNEL(t)}
 t <- seq(-50, 50, length.out = 2 ^ 10)
 plotReIm(cf, t, title = "Smoothed Empirical CF")
 result <- cf2DistGP(cf)

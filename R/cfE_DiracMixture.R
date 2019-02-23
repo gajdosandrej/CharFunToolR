@@ -81,8 +81,18 @@ cfE_DiracMixture <- function(t, d, weight, cfX) {
         szcoefs <- dim(t(d))
         szcoefs <- szcoefs[1] * szcoefs[2]
 
-        szt <- dim(t)
-        sz <- dim(t(t))[1] * dim(t(t))[2]
+        sz <- numeric()
+        szt <- numeric()
+        isvector_t <- TRUE
+        if(is.vector(t)) {
+                szt <- dim(t(t))
+                sz <- szt[1] * szt[2]
+        } else {
+                isvector_t <- FALSE
+                szt <- dim(t)
+                sz <- szt[1] * szt[2]
+        }
+
 
         szcLimit <- ceiling(1e3 / (sz / 2 ^ 16))
         idc <- (1:(trunc(szcoefs / szcLimit) + 1))
@@ -107,13 +117,16 @@ cfE_DiracMixture <- function(t, d, weight, cfX) {
                 if (length(weight) == 1) {
                         cf <- cf + apply(weight * aux, 1, sum)
                 } else {
-                        cf <- cf + apply(aux * weight[idx], 1, sum)
-                        cf <- cf + apply(t(apply(aux * weight[idx], 1, FUN = '*', c(1,2,3))), 1, sum)
+                        cf_aux <- t(t(aux) * weight[idx])
+                        cf <- cf + apply(cf_aux, 1, sum)
                 }
 
         }
 
         dim(cf) <- szt
+        if(isvector_t) {
+                cf <- c(cf)
+        }
 
         return(cf)
 }
