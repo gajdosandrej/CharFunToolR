@@ -18,7 +18,7 @@
 #'
 #' @return  Function returns values of the logarithm of multivariate gamma function of order \code{p} evaluated in points \code{z}.
 #'
-#' @note Ver.: 01-Oct-2018 13:55:47 (consistent with Matlab CharFunTool v1.3.0, 17-Aug-2018 19:45:37).
+#' @note Ver.: 18-Sep-2019 17:14:16 (consistent with Matlab CharFunTool v1.3.0, 17-Aug-2018 19:45:37).
 #'
 #' @example R/Examples/example_GammaMultiLog.R
 #'
@@ -46,7 +46,8 @@ GammaMultiLog <- function(z, p, funmode) {
         sz <- dim(z)
         z <- c(z)
 
-        f <- (p * (p - 1) / 2) * log(pi)
+        # This was corrected on September 18, 2019 (from f = (p*(p-1)/2)*log(pi))
+        f <- (p * (p - 1) / 4) * log(pi)
 
         for(j in 1:p) {
                 f <- f + GammaLog(z - (j - 1) / 2)

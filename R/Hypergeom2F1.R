@@ -437,7 +437,7 @@ hygfz <- function(a, b, c, z) {
                                 t0 <- a - b - k
                                 g0 <- gamma(t0)
                                 gcbk <- gamma(c - b - k)
-                                zf0 < zf0 + zr * g0 / gcbk
+                                zf0 <- zf0 + zr * g0 / gcbk
                         }
 
                         if(mab == 0) {
