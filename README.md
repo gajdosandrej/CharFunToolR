@@ -70,4 +70,10 @@ To get a taste of what computing with CharFunToolR is like, type
 License
 =======
 
-See `LICENSE` for CharFunToolR licensing information.
+See `LICENSE` for CharFunToolR licensing information. 
+
+
+Acknowledgements
+================ 
+
+This work was supported by the Slovak Research and Development Agency under the contract No. APVV-17-0568, the Scientific Grant Agency of the Slovak Republic (VEGA), VEGA grant No.1/0311/18 and the Internal Research Grant System of Faculty of Science, P.J. Šafárik University in Košice (VVGS PF UPJŠ) — project VVGS-PF-2018-792.
