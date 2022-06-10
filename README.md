@@ -66,6 +66,7 @@ To get a taste of what computing with CharFunToolR is like, type
    result <- cf2DistGP(cf)   # Invert the CF to get the CDF and PDF   
 ```
 
+Other interactive examples can be found [here](https://github.com/gajdosandrej/CFTR_JupyterNotebooks). 
 
 License
 =======
