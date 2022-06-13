@@ -97,10 +97,15 @@ result <- cf2DistGP(cf, x, prob, options)
     probability distributions. STAMM Verlag GmbH, Essen, Germany. ISBN 3-87773-025-6.
 }
 \seealso{
-Other Discrete Probability Distribution: \code{\link{cfN_Binomial}},
-  \code{\link{cfN_Delaporte}}, \code{\link{cfN_Geometric}},
-  \code{\link{cfN_Logarithmic}},
-  \code{\link{cfN_NegativeBinomial}},
-  \code{\link{cfN_Poisson}},
-  \code{\link{cfN_PolyaEggenberger}}
+Other Discrete Probability Distribution: 
+\code{\link{cfN_Binomial}()},
+\code{\link{cfN_Delaporte}()},
+\code{\link{cfN_Geometric}()},
+\code{\link{cfN_Logarithmic}()},
+\code{\link{cfN_NegativeBinomial}()},
+\code{\link{cfN_Poisson}()},
+\code{\link{cfN_PolyaEggenberger}()},
+\code{\link{cfN_Quinkert}()},
+\code{\link{cfN_Waring}()}
 }
+\concept{Discrete Probability Distribution}

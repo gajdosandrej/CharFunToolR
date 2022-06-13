@@ -25,6 +25,8 @@ plotPolar(angle, radius, title = "", type = "l", color = "blue")
 Ver.: 22-Sep-2018 20:35:05.
 }
 \seealso{
-Other Graphic Function: \code{\link{plotReIm2}},
-  \code{\link{plotReIm}}
+Other Graphic Function: 
+\code{\link{plotReIm2}()},
+\code{\link{plotReIm}()}
 }
+\concept{Graphic Function}

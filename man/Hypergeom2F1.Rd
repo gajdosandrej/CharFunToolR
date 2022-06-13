@@ -54,14 +54,22 @@ S. Zhang & J. Jin "Computation of Special Functions" (Wiley, 1996).
 Converted by Ben Barrowes (barrowes@alum.mit.edu).
 }
 \seealso{
-Other Utility Function: \code{\link{ChebPoints}},
-  \code{\link{ChebPoly}}, \code{\link{GammaLog}},
-  \code{\link{GammaMultiLog}}, \code{\link{GammaMulti}},
-  \code{\link{GammaZX}},
-  \code{\link{Hypergeom1F1MatApprox}},
-  \code{\link{Hypergeom1F1Mat}},
-  \code{\link{Hypergeom2F1Mat}},
-  \code{\link{HypergeompFqMat}},
-  \code{\link{hypergeom1F1}},
-  \code{\link{interpBarycentric}}
+Other Utility Function: 
+\code{\link{ChebCoefficients}()},
+\code{\link{ChebPoints}()},
+\code{\link{ChebPolyValues}()},
+\code{\link{ChebPoly}()},
+\code{\link{ChebValues}()},
+\code{\link{GammaLog}()},
+\code{\link{GammaMultiLog}()},
+\code{\link{GammaMulti}()},
+\code{\link{GammaZX}()},
+\code{\link{Hypergeom1F1MatApprox}()},
+\code{\link{Hypergeom1F1Mat}()},
+\code{\link{Hypergeom2F1Mat}()},
+\code{\link{HypergeompFqMat}()},
+\code{\link{InterpChebValues}()},
+\code{\link{hypergeom1F1}()},
+\code{\link{interpBarycentric}()}
 }
+\concept{Utility Function}

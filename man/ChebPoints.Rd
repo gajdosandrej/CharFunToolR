@@ -23,15 +23,18 @@ Ver.: 16-Sep-2018 21:16:55 (consistent with Matlab CharFunTool v1.3.0, 24-Jul-20
 \examples{
 ## EXAMPLE 1
 # Barycentric interpolant of the Sine function on (-pi,pi)
+domain<-c(-pi,pi)
 x <- ChebPoints(32, c(-pi, pi))
-f <- sin(x)
+f <- list(sin(x[[1]]))
 xNew <- seq(from = -pi,
             to = pi,
             length.out = 201)
-fNew <- interpBarycentric(x, f, xNew)[[2]]
+fNew <- interpBarycentric(x[[1]], f[[1]], xNew)[[2]]
+fCheb<-InterpChebValues(f,xNew,domain)
+fTrue<-sin(xNew)
 plot(
-        x,
-        f,
+        x[[1]],
+        f[[1]],
         type = "p",
         xlab = "",
         ylab = "",
@@ -42,20 +45,43 @@ plot(
 )
 lines(xNew, fNew, col = "blue",  lwd = 2)
 print(list(
+        "fTrue"=fTrue,
+        "fCheb"=fCheb,
         "xNew" = xNew,
         "fNew" = fNew,
         "sin(xNew)" = sin(xNew)
 ))
+
+## EXAMPLE 2
+#Integral of the Sine function on the interval (0,pi)
+domain<-c(0,pi)
+x<-ChebPoints(32,domain)
+f<-list(sin(x[[1]]))
+Itrue<-2
+Icalc<-t(x[[2]])\%*\%f[[1]]
+print(list(
+        "Itrue"=Itrue,
+        "Icalc"=Icalc
+))
+
 }
 \seealso{
-Other Utility Function: \code{\link{ChebPoly}},
-  \code{\link{GammaLog}}, \code{\link{GammaMultiLog}},
-  \code{\link{GammaMulti}}, \code{\link{GammaZX}},
-  \code{\link{Hypergeom1F1MatApprox}},
-  \code{\link{Hypergeom1F1Mat}},
-  \code{\link{Hypergeom2F1Mat}},
-  \code{\link{Hypergeom2F1}},
-  \code{\link{HypergeompFqMat}},
-  \code{\link{hypergeom1F1}},
-  \code{\link{interpBarycentric}}
+Other Utility Function: 
+\code{\link{ChebCoefficients}()},
+\code{\link{ChebPolyValues}()},
+\code{\link{ChebPoly}()},
+\code{\link{ChebValues}()},
+\code{\link{GammaLog}()},
+\code{\link{GammaMultiLog}()},
+\code{\link{GammaMulti}()},
+\code{\link{GammaZX}()},
+\code{\link{Hypergeom1F1MatApprox}()},
+\code{\link{Hypergeom1F1Mat}()},
+\code{\link{Hypergeom2F1Mat}()},
+\code{\link{Hypergeom2F1}()},
+\code{\link{HypergeompFqMat}()},
+\code{\link{InterpChebValues}()},
+\code{\link{hypergeom1F1}()},
+\code{\link{interpBarycentric}()}
 }
+\concept{Utility Function}

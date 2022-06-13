@@ -98,11 +98,15 @@ probability distributions. STAMM Verlag GmbH, Essen, Germany. ISBN 3-87773-025-6
 For more details see WIKIPEDIA:
 \url{https://en.wikipedia.org/wiki/Binomial_distribution}.
 
-Other Discrete Probability Distribution: \code{\link{cfN_Delaporte}},
-  \code{\link{cfN_GeneralizedPoisson}},
-  \code{\link{cfN_Geometric}},
-  \code{\link{cfN_Logarithmic}},
-  \code{\link{cfN_NegativeBinomial}},
-  \code{\link{cfN_Poisson}},
-  \code{\link{cfN_PolyaEggenberger}}
+Other Discrete Probability Distribution: 
+\code{\link{cfN_Delaporte}()},
+\code{\link{cfN_GeneralizedPoisson}()},
+\code{\link{cfN_Geometric}()},
+\code{\link{cfN_Logarithmic}()},
+\code{\link{cfN_NegativeBinomial}()},
+\code{\link{cfN_Poisson}()},
+\code{\link{cfN_PolyaEggenberger}()},
+\code{\link{cfN_Quinkert}()},
+\code{\link{cfN_Waring}()}
 }
+\concept{Discrete Probability Distribution}

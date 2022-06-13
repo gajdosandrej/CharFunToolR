@@ -78,14 +78,22 @@ For more details on confluent hypergeometric function \eqn{1F1(a, b, z)}
 or the Kummer's (confluent hypergeometric) function \eqn{M(a, b, z)} see WIKIPEDIA:
 \url{https://en.wikipedia.org/wiki/Confluent_hypergeometric_function}.
 
-Other Utility Function: \code{\link{ChebPoints}},
-  \code{\link{ChebPoly}}, \code{\link{GammaLog}},
-  \code{\link{GammaMultiLog}}, \code{\link{GammaMulti}},
-  \code{\link{GammaZX}},
-  \code{\link{Hypergeom1F1MatApprox}},
-  \code{\link{Hypergeom1F1Mat}},
-  \code{\link{Hypergeom2F1Mat}},
-  \code{\link{Hypergeom2F1}},
-  \code{\link{HypergeompFqMat}},
-  \code{\link{interpBarycentric}}
+Other Utility Function: 
+\code{\link{ChebCoefficients}()},
+\code{\link{ChebPoints}()},
+\code{\link{ChebPolyValues}()},
+\code{\link{ChebPoly}()},
+\code{\link{ChebValues}()},
+\code{\link{GammaLog}()},
+\code{\link{GammaMultiLog}()},
+\code{\link{GammaMulti}()},
+\code{\link{GammaZX}()},
+\code{\link{Hypergeom1F1MatApprox}()},
+\code{\link{Hypergeom1F1Mat}()},
+\code{\link{Hypergeom2F1Mat}()},
+\code{\link{Hypergeom2F1}()},
+\code{\link{HypergeompFqMat}()},
+\code{\link{InterpChebValues}()},
+\code{\link{interpBarycentric}()}
 }
+\concept{Utility Function}

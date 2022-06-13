@@ -97,8 +97,10 @@ criteria by numerical inversion of their characteristic functions. \cr
 arXiv preprint arXiv:1801.02248, 2018.
 }
 \seealso{
-Other Likelihood Ratio Test: \code{\link{LRT01_Independence}},
-  \code{\link{LRT02_EqualityMeans}},
-  \code{\link{LRT03_EqualityCovariances}},
-  \code{\link{LRT05_Sphericity}}
+Other Likelihood Ratio Test: 
+\code{\link{LRT01_Independence}()},
+\code{\link{LRT02_EqualityMeans}()},
+\code{\link{LRT03_EqualityCovariances}()},
+\code{\link{LRT05_Sphericity}()}
 }
+\concept{Likelihood Ratio Test}

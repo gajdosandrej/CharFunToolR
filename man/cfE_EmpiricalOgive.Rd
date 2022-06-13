@@ -2,7 +2,7 @@
 % Please edit documentation in R/cfE_EmpiricalOgive.R
 \name{cfE_EmpiricalOgive}
 \alias{cfE_EmpiricalOgive}
-\title{Characteristic function of the OGIVE EMPIRICAL distribution based on the observed histogram}
+\title{Characteristic function of the Ogive empirical distribution based on the observed histogram}
 \usage{
 cfE_EmpiricalOgive(t, bins, freq)
 }
@@ -17,7 +17,7 @@ cfE_EmpiricalOgive(t, bins, freq)
 Characteristic function \eqn{cf(t)} of the EMPIRICAL distribution, based on the observed data.
 }
 \description{
-Characteristic function of the OGIVE EMPIRICAL distribution based
+\code{cfE_EmpiricalOgive(t, bins, freq)} calculates characteristic function of the Ogive empirical distribution based
 on the observed histogram (given by bins and frequencies).
 That is, \eqn{cf(t)} is given as a weighted mixture of the UNIFORM iid RVs.
 \deqn{cf(t) = cfE_EmpiricalOgive(t,bins,freq) = sum_{j=1}^n freq_j * cf_Uniform(t,bins_{j-1},bins_{j}),}
@@ -86,6 +86,8 @@ characteristic function of frequency and severity. arXiv preprint arXiv:1701.082
 For more details see WIKIPEDIA:
 \url{https://en.wikipedia.org/wiki/Empirical_characteristic_function}.
 
-Other Empirical Probability Distribution: \code{\link{cfE_DiracMixture}},
-  \code{\link{cfE_Empirical}}
+Other Empirical Probability Distribution: 
+\code{\link{cfE_DiracMixture}()},
+\code{\link{cfE_Empirical}()}
 }
+\concept{Empirical Probability Distribution}

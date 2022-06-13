@@ -25,20 +25,30 @@ Ver.: 01-Oct-2018 12:33:49 (consistent with Matlab CharFunTool v1.3.0, 07-Sep-20
 ## EXAMPLE 1
 n <- 0:5
 x <- ChebPoints(32, c(-1, 1))
-pval <- ChebPoly(n, x)
-matplot(x, t(pval), main = 'Chebyshev polynomials T_n(x) evaluated at Chebyshev points', type = "b")
+pval <- ChebPoly(n, x[[1]])
+matplot(x[[1]], t(pval),
+        main = 'Chebyshev polynomials T_n(x) evaluated at Chebyshev points',
+        type = "l")
 }
 \seealso{
 For more details see also \url{https://en.wikipedia.org/wiki/Chebyshev_polynomials}.
 
-Other Utility Function: \code{\link{ChebPoints}},
-  \code{\link{GammaLog}}, \code{\link{GammaMultiLog}},
-  \code{\link{GammaMulti}}, \code{\link{GammaZX}},
-  \code{\link{Hypergeom1F1MatApprox}},
-  \code{\link{Hypergeom1F1Mat}},
-  \code{\link{Hypergeom2F1Mat}},
-  \code{\link{Hypergeom2F1}},
-  \code{\link{HypergeompFqMat}},
-  \code{\link{hypergeom1F1}},
-  \code{\link{interpBarycentric}}
+Other Utility Function: 
+\code{\link{ChebCoefficients}()},
+\code{\link{ChebPoints}()},
+\code{\link{ChebPolyValues}()},
+\code{\link{ChebValues}()},
+\code{\link{GammaLog}()},
+\code{\link{GammaMultiLog}()},
+\code{\link{GammaMulti}()},
+\code{\link{GammaZX}()},
+\code{\link{Hypergeom1F1MatApprox}()},
+\code{\link{Hypergeom1F1Mat}()},
+\code{\link{Hypergeom2F1Mat}()},
+\code{\link{Hypergeom2F1}()},
+\code{\link{HypergeompFqMat}()},
+\code{\link{InterpChebValues}()},
+\code{\link{hypergeom1F1}()},
+\code{\link{interpBarycentric}()}
 }
+\concept{Utility Function}

@@ -92,6 +92,8 @@ characteristic function of frequency and severity. arXiv preprint arXiv:1701.082
 For more details see WIKIPEDIA:
 \url{https://en.wikipedia.org/wiki/Empirical_characteristic_function}.
 
-Other Empirical Probability Distribution: \code{\link{cfE_DiracMixture}},
-  \code{\link{cfE_EmpiricalOgive}}
+Other Empirical Probability Distribution: 
+\code{\link{cfE_DiracMixture}()},
+\code{\link{cfE_EmpiricalOgive}()}
 }
+\concept{Empirical Probability Distribution}

@@ -20,7 +20,7 @@ The package includes inversion algorithm, including those based on simple trapez
 Installation and requirements
 ============================= 
 
-CharFunToolR was developed with R version 3.4.2 (2017-09-28).
+CharFunToolR was developed with R version 4.0.4 (2021-02-15).
 
 To install, you can either clone the directory with Git or download a .zip file or install package from R GitHub repository.
 
@@ -66,15 +66,8 @@ To get a taste of what computing with CharFunToolR is like, type
    result <- cf2DistGP(cf)   # Invert the CF to get the CDF and PDF   
 ```
 
-Other interactive examples can be found [here](https://github.com/gajdosandrej/CFTR_JupyterNotebooks). 
 
 License
 =======
 
-See `LICENSE` for CharFunToolR licensing information. 
-
-
-Acknowledgements
-================ 
-
-This work was supported by the Slovak Research and Development Agency under the contract No. APVV-17-0568, the Scientific Grant Agency of the Slovak Republic (VEGA), VEGA grant No.1/0311/18 and the Internal Research Grant System of Faculty of Science, P.J. Šafárik University in Košice (VVGS PF UPJŠ) — project VVGS-PF-2018-792.
+See `LICENSE` for CharFunToolR licensing information.

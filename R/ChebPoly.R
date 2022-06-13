@@ -1,5 +1,4 @@
-#' @title
-#' Evaluates the Chebyshev nth order polynomial of the first kind
+#' @title Evaluates the Chebyshev nth order polynomial of the first kind
 #'
 #' @description
 #' \code{ChebPoly(n, x)} evaluates the Chebyshev nth order polynomial of the first kind
@@ -34,7 +33,7 @@ ChebPoly <- function(n, x) {
         x <- Conj(c(x))
 
         ## ALGORITHM
-        pval  = cos(n %*% t(acos(x)))
+        pval  <- cos(n %*% t(acos(x)))
 
         if(length(n) == 1) {
                 dim(pval) <- szx

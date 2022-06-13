@@ -62,5 +62,7 @@ plotReIm(cf, t, title = 'CF of a Linear Combination of iid RVs')
 result <- cf2DistGP(cf)
 }
 \seealso{
-Other CF Tool: \code{\link{cfX_PDF}}
+Other CF Tool: 
+\code{\link{cfX_PDF}()}
 }
+\concept{CF Tool}

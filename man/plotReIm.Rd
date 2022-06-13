@@ -4,8 +4,20 @@
 \alias{plotReIm}
 \title{Plot real and imaginary part of f(x)}
 \usage{
-plotReIm(f, x, title, xmin, xmax, dx = 0.1, xlab, ylab, px = 0, py = 0,
-  labelx = TRUE, labely = TRUE)
+plotReIm(
+  f,
+  x,
+  title,
+  xmin,
+  xmax,
+  dx = 0.1,
+  xlab,
+  ylab,
+  px = 0,
+  py = 0,
+  labelx = TRUE,
+  labely = TRUE
+)
 }
 \arguments{
 \item{f}{function.}
@@ -45,6 +57,8 @@ Function with optional parameters must be pass as lambda function \code{f = func
 Ver.: 22-Sep-2018 20:32:20.
 }
 \seealso{
-Other Graphic Function: \code{\link{plotPolar}},
-  \code{\link{plotReIm2}}
+Other Graphic Function: 
+\code{\link{plotPolar}()},
+\code{\link{plotReIm2}()}
 }
+\concept{Graphic Function}

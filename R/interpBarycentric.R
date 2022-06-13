@@ -25,12 +25,15 @@
 #' @example R/Examples/example_interpBarycentric.R
 #'
 #' @export
-interpBarycentric <- function(x, fun, xNew, options) {
+interpBarycentric <- function(x, fun, xNew, w, options) {
   if (missing(xNew)) {
     xNew <- vector()
   }
   if (missing(options)) {
     options <- list()
+  }
+  if (missing(w)){
+    w <- vector()
   }
   if (length(xNew) == 0) {
     xNew <- seq(min(x), max(x))
@@ -48,12 +51,28 @@ interpBarycentric <- function(x, fun, xNew, options) {
   nx <- length(x)
   nxNew <- length(xNew)
   funNew <- seq(0, 0, length.out = length(xNew))
+if( nx< 2 ){
+  errorCondition('small number of nodes')
+}
 
-  w <- (-1) ^ seq(0, length(x) - 1)
-  w[1] <- w[1] / 2
-  w[length(x)] <- w[length(x)] / 2
+  if(length(w)==0){
 
-  for (i in seq(1, length(xNew))) {
+   if( options$isChebPts == FALSE && nx >= 4){
+       w <- (-1)^seq(0, length(x) - 1)
+       w[1] <- w[1] / 4
+       w[2] <- 3*w[2] / 4
+       w[length(x)-1] <-3* w[length(x)-1] / 4
+       w[length(x)] <- w[length(x)] / 4
+   }
+   else{
+       w <- (-1) ^ seq(0, length(x) - 1)
+       w[1] <- w[1] / 2
+       w[length(x)] <- w[length(x)] / 2
+   }
+
+     }
+
+   for (i in seq(1, length(xNew))) {
     A <- 0
     B <- 0
     for (j in seq(1, length(x))) {

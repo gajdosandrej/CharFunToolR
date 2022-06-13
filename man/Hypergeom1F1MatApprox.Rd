@@ -60,13 +60,22 @@ options$xMin <- 0
 result <- cf2DistGP(cf, prob = prob, options = options)
 }
 \seealso{
-Other Utility Function: \code{\link{ChebPoints}},
-  \code{\link{ChebPoly}}, \code{\link{GammaLog}},
-  \code{\link{GammaMultiLog}}, \code{\link{GammaMulti}},
-  \code{\link{GammaZX}}, \code{\link{Hypergeom1F1Mat}},
-  \code{\link{Hypergeom2F1Mat}},
-  \code{\link{Hypergeom2F1}},
-  \code{\link{HypergeompFqMat}},
-  \code{\link{hypergeom1F1}},
-  \code{\link{interpBarycentric}}
+Other Utility Function: 
+\code{\link{ChebCoefficients}()},
+\code{\link{ChebPoints}()},
+\code{\link{ChebPolyValues}()},
+\code{\link{ChebPoly}()},
+\code{\link{ChebValues}()},
+\code{\link{GammaLog}()},
+\code{\link{GammaMultiLog}()},
+\code{\link{GammaMulti}()},
+\code{\link{GammaZX}()},
+\code{\link{Hypergeom1F1Mat}()},
+\code{\link{Hypergeom2F1Mat}()},
+\code{\link{Hypergeom2F1}()},
+\code{\link{HypergeompFqMat}()},
+\code{\link{InterpChebValues}()},
+\code{\link{hypergeom1F1}()},
+\code{\link{interpBarycentric}()}
 }
+\concept{Utility Function}

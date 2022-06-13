@@ -2,7 +2,7 @@
 % Please edit documentation in R/cfX_PDF.R
 \name{cfX_PDF}
 \alias{cfX_PDF}
-\title{Computes the characteristic function of the continuos distribution defined by its PDF function.}
+\title{Computes the characteristic function of the continuos distribution defined by its PDF function}
 \usage{
 cfX_PDF(t, pdfFun, method, tol)
 }
@@ -115,5 +115,7 @@ of collective risk models. Working Paper. Journal of Statistical Software.
 arXiv preprint arXiv:1801.02248, 2018.
 }
 \seealso{
-Other CF Tool: \code{\link{cf_Conv}}
+Other CF Tool: 
+\code{\link{cf_Conv}()}
 }
+\concept{CF Tool}

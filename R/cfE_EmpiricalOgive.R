@@ -1,7 +1,7 @@
-#' @title Characteristic function of the OGIVE EMPIRICAL distribution based on the observed histogram
+#' @title Characteristic function of the Ogive empirical distribution based on the observed histogram
 #'
 #' @description
-#' Characteristic function of the OGIVE EMPIRICAL distribution based
+#' \code{cfE_EmpiricalOgive(t, bins, freq)} calculates characteristic function of the Ogive empirical distribution based
 #' on the observed histogram (given by bins and frequencies).
 #' That is, \eqn{cf(t)} is given as a weighted mixture of the UNIFORM iid RVs.
 #' \deqn{cf(t) = cfE_EmpiricalOgive(t,bins,freq) = sum_{j=1}^n freq_j * cf_Uniform(t,bins_{j-1},bins_{j}),}

@@ -133,15 +133,23 @@ of a matrix argument. \emph{Mathematics of Computation}, 75(254), 833-846.
 [2] Muirhead RJ. Aspects of multivariate statistical theory. John Wiley & Sons; 2009 Sep 25.
 }
 \seealso{
-Other Utility Function: \code{\link{ChebPoints}},
-  \code{\link{ChebPoly}}, \code{\link{GammaLog}},
-  \code{\link{GammaMultiLog}}, \code{\link{GammaMulti}},
-  \code{\link{GammaZX}},
-  \code{\link{Hypergeom1F1MatApprox}},
-  \code{\link{Hypergeom1F1Mat}},
-  \code{\link{Hypergeom2F1Mat}},
-  \code{\link{Hypergeom2F1}}, \code{\link{hypergeom1F1}},
-  \code{\link{interpBarycentric}}
+Other Utility Function: 
+\code{\link{ChebCoefficients}()},
+\code{\link{ChebPoints}()},
+\code{\link{ChebPolyValues}()},
+\code{\link{ChebPoly}()},
+\code{\link{ChebValues}()},
+\code{\link{GammaLog}()},
+\code{\link{GammaMultiLog}()},
+\code{\link{GammaMulti}()},
+\code{\link{GammaZX}()},
+\code{\link{Hypergeom1F1MatApprox}()},
+\code{\link{Hypergeom1F1Mat}()},
+\code{\link{Hypergeom2F1Mat}()},
+\code{\link{Hypergeom2F1}()},
+\code{\link{InterpChebValues}()},
+\code{\link{hypergeom1F1}()},
+\code{\link{interpBarycentric}()}
 }
 \author{
 Copyright (c) 2004 Plamen Koev.
@@ -164,3 +172,4 @@ If you use MHG in any program or publication, please acknowledge its author by a
 
 This is R version of modified (by Viktor Witkovsky) version of the original MATLAB code hg.m by Plamen Koev
 }
+\concept{Utility Function}

@@ -26,7 +26,7 @@ Hence, the logarithm of multivariate gamma
 is given by \eqn{log(gamma_p(z))=(p*(p-1)/2)*log(pi) + sum_{j=1}^p log(gamma(z-(j-1)/2))}.
 }
 \note{
-Ver.: 01-Oct-2018 13:55:47 (consistent with Matlab CharFunTool v1.3.0, 17-Aug-2018 19:45:37).
+Ver.: 18-Sep-2019 17:14:16 (consistent with Matlab CharFunTool v1.3.0, 17-Aug-2018 19:45:37).
 }
 \examples{
 ## EXAMPLE 1
@@ -43,14 +43,22 @@ funmode <- 1
 f <- GammaMultiLog(z, p, funmode)
 }
 \seealso{
-Other Utility Function: \code{\link{ChebPoints}},
-  \code{\link{ChebPoly}}, \code{\link{GammaLog}},
-  \code{\link{GammaMulti}}, \code{\link{GammaZX}},
-  \code{\link{Hypergeom1F1MatApprox}},
-  \code{\link{Hypergeom1F1Mat}},
-  \code{\link{Hypergeom2F1Mat}},
-  \code{\link{Hypergeom2F1}},
-  \code{\link{HypergeompFqMat}},
-  \code{\link{hypergeom1F1}},
-  \code{\link{interpBarycentric}}
+Other Utility Function: 
+\code{\link{ChebCoefficients}()},
+\code{\link{ChebPoints}()},
+\code{\link{ChebPolyValues}()},
+\code{\link{ChebPoly}()},
+\code{\link{ChebValues}()},
+\code{\link{GammaLog}()},
+\code{\link{GammaMulti}()},
+\code{\link{GammaZX}()},
+\code{\link{Hypergeom1F1MatApprox}()},
+\code{\link{Hypergeom1F1Mat}()},
+\code{\link{Hypergeom2F1Mat}()},
+\code{\link{Hypergeom2F1}()},
+\code{\link{HypergeompFqMat}()},
+\code{\link{InterpChebValues}()},
+\code{\link{hypergeom1F1}()},
+\code{\link{interpBarycentric}()}
 }
+\concept{Utility Function}

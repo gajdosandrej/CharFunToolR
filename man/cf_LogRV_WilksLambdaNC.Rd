@@ -141,31 +141,31 @@ matplot(cbind(result0$x, result$x), cbind(result0$pdf, result$pdf),
         main = expression(paste('PDFs of -log(',Lambda,') under null and alternative hypothesis')))
 
 ## EXAMPLE 4 (Compare exact vs. simulated non-central Wilk's distribution)
-# p <- 10 # p - length of the sample vectors (dimensionality)
-# n <- 30 # n - sample size / degrees of freedon
-# q <- 5  # q - degrees of freedom due to hypothesis model
-# N <- 10000  # N - number of simulation samples
-# M <- replicate(q, runif(p)) # M - the (true) mean (p x q)-matrix
-# delta <- eigen(M \%*\% t(M))$values # delta - the eigenvalues of non-centrality matrix
-# L <- rep(0, N)
-# for(i in 1:N) {
-#         X <- replicate(n, rnorm(p))
-#         E <- X \%*\% t(X)
-#         Y <- replicate(q, rnorm(p)) + M
-#         H <- Y \%*\% t(Y)
-#         L[i] <- det((E + H) / E)
-# }
-# # Exact and the empirical CDF of -log(L)
-# cf <- function(t) cf_LogRV_WilksLambdaNC(t, p, n, q, delta, -1)
-# options <- list()
-# options$xMin <- 0
-# options$SixSigmaRule <- 6
-# prob <- c(0.9, 0.95, 0.99)
-# result <- cf2DistGP(cf, prob = prob, options = options)
-# Fn <- ecdf(L)
-# matplot(cbind(result$x, result$x), cbind(result$cdf, Fn(result$x)),
-#         xlab = "x", ylab = "CDF / ECDF",
-# title = "Exact vs. empirical CDF of the non-central distribution")
+p <- 10 # p - length of the sample vectors (dimensionality)
+n <- 30 # n - sample size / degrees of freedon
+q <- 5  # q - degrees of freedom due to hypothesis model
+N <- 10000  # N - number of simulation samples
+M <- replicate(q, runif(p)) # M - the (true) mean (p x q)-matrix
+delta <- eigen(M \%*\% t(M))$values # delta - the eigenvalues of non-centrality matrix
+L <- rep(0, N)
+for(i in 1:N) {
+        X <- replicate(n, rnorm(p))
+        E <- X \%*\% t(X)
+        Y <- replicate(q, rnorm(p)) + M
+        H <- Y \%*\% t(Y)
+        L[i] <-  -log(det(E)/det(E + H))
+}
+# Exact and the empirical CDF of -log(L)
+cf <- function(t) cf_LogRV_WilksLambdaNC(t, p, n, q, delta, -1)
+options <- list()
+options$xMin <- 0
+options$SixSigmaRule <- 6
+prob <- c(0.9, 0.95, 0.99)
+result <- cf2DistGP(cf, prob = prob, options = options)
+Fn <- ecdf(L)
+matplot(cbind(result$x, result$x), cbind(result$cdf, Fn(result$x)),
+        xlab = "x", ylab = "CDF / ECDF",
+main = "Exact vs. empirical CDF of the non-central distribution")
 
 }
 \references{
@@ -181,36 +181,49 @@ arXiv preprint arXiv:1801.02248.
 For more details see WIKIPEDIA:
 https://en.wikipedia.org/wiki/Wilks%27s_lambda_distribution.
 
-Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
-  \code{\link{cfS_Beta}}, \code{\link{cfS_Gaussian}},
-  \code{\link{cfS_Rectangular}}, \code{\link{cfS_Student}},
-  \code{\link{cfS_Trapezoidal}},
-  \code{\link{cfS_Triangular}},
-  \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}},
-  \code{\link{cfX_FisherSnedecor}},
-  \code{\link{cfX_Gamma}}, \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}},
-  \code{\link{cf_ArcsineSymmetric}},
-  \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
-  \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
-  \code{\link{cf_Exponential}},
-  \code{\link{cf_FisherSnedecorNC}},
-  \code{\link{cf_FisherSnedecor}}, \code{\link{cf_Gamma}},
-  \code{\link{cf_InverseGamma}},
-  \code{\link{cf_LogRV_BetaNC}},
-  \code{\link{cf_LogRV_Beta}},
-  \code{\link{cf_LogRV_ChiSquareNC}},
-  \code{\link{cf_LogRV_ChiSquare}},
-  \code{\link{cf_LogRV_FisherSnedecorNC}},
-  \code{\link{cf_LogRV_FisherSnedecor}},
-  \code{\link{cf_LogRV_MeansRatioW}},
-  \code{\link{cf_LogRV_MeansRatio}},
-  \code{\link{cf_LogRV_WilksLambda}},
-  \code{\link{cf_Normal}},
-  \code{\link{cf_RectangularSymmetric}},
-  \code{\link{cf_Student}},
-  \code{\link{cf_TrapezoidalSymmetric}},
-  \code{\link{cf_TriangularSymmetric}},
-  \code{\link{cf_vonMises}}
+Other Continuous Probability Distribution: 
+\code{\link{cfS_Arcsine}()},
+\code{\link{cfS_Beta}()},
+\code{\link{cfS_Gaussian}()},
+\code{\link{cfS_Laplace}()},
+\code{\link{cfS_Rectangular}()},
+\code{\link{cfS_Student}()},
+\code{\link{cfS_TSP}()},
+\code{\link{cfS_Trapezoidal}()},
+\code{\link{cfS_Triangular}()},
+\code{\link{cfS_Wigner}()},
+\code{\link{cfX_ChiSquare}()},
+\code{\link{cfX_Exponential}()},
+\code{\link{cfX_FisherSnedecor}()},
+\code{\link{cfX_Gamma}()},
+\code{\link{cfX_InverseGamma}()},
+\code{\link{cfX_LogNormal}()},
+\code{\link{cf_ArcsineSymmetric}()},
+\code{\link{cf_BetaNC}()},
+\code{\link{cf_BetaSymmetric}()},
+\code{\link{cf_Beta}()},
+\code{\link{cf_ChiSquare}()},
+\code{\link{cf_Exponential}()},
+\code{\link{cf_FisherSnedecorNC}()},
+\code{\link{cf_FisherSnedecor}()},
+\code{\link{cf_Gamma}()},
+\code{\link{cf_InverseGamma}()},
+\code{\link{cf_Laplace}()},
+\code{\link{cf_LogRV_BetaNC}()},
+\code{\link{cf_LogRV_Beta}()},
+\code{\link{cf_LogRV_ChiSquareNC}()},
+\code{\link{cf_LogRV_ChiSquare}()},
+\code{\link{cf_LogRV_FisherSnedecorNC}()},
+\code{\link{cf_LogRV_FisherSnedecor}()},
+\code{\link{cf_LogRV_MeansRatioW}()},
+\code{\link{cf_LogRV_MeansRatio}()},
+\code{\link{cf_LogRV_WilksLambda}()},
+\code{\link{cf_Normal}()},
+\code{\link{cf_RectangularSymmetric}()},
+\code{\link{cf_Student}()},
+\code{\link{cf_TSPSymmetric}()},
+\code{\link{cf_TrapezoidalSymmetric}()},
+\code{\link{cf_TriangularSymmetric}()},
+\code{\link{cf_vonMises}()}
 }
+\concept{Continuous Probability Distribution}

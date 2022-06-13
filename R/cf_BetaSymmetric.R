@@ -87,10 +87,10 @@ cf_BetaSymmetric <- function(t, theta, coef, niid) {
   ## Characteristic function
   szt <- dim(t)
   t <- c(t)
-  cf <- vector()
+  #cf <- vector()
 
   if (length(coef) == 1) {
-    # cf <- vector()
+    cf <- vector()
     coef_t <- coef * t
     for(i in 1:length(t)) {
       cf <- c(cf, tryCatch(Re(exp(GammaLog(0.5 + theta) + (0.5 - theta) * log(0.5 * coef_t[i] + 0i)) * Bessel::BesselJ(coef_t[i], theta - 0.5)), error = function(e) 0))

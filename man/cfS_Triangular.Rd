@@ -56,42 +56,61 @@ result <- cf2DistGP(cf = cf, x = x, options = options)
 For more details see WIKIPEDIA:
 \url{https://en.wikipedia.org/wiki/Triangular_distribution}.
 
-Other Continuous Probability Distribution: \code{\link{cfS_Arcsine}},
-  \code{\link{cfS_Beta}}, \code{\link{cfS_Gaussian}},
-  \code{\link{cfS_Rectangular}}, \code{\link{cfS_Student}},
-  \code{\link{cfS_Trapezoidal}},
-  \code{\link{cfX_ChiSquare}},
-  \code{\link{cfX_Exponential}},
-  \code{\link{cfX_FisherSnedecor}},
-  \code{\link{cfX_Gamma}}, \code{\link{cfX_InverseGamma}},
-  \code{\link{cfX_LogNormal}},
-  \code{\link{cf_ArcsineSymmetric}},
-  \code{\link{cf_BetaNC}}, \code{\link{cf_BetaSymmetric}},
-  \code{\link{cf_Beta}}, \code{\link{cf_ChiSquare}},
-  \code{\link{cf_Exponential}},
-  \code{\link{cf_FisherSnedecorNC}},
-  \code{\link{cf_FisherSnedecor}}, \code{\link{cf_Gamma}},
-  \code{\link{cf_InverseGamma}},
-  \code{\link{cf_LogRV_BetaNC}},
-  \code{\link{cf_LogRV_Beta}},
-  \code{\link{cf_LogRV_ChiSquareNC}},
-  \code{\link{cf_LogRV_ChiSquare}},
-  \code{\link{cf_LogRV_FisherSnedecorNC}},
-  \code{\link{cf_LogRV_FisherSnedecor}},
-  \code{\link{cf_LogRV_MeansRatioW}},
-  \code{\link{cf_LogRV_MeansRatio}},
-  \code{\link{cf_LogRV_WilksLambdaNC}},
-  \code{\link{cf_LogRV_WilksLambda}},
-  \code{\link{cf_Normal}},
-  \code{\link{cf_RectangularSymmetric}},
-  \code{\link{cf_Student}},
-  \code{\link{cf_TrapezoidalSymmetric}},
-  \code{\link{cf_TriangularSymmetric}},
-  \code{\link{cf_vonMises}}
+Other Continuous Probability Distribution: 
+\code{\link{cfS_Arcsine}()},
+\code{\link{cfS_Beta}()},
+\code{\link{cfS_Gaussian}()},
+\code{\link{cfS_Laplace}()},
+\code{\link{cfS_Rectangular}()},
+\code{\link{cfS_Student}()},
+\code{\link{cfS_TSP}()},
+\code{\link{cfS_Trapezoidal}()},
+\code{\link{cfS_Wigner}()},
+\code{\link{cfX_ChiSquare}()},
+\code{\link{cfX_Exponential}()},
+\code{\link{cfX_FisherSnedecor}()},
+\code{\link{cfX_Gamma}()},
+\code{\link{cfX_InverseGamma}()},
+\code{\link{cfX_LogNormal}()},
+\code{\link{cf_ArcsineSymmetric}()},
+\code{\link{cf_BetaNC}()},
+\code{\link{cf_BetaSymmetric}()},
+\code{\link{cf_Beta}()},
+\code{\link{cf_ChiSquare}()},
+\code{\link{cf_Exponential}()},
+\code{\link{cf_FisherSnedecorNC}()},
+\code{\link{cf_FisherSnedecor}()},
+\code{\link{cf_Gamma}()},
+\code{\link{cf_InverseGamma}()},
+\code{\link{cf_Laplace}()},
+\code{\link{cf_LogRV_BetaNC}()},
+\code{\link{cf_LogRV_Beta}()},
+\code{\link{cf_LogRV_ChiSquareNC}()},
+\code{\link{cf_LogRV_ChiSquare}()},
+\code{\link{cf_LogRV_FisherSnedecorNC}()},
+\code{\link{cf_LogRV_FisherSnedecor}()},
+\code{\link{cf_LogRV_MeansRatioW}()},
+\code{\link{cf_LogRV_MeansRatio}()},
+\code{\link{cf_LogRV_WilksLambdaNC}()},
+\code{\link{cf_LogRV_WilksLambda}()},
+\code{\link{cf_Normal}()},
+\code{\link{cf_RectangularSymmetric}()},
+\code{\link{cf_Student}()},
+\code{\link{cf_TSPSymmetric}()},
+\code{\link{cf_TrapezoidalSymmetric}()},
+\code{\link{cf_TriangularSymmetric}()},
+\code{\link{cf_vonMises}()}
 
 Other Symmetric Probability Distribution
 
 WITKOVSKY V. (2016). Numerical inversion of a characteristic function:
 An alternative tool to form the probability distribution
-of output quantity in linear measurement models. Acta IMEKO, 5(3), 32-44.: \code{\link{cf_TriangularSymmetric}}
+of output quantity in linear measurement models. Acta IMEKO, 5(3), 32-44.: 
+\code{\link{cf_TriangularSymmetric}()}
 }
+\concept{Continuous Probability Distribution}
+\concept{Symmetric Probability Distribution
+
+WITKOVSKY V. (2016). Numerical inversion of a characteristic function:
+An alternative tool to form the probability distribution
+of output quantity in linear measurement models. Acta IMEKO, 5(3), 32-44.}

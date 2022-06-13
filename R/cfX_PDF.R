@@ -1,5 +1,5 @@
 #' @title
-#' Computes the characteristic function of the continuos distribution defined by its PDF function.
+#' Computes the characteristic function of the continuos distribution defined by its PDF function
 #'
 #' @description
 #' \code{cfX_PDF(t, pdfFun, method, tol)} computes the characteristic function of the continuos
