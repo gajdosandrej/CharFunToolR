@@ -8,7 +8,7 @@
 #' @family Utility Function
 #'
 #' @importFrom pracma ifft
-#' @mportFrom matlab flipud
+#' @importFrom matlab flipud
 #'
 #' @param values function values evaluated at Chebyshev points of the 2nd kind
 #'

@@ -7,7 +7,7 @@
 #' @family Utility Function
 #'
 #' @importFrom stats fft
-#' @mportFrom matlab flipud
+#' @importFrom matlab flipud
 #'
 #' @param  coeffs Chebyshev coefficients
 #'

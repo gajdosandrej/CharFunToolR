@@ -150,5 +150,9 @@ of frequency and severity. ArXiv preprint, 2017, arXiv:1701.08299.
 \seealso{
 For more details see:
 \url{https://arxiv.org/pdf/1701.08299.pdf}.
+
+Other CF Inversion Algorithm: 
+\code{\link{cf2DistFFT}()},
+\code{\link{cf2PMF_FFT}()}
 }
 \concept{CF Inversion Algorithm}
