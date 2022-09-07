@@ -352,7 +352,7 @@ cf2DistGP <- function(cf, x, prob, options) {
     }
 
     #WARNING: OUT of range
-    if (any(x < xMin || any(x > xMax))) {
+    if (any(x < xMin) || any(x > xMax)) {
       warning(
         "CharFun: cf2DistGP" ,
         "x out of range (the used support): [xMin, xMax] = [",
