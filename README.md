@@ -71,3 +71,9 @@ License
 =======
 
 See `LICENSE` for CharFunToolR licensing information.
+
+
+Acknowledgements
+================
+
+This work was supported by the Slovak Research and Development Agency under the contract no. APVV-17-0568, no. APVV-21-0216 and no. APVV-21-0369. 
