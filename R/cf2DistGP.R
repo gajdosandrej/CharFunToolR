@@ -214,11 +214,11 @@ cf2DistGP <- function(cf, x, prob, options) {
     }
 
     if (is.null(options$correctedCDF)) {
-      if (options$isCircular) {
-        options$correctedCDF <- TRUE
-      } else {
+    #  if (options$isCircular) {
+     #   options$correctedCDF <- TRUE
+      #} else {
         options$correctedCDF <- FALSE
-      }
+      #}
     }
 
     if (is.null(options$isInterp)) {
@@ -338,8 +338,12 @@ cf2DistGP <- function(cf, x, prob, options) {
     # ALGORITHM ---------------------------------------------------------------
 
     if (length(x) == 0) {
+      xempty <- TRUE
       #if (missing(x)) {
       x <- seq(xMin, xMax, length.out = options$xN)
+    }
+    else{
+      xempty <- FALSE
     }
 
     if (options$isInterp) {
@@ -471,20 +475,35 @@ cf2DistGP <- function(cf, x, prob, options) {
       id <- is.finite(cdf)
       CDF <-
         function(xNew)
-          pmax(0, pmin(1, interpBarycentric(x[id]), cdf[id], xNew)[[2]])
+          pmax(0, pmin(1, interpBarycentric(x[id], cdf[id], xNew)[[2]]))
 
       QF <- function(prob)
         interpBarycentric(cdf[id], x[id], prob)[[2]]
 
       RND <- function(n)
         QF(runif(n))
-    }
 
-    if (length(xOrg) > 0) {
+    trycatch(
+
+    expr={
+      if (xempty==FALSE) {
       x <- xOrg
       cdf <- CDF(x)
       pdf <- PDF(x)
+      }
+    },
+
+warning={warning('VW:CharFunTool:cf2DistGPT',
+         'Problem using the interpolant function')})
+
+
     }
+      else{
+        PDF  <- vector()
+        CDF  <- vector()
+        QF   <- vector()
+        RND  <- vector()
+      }
 
     # Reset the correct value for compound PDF at 0
     if (options$isCompound) {
