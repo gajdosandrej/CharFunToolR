@@ -61,7 +61,7 @@ plotReIm <-
                         if (missing(xmax)) {
                                 xmax <- max(x)
                         }
-                        x <- x[x >= xmin && x <= xmax]
+                        x <- x[x >= xmin & x <= xmax]
                 }
 
                 if (missing(title)) {
