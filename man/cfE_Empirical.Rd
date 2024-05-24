@@ -94,6 +94,8 @@ For more details see WIKIPEDIA:
 
 Other Empirical Probability Distribution: 
 \code{\link{cfE_DiracMixture}()},
-\code{\link{cfE_EmpiricalOgive}()}
+\code{\link{cfE_EmpiricalBootstrapped}()},
+\code{\link{cfE_EmpiricalOgive}()},
+\code{\link{cfE_SampleMean}()}
 }
 \concept{Empirical Probability Distribution}

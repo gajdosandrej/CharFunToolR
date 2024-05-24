@@ -4,30 +4,47 @@
 \alias{cfE_EmpiricalOgive}
 \title{Characteristic function of the Ogive empirical distribution based on the observed histogram}
 \usage{
-cfE_EmpiricalOgive(t, bins, freq)
+cfE_EmpiricalOgive(t, data, counts)
 }
 \arguments{
 \item{t}{vector or array of real values, where the CF is evaluated.}
 
-\item{bins}{vector of breaks of histogram bins.}
+\item{data}{vector of data (if the size is equal to the vector counts) or a vector of edges (if)the size is \eqn{n+1}, where \eqn{n} is the length of counts). If empty, default value is \deqn{data=1}.}
 
-\item{freq}{frequencies for each bin of histogram.}
+\item{counts}{vector of counts (integers) related to the values given by data. If empty, default value is \deqn{couns=1}.}
 }
 \value{
-Characteristic function \eqn{cf(t)} of the EMPIRICAL distribution, based on the observed data.
+Characteristic function \eqn{cf(t)} of the Ogive empirical distribution, based on the observed data.
 }
 \description{
-\code{cfE_EmpiricalOgive(t, bins, freq)} calculates characteristic function of the Ogive empirical distribution based
-on the observed histogram (given by bins and frequencies).
-That is, \eqn{cf(t)} is given as a weighted mixture of the UNIFORM iid RVs.
-\deqn{cf(t) = cfE_EmpiricalOgive(t,bins,freq) = sum_{j=1}^n freq_j * cf_Uniform(t,bins_{j-1},bins_{j}),}
-where \eqn{cf_Uniform(t,bin_{j-1},bin_{j})} is CF of the Uniform distribution on the interval \eqn{[bins_{j-1},bins_j]}.
+Characteristic function of the OGIVE EMPIRICAL distribution based on
+the observed histogram given by data and counts (the vector lengths of
+data and counts are equal) or by edges and counts (the length of the
+edges is equal to the length of counts + 1).
 
-The bins and frequencies = counts/sum(counts) are based on the discretized/grouped
-or histogram data, for more details see e.g. the R function \code{hist}.
+That is, \eqn{cf(t)} is given as a weighted mixture of the RECTANGULAR
+(continuous uniform) RVs,
+\code{cf(t) = cfE_EmpiricalOgive(t,data,counts) = sum_{j=1}^n freq_j * cf_Rectangular(t,edges_{j},edges_{j+1})},
+where \code{cf_Rectangular(t,edges_{j},edges_{j+1})} is CF of the RECTANGULAR
+distribution on the interval \eqn{[edges_{j},edges_{j+1}]}. Here, the
+frequencies are derived from the counts, \eqn{FREQ = COUNTS/SUM(COUNTS)}, and
+the vector EDGES is derived automatically from the DATA (or is
+specified by the user as an input vector EDGES of size n+1, instead of
+DATA). In particular, for \deqn{j = 2,...,n} we set \eqn{EDGES(j) = (DATA(j-1) +
+DATA(j))/2} and further,  \eqn{EDGES(1) = DATA(1) - (DATA(2)-DATA(1))/2} and
+\code{EDGES(n+1) = DATA(n) + (DATA(n)-DATA(n-1))/2}.
+
+In particular, \eqn{[COUNTS,EDGES] = HISTCOUNTS(DATA)} partitions the values
+in DATA into bins, and returns the count in each bin, as well as the
+bin edges. HISTCOUNTS uses an automatic binning algorithm that returns
+bins with a uniform width, chosen to cover the range of elements in
+DATA and reveal the underlying shape of the distribution. \eqn{COUNTS(k)}
+will count the value \eqn{DATA(i)} if \deqn{EDGES(k) <= DATA(i) < EDGES(k+1)}. The
+last bin will also include the right edge such that COUNTS(end) will
+count \eqn{DATA(i)} if \deqn{EDGES(end-1) <= DATA(i) <= EDGES(end)}.
 }
 \note{
-Ver.: 02-Oct-2018 14:07:43 (consistent with Matlab CharFunTool v1.3.0, 24-Jun-2017 09:34:15).
+ver.:18-aug-2022 17:50:50  (consistent with Matlab CharFunTool, 8-May-2022 15:45:27).
 }
 \examples{
 ## EXAMPLE1 (Ogive ECF - a weighted mixture of independent Uniform RVs)
@@ -36,12 +53,10 @@ n <- 1000
 Data <- c(rnorm(3 * n, 5, 0.2), rt(n, 10))
 Edges <- -6:6
 Counts <- hist(x = Data, breaks = Edges)$counts
-Xbins <- Edges
-Xfreq <- Counts / sum(Counts)
+
 t <- seq(-10, 10, length.out = 501)
-bins <- Xbins
-freq <- Xfreq
-plotReIm(function(t) cfE_EmpiricalOgive(t, Xbins, Xfreq),
+
+plotReIm(function(t) cfE_EmpiricalOgive(t, Edges, Counts),
          t, title = 'Ogive ECF of the grouped (histogram) data')
 
 ## EXAMPLE2 (PDF/CDF of the Ogive distribution)
@@ -50,15 +65,13 @@ n <- 1000
 Data <- c(rnorm(3 * n, 5, 0.2), rt(n, 10))
 Edges <- -6:6
 Counts <- hist(x = Data, breaks = Edges)$counts
-Xbins <- Edges
-Xfreq <- Counts / sum(Counts)
-cf <- function(t) cfE_EmpiricalOgive(t, Xbins, Xfreq)
-x <- seq(-5, 7, length.out = 101)
+cf <- function(t) cfE_EmpiricalOgive(t, Edges, Counts)
+x <- seq(-30, 40, length.out = 101)
 prob <- c(0.9, 0.95)
 options <- list()
 options$N <- 2^12
 options$SixSigmaRule <- 8
-result <- cf2DistGP(cf, x, prob, options)
+result <- cf2DistGP(cf,x,prob,options)
 
 ## EXAMPLE3 (PDF/CDF of the compound Poisson-Ogive distribution)
 set.seed(101)
@@ -66,9 +79,7 @@ n <- 1000
 Data <- c(rnorm(3 * n, 5, 0.2), rt(n, 10))
 Edges <- -6:6
 Counts <- hist(x = Data, breaks = Edges)$counts
-Xbins <- Edges
-Xfreq <- Counts / sum(Counts)
-cfX <- function(t) cfE_EmpiricalOgive(t, Xbins, Xfreq)
+cfX <- function(t) cfE_EmpiricalOgive(t, Edges, Counts)
 lambda <- 15
 cf <- function(t) cfN_Poisson(t, lambda, cfX)
 x <- seq(0, 100, length.out = 101)
@@ -84,10 +95,13 @@ characteristic function of frequency and severity. arXiv preprint arXiv:1701.082
 }
 \seealso{
 For more details see WIKIPEDIA:
-\url{https://en.wikipedia.org/wiki/Empirical_characteristic_function}.
+\url{https://en.wikipedia.org/wiki/Empirical_distribution_function}.
+\url{https://en.wikipedia.org/wiki/Ogive_(statistics)}
 
 Other Empirical Probability Distribution: 
 \code{\link{cfE_DiracMixture}()},
-\code{\link{cfE_Empirical}()}
+\code{\link{cfE_EmpiricalBootstrapped}()},
+\code{\link{cfE_Empirical}()},
+\code{\link{cfE_SampleMean}()}
 }
 \concept{Empirical Probability Distribution}

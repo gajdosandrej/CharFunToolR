@@ -328,7 +328,7 @@ cf2DistFFT <- function(cf, x, prob, options) {
         c <- (as.complex(-1))^(A * (N - 1) / (B - A)) / (B-A)
 
         C <- c * (as.complex(-1))^((1 - 1 / N) * k)
-        D <- (-1)^(-2 * (A / (B - A)) * k)
+        D <- (as.complex(-1))^(-2 * (A / (B - A)) * k)
         pdfFFT <- pmax(0, Re(C * stats::fft(D * cft)))
         cdfFFT <- pmin(1, pmax(0, 0.5 + Re(1i * C * stats::fft(D * cft / t))))
 

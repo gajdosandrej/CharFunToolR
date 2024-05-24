@@ -25,7 +25,7 @@
 #' @example R/Examples/example_interpBarycentric.R
 #'
 #' @export
-interpBarycentric <- function(x, fun, xNew, w, options) {
+interpBarycentric<- function(x, fun, xNew, w, options) {
   if (missing(xNew)) {
     xNew <- vector()
   }
@@ -94,10 +94,15 @@ if( nx< 2 ){
       }
     }
 
-  }
+   }
 
   dim(xNew) <- sztNew
   dim(funNew) <- sztNew
 
-  return(list(xNew, funNew))
+  result <- list(
+    "xNew"        = xNew,
+    "funNew"      = funNew
+)
+
+  return(result)
 }

@@ -10,14 +10,15 @@ plotReIm(function(t)
 
 ## EXAMPLE 2
 # PDF/CDF of the Gamma distribution with alpha = 2, beta = 2
-alpha <- 2
-beta <- 2
-x <- seq(from = 0,
-         to = 5,
+alpha <- alpha[18]
+beta <- beta[18]
+x <- seq(from = 0.1,
+         to = 4,
          length.out = 101)
 prob <- c(0.9, 0.95, 0.99)
 options <- list()
-options$xMin <- 0
+options$xMin <- 0.1
+options$xMax <- 4
 options$N <- 2 ^ 14
 cf <- function(t)
         cfX_Gamma(t, alpha, beta)

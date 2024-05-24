@@ -4,7 +4,9 @@
 \name{Severity}
 \alias{Severity}
 \title{The Danish Insurance Data}
-\format{A data frame with one column containing fire losses over the period 1980 to 1990.}
+\format{
+A data frame with one column containing fire losses over the period 1980 to 1990.
+}
 \source{
 \href{http://www.macs.hw.ac.uk/~mcneil/data.html}{SeverityData}
 }

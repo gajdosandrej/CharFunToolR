@@ -102,7 +102,9 @@ For more details see WIKIPEDIA:
 \url{https://en.wikipedia.org/wiki/Empirical_characteristic_function}.
 
 Other Empirical Probability Distribution: 
+\code{\link{cfE_EmpiricalBootstrapped}()},
 \code{\link{cfE_EmpiricalOgive}()},
-\code{\link{cfE_Empirical}()}
+\code{\link{cfE_Empirical}()},
+\code{\link{cfE_SampleMean}()}
 }
 \concept{Empirical Probability Distribution}
