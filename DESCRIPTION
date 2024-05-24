@@ -1,7 +1,7 @@
 Package: CharFunToolR
 Type: Package
 Title: Numerical Computation Cumulative Distribution Function and Probability Density Function from Characteristic Function
-Version: 0.5.1
+Version: 0.6.0
 Author: Viktor Witkovsky, Andrej Gajdos, Branislav Lacovic 
 Authors@R: c(
     person("Lacovic", "Branislav", email = "branislavlacovic@gmail.com", role = "cre"),
